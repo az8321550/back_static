@@ -1,0 +1,407 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/jquery-jqgrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/setting.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/jquery.ztree/zTreeStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../../static/dmp/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li><a href="setting.html">用户管理</a></li>
+            <li><a href="rolemanage.html">角色管理</a></li>
+            <li><a href="rolemenu.html">菜单管理</a></li>
+            <li><a href="menubutton.html">按钮管理</a></li>
+            <li class="active"><a href="roleedit.html">权限配置</a></li>
+            <li><a href="rolewarning.html">权限异常</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="list.html">营销中心</a></li>
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li><a href="#">系统配置</a></li>
+                            <li class="active">角色管理</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content-title clearfix mb20">
+                        <span class="title fontblue">权限配置</span>
+                    </div>
+                    <div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="role-text">
+                                    Step 1：角色
+                                </label>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>角色名称</option>
+                                        <option>角色名称2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    Step 2：菜单
+                                    
+                                    <div class="rolemenu">
+
+                                        <ul id="roletree" class="ztree"></ul>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    Step 3：数据权限
+                                    <div class="rolemenu" id="rolemenu">
+                                        <div class="roletitle">"<span>营销活动</span>" 的数据权限:</div>
+                                        <div class="role-ck">
+                                            <label>
+                                                <input id="sysFunction_1" name="sysFunction_1" type="checkbox"> 仅看到自己的数据
+                                            </label>
+                                        </div>
+                                        <div class="role-ck">
+                                            <label>
+                                                <input id="sysFunction_3" name="sysFunction_3" type="checkbox"> 仅看到部门的数据
+                                            </label>
+                                        </div>
+                                        <div class="role-ck pb10">
+                                            <label>
+                                                <input id="sysFunction_3" name="sysFunction_3" type="checkbox"> 看到全部
+                                            </label>
+                                        </div>
+                                        <div class="role-ck">
+                                            <label>
+                                                <input id="sysFunction_2" name="sysFunction_2" type="checkbox"> 仅编辑自己数据
+                                            </label>
+                                        </div>
+                                        <div class="role-ck">
+                                            <label>
+                                                <input id="sysFunction_3" name="sysFunction_3" type="checkbox"> 仅编辑部门数据
+                                            </label>
+                                        </div>
+                                        <div class="role-ck">
+                                            <label>
+                                                <input id="sysFunction_3" name="sysFunction_3" type="checkbox"> 编辑全部
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    Step 4：功能权限
+                                    <div class="rolemenu" id="sysFunction" style="padding-top:0;">
+                                        <div class="rolesys-left">
+                                            <div class="rolemenu-item active">营销</div>
+                                            <div class="rolemenu-item">促销</div>
+                                            <div class="rolemenu-item">优惠券</div>
+                                            <div class="rolemenu-item">支付优惠</div>
+                                            <div class="rolemenu-item">渠道</div>
+                                            <div class="rolemenu-item">会员</div>
+                                            <div class="rolemenu-item">会员</div>
+                                            <div class="rolemenu-item">会员</div>
+                                        </div>
+                                        <!--<div class="roletitle roletitle2">"<span>营销活动</span>" 的功能按钮:</div>-->
+                                        <div id="rolesys">
+                                            <div class="rolesys-item active">
+                                                <div class="role-detail clearfix">
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_1" value="option1"> 按钮1按钮1按钮1按钮1按钮1按钮1
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 按钮2
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 按钮3
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 按钮4
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 按钮5
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 按钮6
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 按钮7
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 按钮8
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="rolesys-item">
+                                                <div class="role-detail clearfix">
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 222
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 222
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="rolesys-item">
+                                                <div class="role-detail clearfix">
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 333
+                                                    </label>
+                                                    <label class="checkbox-inline col-md-12">
+                                                        <input type="checkbox" id="dataRight_2" value="option2"> 333
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mybtn role-btn">
+                                        <button class="btn btn-success" id="btn-save">保 存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script src="../../static/dmp/plugins/jquery.ztree/jquery.ztree.core-3.4.js"></script>
+    <script src="../../static/dmp/plugins/jquery.ztree/jquery.ztree.excheck-3.4.js"></script>
+    <script>
+
+        var tempNid;
+        var data = [];
+
+        !function () {
+            //ztree
+            var setting = {
+                check: {
+                    enable: true
+                },
+                data: {
+                    key: {
+                        children: "children",
+                        name: "nameZh",
+                        title: "",
+                        url: "url"
+                    },
+                    simpleData: {
+                        enable: true,
+                        idKey: "id",
+                        pIdKey: "pid",
+                        pidKey: "pid",
+                        rootPId: null
+                    }
+                },
+                view: {
+                    showIcon:false
+                },
+                callback: {
+                    onClick: function (event, treeId, treeNode) {
+                        if (treeNode.isParent) {
+                            $(".curSelectedNode").removeClass("curSelectedNode");
+                            return;
+                        }
+                        $(".roletitle span").text(treeNode.nameZh);
+                    },
+                    beforeClick: function (treeId, treeNode, clickFlag) {
+                        var tempNode = $("a.curSelectedNode");
+                        if (tempNode.length) {
+                            var tempCk = tempNode.prev().hasClass("checkbox_false_full") ? false : true;
+                            getData(tempNode.parent().attr("id"), tempCk);
+                        }
+                    },
+                    onNodeCreated: function (event, treeId, treeNode) {
+                        if (treeNode.isParent) {
+                            var count = 0;
+                            treeNode.children.forEach(function (ele) {
+                                if (ele.checked) {
+                                    count++;
+                                }
+                            });
+                            var tempnode = $("span:contains(" + treeNode.nameZh + ")").parent();;
+                            tempnode.html(tempnode.html() + "<span class='select-num'>(" + count + ")</span>");
+                        }
+                    },
+                    beforeCheck: function (treeId, treeNode) {
+                        if (treeNode.isParent) {
+                            return false;
+                        }
+                    },
+                    onCheck: function (event, treeId, treeNode) {
+                        var parent;
+                        if (treeNode.isParent) {
+                            parent=treeNode;
+                        } else {
+                            parent=treeNode.getParentNode();
+                        }
+                        if (treeNode.checked && !treeNode.isParent) {
+                            $(".roletitle span").text(treeNode.nameZh);
+                        }
+                        if (parent) {
+                            
+                            var count = 0;
+                            parent.children.forEach(function (ele) {
+                                if (ele.checked) {
+                                    count++;
+                                }
+                            });
+                            var tempnode = $("span:contains(" + parent.nameZh + ")").parent();
+                            tempnode.find(".select-num").remove().end().append("<span class='select-num'>(" + count + ")</span>");
+                        }
+
+                        if (tempNid) {
+                            getData(tempNid, $("#" + tempNid + "_check").hasClass("checkbox_true_full"));
+                        }
+                        tempNid = treeNode.tId;
+                        
+
+
+                    }
+                }
+            };
+
+            $(document).on("click", ".chk", function () {
+                $(".curSelectedNode").removeClass("curSelectedNode");
+                $(this).next().addClass("curSelectedNode");
+            });
+
+            var getLast = function () {
+                var tempNode = $("a.curSelectedNode");
+                var tempCk = tempNode.prev().hasClass("checkbox_false_full") ? false : true;
+                getData(tempNode.parent().attr("id"), tempCk);
+            }
+
+            $("#btn-save").click(function () {
+                getLast();
+                console.log(data);
+            });
+
+
+            var getData = function (id, ck) {
+
+                
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].resourceId == id) {
+                        data[i].status = ck;
+                        return;
+                    }
+                }
+
+                var tempdata = {};
+                tempdata.resourceId = id;
+                console.log("id为"+$.fn.zTree.getZTreeObj("roletree").getNodeByTId(id).id)
+                tempdata.status = ck;
+                
+                var dataIds = "";
+                $("#rolemenu").find("input:checked").each(function (index, ele) {
+                    dataIds += ele.id + ",";
+                });
+                if (dataIds) {
+                    dataIds.substr(0, dataIds.length - 1);
+                }
+                tempdata.dataIds = dataIds;
+
+                var functionIds = "";
+                $("#sysFunction").find("input:checked").each(function (index, ele) {
+                    functionIds += ele.id + ",";
+                });
+                if (functionIds) {
+                    functionIds.substr(0, functionIds.length - 1);
+                }
+                tempdata.functionIds = functionIds;
+
+                data.push(tempdata);
+                console.log(data);
+
+            };
+            var setDataStatu = function () {
+                data[treeId].status = false;
+            };
+
+            var zNodes = [{ "children": null, "status": 1, "resourceType": 0, "resourceUrl": "", "resourceCode": "marketing_portal", "createOn": "2014-04-14 16:23:32", "createBy": 1, "updateOn": "2014-04-24 16:21:37", "updateBy": 1, "nameZh": "营销门户", "pid": 0, "remark": "营销门户", "nameEn": "marketing_portal", "orderNum": 1, "isDeleted": 0, "id": 287 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/management/sysuser", "resourceCode": "user", "createOn": "2012-09-06 18:37:37", "createBy": 1, "updateOn": "2014-03-18 17:30:16", "updateBy": null, "nameZh": "用户管理", "pid": 3, "remark": "", "nameEn": "user_manage", "orderNum": 12, "isDeleted": 0, "id": 7 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/management/sysrole", "resourceCode": "role", "createOn": "2012-09-06 18:36:59", "createBy": 1, "updateOn": "2014-03-18 17:30:16", "updateBy": null, "nameZh": "角色管理", "pid": 3, "remark": "", "nameEn": "role_manage", "orderNum": 13, "isDeleted": 0, "id": 6 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/management/sysresource", "resourceCode": "resource", "createOn": "2012-09-06 18:36:18", "createBy": 1, "updateOn": "2014-03-21 13:32:32", "updateBy": 8, "nameZh": "菜单管理", "pid": 3, "remark": "", "nameEn": "resource_manage", "orderNum": 14, "isDeleted": 0, "id": 5 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/management/sysFunction", "resourceCode": null, "createOn": "2014-04-10 11:29:21", "createBy": 8, "updateOn": "2014-04-10 11:29:52", "updateBy": 8, "nameZh": "按钮管理", "pid": 3, "remark": null, "nameEn": null, "orderNum": 15, "isDeleted": 0, "id": 275 }, { "children": null, "status": 0, "resourceType": 0, "resourceUrl": "/management/log", "resourceCode": "log", "createOn": "2012-09-10 15:54:16", "createBy": 1, "updateOn": "2014-04-24 20:39:03", "updateBy": 8, "nameZh": "日志管理", "pid": 3, "remark": "", "nameEn": "log_manage", "orderNum": 21, "isDeleted": 0, "id": 20 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/management/dataright", "resourceCode": "data_right", "createOn": "2012-09-26 15:15:25", "createBy": 1, "updateOn": "2014-03-24 14:55:45", "updateBy": 8, "nameZh": "数据权限", "pid": 3, "remark": "", "nameEn": "data_right", "orderNum": 22, "isDeleted": 0, "id": 31 }, { "children": null, "status": 0, "resourceType": 0, "resourceUrl": "/management/sysbasetype", "resourceCode": "base", "createOn": "2012-09-07 14:36:49", "createBy": 1, "updateOn": "2014-04-24 16:43:39", "updateBy": 1, "nameZh": "基础信息", "pid": 3, "remark": "", "nameEn": "base_info", "orderNum": 23, "isDeleted": 0, "id": 14 }, { "children": null, "status": 0, "resourceType": 0, "resourceUrl": "/management/sysposition", "resourceCode": "position", "createOn": "2012-09-12 11:28:43", "createBy": 1, "updateOn": "2014-04-24 16:25:55", "updateBy": null, "nameZh": "职位管理", "pid": 3, "remark": "", "nameEn": "position_manange", "orderNum": 24, "isDeleted": 0, "id": 25 }, { "children": null, "status": 0, "resourceType": 0, "resourceUrl": "/management/sysorganize", "resourceCode": "or", "createOn": "2012-09-07 14:39:19", "createBy": 1, "updateOn": "2014-04-24 17:50:36", "updateBy": 1, "nameZh": "机构管理", "pid": 3, "remark": "", "nameEn": "organize", "orderNum": 25, "isDeleted": 0, "id": 15 }, { "children": null, "status": 1, "resourceType": 1, "resourceUrl": "", "resourceCode": "bonux_apply_view", "createOn": "2013-07-02 20:20:34", "createBy": 1, "updateOn": "2013-07-02 20:21:29", "updateBy": 1, "nameZh": "品牌劵活动申请查看", "pid": 54, "remark": "", "nameEn": "bonux_apply_view", "orderNum": 1, "isDeleted": 0, "id": 61 }, { "children": null, "status": 1, "resourceType": 1, "resourceUrl": "", "resourceCode": "bonux_apply_delete", "createOn": "2013-07-02 20:21:22", "createBy": 1, "updateOn": "2014-03-18 17:30:16", "updateBy": null, "nameZh": "品牌劵活动申请删除", "pid": 54, "remark": "", "nameEn": "bonux_apply_delete", "orderNum": 3, "isDeleted": 0, "id": 63 }, { "children": null, "status": 1, "resourceType": 1, "resourceUrl": "", "resourceCode": "bonux_apply_add", "createOn": "2013-07-29 15:51:36", "createBy": 1, "updateOn": "2014-03-18 17:30:16", "updateBy": null, "nameZh": "品牌劵活动增加", "pid": 54, "remark": "", "nameEn": "bonux_apply_add", "orderNum": 4, "isDeleted": 0, "id": 70 }, { "children": null, "status": 1, "resourceType": 1, "resourceUrl": "", "resourceCode": "bonux_apply_edit", "createOn": "2013-07-02 20:21:04", "createBy": 1, "updateOn": "2014-03-18 17:30:16", "updateBy": null, "nameZh": "品牌劵活动申请修改", "pid": 54, "remark": "", "nameEn": "bonux_apply_edit", "orderNum": 11, "isDeleted": 0, "id": 62 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/dmp/channel/goChannelPage", "resourceCode": "channel_manage", "createOn": "2014-03-18 16:41:36", "createBy": 1, "updateOn": "2014-04-03 15:14:49", "updateBy": 9, "nameZh": "渠道管理", "pid": 261, "remark": "渠道管理", "nameEn": "channel_manage", "orderNum": 1, "isDeleted": 0, "id": 262 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/dmp/template/goTemplatePage", "resourceCode": "template", "createOn": "2014-04-03 17:32:41", "createBy": 9, "updateOn": "2014-04-03 17:34:13", "updateBy": null, "nameZh": "活动模版", "pid": 264, "remark": "活动模版", "nameEn": "template", "orderNum": 1, "isDeleted": 0, "id": 265 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/dmp/template/goTemplateCategoryPage", "resourceCode": "TemplateCategory", "createOn": "2014-04-03 17:34:41", "createBy": 9, "updateOn": "2014-04-03 17:36:13", "updateBy": null, "nameZh": "模版分类", "pid": 264, "remark": "模版分类", "nameEn": "TemplateCategory", "orderNum": 3, "isDeleted": 0, "id": 266 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/dmp/template/goTemplateParameterPage", "resourceCode": "TemplateParameter", "createOn": "2014-04-03 17:35:15", "createBy": 9, "updateOn": "2014-04-03 17:36:47", "updateBy": null, "nameZh": "模版参数", "pid": 264, "remark": "模版参数", "nameEn": "TemplateParameter", "orderNum": 4, "isDeleted": 0, "id": 267 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/dmp/marketing/goMarketingPage", "resourceCode": "marketing", "createOn": "2014-04-10 16:56:18", "createBy": 9, "updateOn": "2014-04-10 16:56:42", "updateBy": 9, "nameZh": "营销活动", "pid": 268, "remark": "营销活动", "nameEn": "marketing", "orderNum": 1, "isDeleted": 0, "id": 278 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/dmp/marketing/goMarketingActPage", "resourceCode": "marketing_act", "createOn": "2014-04-03 17:52:43", "createBy": 9, "updateOn": "2014-04-08 14:18:42", "updateBy": 9, "nameZh": "业务类型", "pid": 268, "remark": "业务类型", "nameEn": "marketing_act", "orderNum": 2, "isDeleted": 0, "id": 269 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "22", "resourceCode": null, "createOn": "2014-04-17 15:18:08", "createBy": 8, "updateOn": "2014-04-17 15:19:41", "updateBy": null, "nameZh": "22", "pid": 268, "remark": null, "nameEn": null, "orderNum": 3, "isDeleted": 0, "id": 298 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/marketingtask/activelist", "resourceCode": null, "createOn": "2014-04-24 10:40:46", "createBy": 11, "updateOn": "2014-04-24 10:42:19", "updateBy": null, "nameZh": "活动任务", "pid": 268, "remark": null, "nameEn": null, "orderNum": 4, "isDeleted": 0, "id": 303 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "", "resourceCode": "sysmanage", "createOn": "2012-09-06 15:37:09", "createBy": 1, "updateOn": "2014-03-18 17:30:16", "updateBy": null, "nameZh": "系统管理", "pid": 287, "remark": "", "nameEn": "system_manage", "orderNum": 2, "isDeleted": 0, "id": 3 }, { "children": null, "status": 0, "resourceType": 0, "resourceUrl": "", "resourceCode": "check_center", "createOn": "2013-09-17 10:25:24", "createBy": 1, "updateOn": "2014-04-24 20:06:44", "updateBy": 1, "nameZh": "活动核对中心", "pid": 287, "remark": "", "nameEn": "check_center", "orderNum": 3, "isDeleted": 0, "id": 91 }, { "children": null, "status": 0, "resourceType": 0, "resourceUrl": "", "resourceCode": "report", "createOn": "2012-09-06 15:36:27", "createBy": 1, "updateOn": "2014-03-17 16:15:38", "updateBy": 1, "nameZh": "报表中心", "pid": 287, "remark": "", "nameEn": "report_center", "orderNum": 4, "isDeleted": 0, "id": 2 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "", "resourceCode": "channel_center", "createOn": "2014-03-18 16:41:05", "createBy": 1, "updateOn": "2014-04-03 15:10:35", "updateBy": 9, "nameZh": "渠道中心", "pid": 287, "remark": "渠道中心", "nameEn": "channel_center", "orderNum": 5, "isDeleted": 0, "id": 261 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "", "resourceCode": "template_center", "createOn": "2014-04-03 17:31:35", "createBy": 9, "updateOn": "2014-04-03 17:33:06", "updateBy": null, "nameZh": "模版中心", "pid": 287, "remark": "模版中心", "nameEn": "template_center", "orderNum": 6, "isDeleted": 0, "id": 264 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "", "resourceCode": "marketing_center", "createOn": "2014-04-03 17:51:38", "createBy": 9, "updateOn": "2014-04-03 17:53:09", "updateBy": null, "nameZh": "营销中心", "pid": 287, "remark": "营销中心", "nameEn": "marketing_center", "orderNum": 7, "isDeleted": 0, "id": 268 }, { "children": null, "status": 0, "resourceType": 0, "resourceUrl": "", "resourceCode": "coupon", "createOn": "2013-09-17 10:23:11", "createBy": 1, "updateOn": "2014-03-17 16:15:33", "updateBy": 1, "nameZh": "优惠券", "pid": 287, "remark": "", "nameEn": "coupon_center", "orderNum": 10, "isDeleted": 0, "id": 90 }, { "children": null, "status": 0, "resourceType": 0, "resourceUrl": "", "resourceCode": "sale", "createOn": "2012-09-06 15:28:24", "createBy": 1, "updateOn": "2014-03-17 16:15:22", "updateBy": 1, "nameZh": "促销中心", "pid": 287, "remark": "促销中心菜单", "nameEn": "sale_center", "orderNum": 11, "isDeleted": 0, "id": 1 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "", "resourceCode": null, "createOn": "2014-04-18 15:03:07", "createBy": 13, "updateOn": "2014-04-18 15:04:41", "updateBy": null, "nameZh": "会员中心", "pid": 287, "remark": null, "nameEn": null, "orderNum": 18, "isDeleted": 0, "id": 299 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "2", "resourceCode": null, "createOn": "2014-04-16 15:35:54", "createBy": 8, "updateOn": "2014-04-16 15:37:26", "updateBy": null, "nameZh": "2", "pid": 288, "remark": null, "nameEn": null, "orderNum": 1, "isDeleted": 0, "id": 289 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/dmp/tag", "resourceCode": null, "createOn": "2014-04-19 16:10:32", "createBy": 13, "updateOn": "2014-04-19 16:12:07", "updateBy": null, "nameZh": "标签管理", "pid": 299, "remark": null, "nameEn": null, "orderNum": 1, "isDeleted": 0, "id": 301 }, { "children": null, "status": 1, "resourceType": 0, "resourceUrl": "/dmp/norm", "resourceCode": null, "createOn": "2014-04-23 16:10:42", "createBy": 8, "updateOn": "2014-04-23 16:12:16", "updateBy": null, "nameZh": "指标管理", "pid": 299, "remark": null, "nameEn": null, "orderNum": 2, "isDeleted": 0, "id": 302 }];
+
+            $(document).ready(function () {
+                $.fn.zTree.init($("#roletree"), setting, zNodes);
+                
+                //默认展开第一级
+                $("#roletree>.level0:first>.switch").click();
+            });
+            //获取所有选中节点的值
+            function getCheckedAll() {
+                var treeObj = $.fn.zTree.getZTreeObj("roletree");
+                var nodes = treeObj.getCheckedNodes(true);
+                var out = new Array();
+                for (var i = 0; i < nodes.length; i++) {
+                    out.push(nodes[i].id);
+                }
+                return out;
+            }
+
+        }();
+
+        //功能切换
+        $(".rolemenu-item").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $("#rolesys .rolesys-item").eq($(this).index()).addClass("active").siblings().removeClass("active");
+        });
+
+        //setTimeout(function () {
+        //    var treeObj = $.fn.zTree.getZTreeObj("roletree");
+        //    var tempNodes = treeObj.transformToArray(treeObj.getNodes());
+        //    for (var i = 0; i < tempNodes.length; i++) {
+        //        treeObj.checkNode(tempNodes[i], true, true);
+        //        if (tempNodes[i].isParent) {
+        //            var count = 0;
+        //            tempNodes[i].children.forEach(function (ele) {
+        //                if (ele.checked) {
+        //                    count++;
+        //                }
+        //            });
+        //            var tempnode = $("span:contains(" + tempNodes[i].nameZh + ")").parent();;
+        //            tempnode.find(".select-num").text("(" + count + ")");
+        //        }
+        //    }
+        //},1000)
+    </script>
+</body>
+</html>

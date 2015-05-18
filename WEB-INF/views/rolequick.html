@@ -1,0 +1,142 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/jquery-jqgrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/setting.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/jquery.ztree/zTreeStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../../static/dmp/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li><a href="setting.html">用户管理</a></li>
+            <li><a href="rolemanage.html">角色管理</a></li>
+            <li><a href="rolemenu.html">菜单管理</a></li>
+            <li><a href="menubutton.html">按钮管理</a></li>
+            <li class="active"><a href="roleedit.html">权限配置</a></li>
+            <li><a href="rolewarning.html">权限异常</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="list.html">营销中心</a></li>
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li><a href="#">系统配置</a></li>
+                            <li class="active">快速入口配置</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content-title clearfix mb20">
+                        <span class="title fontblue">快速入口配置</span>
+                    </div>
+                    <div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <div class="step-title">一级菜单：</div>
+                                    <div class="rolemenu quick-con">
+                                        <div class="quick-item active">门户首页</div>
+                                        <div class="quick-item">营销中心</div>
+                                        <div class="quick-item">会员中心</div>
+                                        <div class="quick-item">模板中心</div>
+                                        <div class="quick-item">渠道中心</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="step-title">快速入口：</div>
+                                    <div class="rolemenu rolemenu-ck">
+                                        <div class="quick-parent">
+                                            <label><input type="checkbox" /> 系统配置</label>
+                                        </div>
+                                        <div class="quick-child">
+                                            <div><label><input type="checkbox" /> 角色管理</label></div>
+                                            <div><label><input type="checkbox" /> 数据管理</label></div>
+                                            <div><label><input type="checkbox" /> 菜单管理</label></div>
+                                            <div><label><input type="checkbox" /> 权限管理</label></div>
+                                        </div>
+                                        <div class="quick-parent">
+                                            <label><input type="checkbox" /> 系统配置</label>
+                                        </div>
+                                        <div class="quick-child">
+                                            <div><label><input type="checkbox" /> 角色管理</label></div>
+                                            <div><label><input type="checkbox" /> 数据管理</label></div>
+                                            <div><label><input type="checkbox" /> 菜单管理</label></div>
+                                            <div><label><input type="checkbox" /> 权限管理</label></div>
+                                        </div>
+                                        <div class="quick-parent">
+                                            <label><input type="checkbox" /> 系统配置</label>
+                                        </div>
+                                        <div class="quick-child">
+                                            <div><label><input type="checkbox" /> 角色管理</label></div>
+                                            <div><label><input type="checkbox" /> 数据管理</label></div>
+                                            <div><label><input type="checkbox" /> 菜单管理</label></div>
+                                            <div><label><input type="checkbox" /> 权限管理</label></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mybtn role-btn">
+                                        <button class="btn btn-success">保 存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        !function () {
+            
+            $(".quick-item").click(function () {
+
+                $(this).siblings(".active").removeClass("active").end().addClass("active");
+
+                //右边改变
+
+            });
+            $(".quick-item").eq(0).trigger("click");
+
+        }();
+    </script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>数字营销平台</title>
+    <link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/index.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../../static/dmp/images/header.png" />
+            <span class="user-name">Admin_Super</span><a href="#" class="user-quit">退出</a>
+        </div>
+        <ul class="menu">
+            <li class="active"><a href="#">工作台</a></li>
+            <li><a class="nobody" href="list.html">营销中心</a></li>
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="setting.html">系统管理</a></li>
+            <li><a href="#">消息中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="col-sm-6">
+            <div class="act mt20">
+                <div class="content-title nopadding clearfix">
+                    <span class="title">事件</span>
+                    <div class="group-small clearfix">
+                        <div class="small-btn" id="event-manage" data-toggle="dialog" data-target="#main-dialog1"><i class="icon icon-cog"></i></div>
+                        <div class="small-btn green disabled enabled" id="event-create" data-toggle="dialog" data-target="#main-dialog1"><i class="icon icon-plus"></i></div>
+                    </div>
+                </div>
+                <div id="event" class="tag">
+                    <div class=" clearfix">
+                        <span class="tag-item">2.19大促</span>
+                        <span class="tag-item">2.27桃花节网购盛会</span>
+                        <span class="tag-item">5.1购物狂欢</span>
+                        <span class="tag-item">常规活动</span>
+                    </div>
+                </div>
+                <div class="content-title clearfix normal-act">
+                    <span id="event-name" class="title">常规活动</span>
+                </div>
+                <div id="detail-tag" class="tag disabled">
+                    <div class="tag-spi clearfix">
+                        <span class="tag-item" data-href="list.html">营销活动管理</span>
+                        <span class="tag-item" data-href="backlist.html">客服反馈管理</span>
+                        <span class="tag-item" data-href="waylist.html">发送渠道管理</span>
+                        <span class="tag-item" data-href="create.html">创建营销活动</span>
+                        <span class="tag-item" data-href="createback.html">创建客服反馈</span>
+                        <span class="tag-item" data-href="tmplactive.html">活动模板管理</span>
+                    </div>
+                    <div class="tag-spi clearfix">
+                        <span class="tag-item" data-href="tag.html">会员标签管理</span>
+                        <span class="tag-item" data-href="tag.html">会员指标管理</span>
+                    </div>
+                    <div class="tag-spi clearfix">
+                        <span class="tag-item">促销活动管理</span>
+                        <span class="tag-item">创建促销活动</span>
+                        <span class="tag-item">促销核对</span>
+                        <span class="tag-item">优惠券</span>
+                        <span class="tag-item">支付优惠</span>
+                    </div>
+                    <div class="tag-spi clearfix">
+                        <span class="tag-item">广告投放</span>
+                        <span class="tag-item">广告方案管理</span>
+                        <span class="tag-item">广告渠道</span>
+                        <span class="tag-item">广告媒介</span>
+                        <span class="tag-item">广告素材</span>
+                    </div>
+                    <div class="tag-spi clearfix">
+                        <span class="tag-item">CPS订单与佣金</span>
+                        <span class="tag-item">签约会员、商家</span>
+                    </div>
+                    <div class="tag-spi clearfix">
+                        <span class="tag-item">审核与权限</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6" id="img-animate">
+            <div class="msg_center">
+                <img src="../../static/dmp/images/msg_center.png" />
+            </div>
+        </div>
+    </div>
+    <div class="main-dialog" id="main-dialog1">
+        <div class="event-manage">
+            <div class="col-xs-12">
+                <div class="event-top clearfix">
+                    <div class="event-icon">
+                        <i class="icon icon-reorder"></i>
+                    </div>
+                    <div class="title">
+                        事件管理
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-primary" id="btn-index-now">正进行</button>
+                        <button class="btn btn-default" id="btn-index-delete">已归档</button>
+                    </div>
+                </div>
+
+                <div id="delete-con" style="display:none;">
+                    <div class="edit-group">
+                        <button class="btn btn-default">删除</button>
+                    </div>
+                    <div class="event-ck">
+                        <div class="checkbox">
+                            <div class="checkbox-con">
+                                <label>
+                                    <input type="checkbox"> <span>归档1111111</span>
+                                </label>
+                                <i class="icon-pencil"></i>
+                            </div>
+                            <div class="edit-con">
+                                <div class="form-group form-event-input">
+                                    <input type="text" name="event-new-text" autofocus class="form-control event-new-text">
+                                </div>
+                                <button class="btn btn-default btn-green edit-con-save" disabled>保存</button>
+                                <button type="button" class="btn btn-default edit-con-cancel">取消</button>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <div class="checkbox-con">
+                                <label>
+                                    <input type="checkbox"> <span>归档2222222</span>
+                                </label>
+                                <i class="icon-pencil"></i>
+                            </div>
+                            <div class="edit-con">
+                                <div class="form-group form-event-input">
+                                    <input type="text" name="event-new-text" autofocus class="form-control event-new-text">
+                                </div>
+                                <button class="btn btn-default btn-green edit-con-save" disabled>保存</button>
+                                <button type="button" class="btn btn-default edit-con-cancel">取消</button>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <div class="checkbox-con">
+                                <label>
+                                    <input type="checkbox"> <span>归档3333333</span>
+                                </label>
+                                <i class="icon-pencil"></i>
+                            </div>
+                            <div class="edit-con">
+                                <div class="form-group form-event-input">
+                                    <input type="text" name="event-new-text" autofocus class="form-control event-new-text">
+                                </div>
+                                <button class="btn btn-default btn-green edit-con-save" disabled>保存</button>
+                                <button type="button" class="btn btn-default edit-con-cancel">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="create-con">
+                    <div class="edit-group">
+                        <button class="btn btn-default">删除</button>
+                        <button class="btn btn-default" id="btn-event-gui">归档</button>
+                    </div>
+                    <div class="create-new">
+                        创建新的事件
+                    </div>
+                    <div class="inputcon pt10">
+                        <form class="clearfix">
+                            <div class="form-group form-event-input">
+                                <input type="text" name="event-new-text" autofocus class="form-control event-new-text" placeholder="新事件">
+                            </div>
+                            <button class="btn btn-default btn-green" disabled id="event-new-btn">保存</button>
+                            <button type="button" id="event-cancel-btn" class="btn btn-default">取消</button>
+                        </form>
+                    </div>
+                    <div class="event-ck">
+                        <div class="checkbox">
+                            <div class="checkbox-con">
+                                <label>
+                                    <input type="checkbox"> <span>2.27桃花节购物盛会</span>
+                                </label>
+                                <i class="icon-pencil"></i>
+                            </div>
+                            <div class="edit-con">
+                                <div class="form-group form-event-input">
+                                    <input type="text" name="event-new-text" autofocus class="form-control event-new-text">
+                                </div>
+                                <button class="btn btn-default btn-green edit-con-save" disabled>保存</button>
+                                <button type="button" class="btn btn-default edit-con-cancel">取消</button>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <div class="checkbox-con">
+                                <label>
+                                    <input type="checkbox"> <span>5.1购物狂欢节</span>
+                                </label>
+                                <i class="icon-pencil"></i>
+                            </div>
+                            <div class="edit-con">
+                                <div class="form-group form-event-input">
+                                    <input type="text" name="event-new-text" autofocus class="form-control event-new-text">
+                                </div>
+                                <button class="btn btn-default btn-green" disabled>保存</button>
+                                <button type="button" class="btn btn-default">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[if lt IE 8]>
+        <script>
+            alert("对不起,本系统使用html5技术开发,请使用ie8+,chrome,firefox等浏览器访问,360、搜狗、QQ等浏览器请切换至高速模式下访问!");
+            window.location.href = "${ctx}/commonError?error="+encodeURIComponent("当前浏览器不兼容")+"&msg="+encodeURIComponent("请安装更高版本的浏览器后重试,360,QQ,搜狗浏览器请切换至高速模式下访问");
+        </script>
+    <![endif]-->
+    <script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+    <script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script src="../../static/dmp/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script>
+        !function () {
+
+            //“常规活动”终排在第一个
+            var normal_act = $(".tag").find(".tag-item:contains(常规活动)");
+            if (normal_act.index() != 0) {
+                normal_act.insertBefore(normal_act.parent().children().first());
+            }
+
+            //点击事件 激活下面按钮
+            $("#event .tag-item").click(function () {
+                $(this).siblings().removeClass("active").end().addClass("active");
+                $("#event-name").text($(this).text());
+                $("#detail-tag").removeClass("disabled");
+            });
+
+            $("#detail-tag .tag-item").click(function () {
+                if ($("#event").find(".active").length) {
+                    if ($(this).data("href")) {
+                        location.href = $(this).data("href");
+                    }
+                }
+            });
+
+            $("#event-create").click(function () {
+                $(".create-new").hide().next().show();
+
+            });
+
+            $("#event-manage").click(function () {
+                $(".create-new").hide().next().hide();
+            });
+
+            $("#main-dialog1").on("dialog.hide", function () {
+                $(".create-new").next().children().not(":first").html("");
+            });
+
+            //输入框事件
+            $("body").on("input", ".event-new-text", function () {
+                if ($(this).val().trim() != "") {
+                    $(this).parent().next().removeAttr("disabled");
+                } else {
+                    $(this).parent().next().attr("disabled", "disabled");
+                }
+            });
+
+            $("#event-cancel-btn").click(function () {
+                $(this).parent().parent().hide();
+                $(".create-new").show();
+            });
+
+            //创建新的事件
+            $(".create-new").click(function () {
+                $(this).hide().next().show().find("input").focus();
+                tempform.validate({
+                    rules: {
+                        "event-new-text": {
+                            maxlength: 2
+                        }
+                    },
+                    messages: {
+                        "event-new-text": {
+                            required: "请输入活动名称"
+                        }
+                    }
+                });
+            });
+
+            $("body").on("click", ".event-cancel", function () {
+                $(this).parent().remove();
+            });
+
+            var vali = function (ele) {
+                ele.validate({
+                    rules: {
+                        "event-new-text": {
+                            maxlength: 2
+                        }
+                    },
+                    messages: {
+                        "event-new-text": {
+                            required: "请输入活动名称"
+                        }
+                    }
+                });
+            };
+            vali($("form.clearfix"));
+
+            $("#btn-index-delete").click(function () {
+                $("#delete-con").show();
+                $("#create-con").hide();
+                $(this).addClass("btn-primary").prev().removeClass("btn-primary");
+            });
+
+            $("#btn-index-now").click(function () {
+                $("#delete-con").hide();
+                $("#create-con").show();
+                $(this).addClass("btn-primary").next().removeClass("btn-primary");
+            });
+
+            $(document).on("click", ".icon-pencil", function () {
+                $(this).parent().hide().siblings().show().parent().addClass("edit").find("input").val($(this).siblings().text().trim());
+            });
+
+            $(document).on("click", ".edit-con-cancel", function () {
+                $(this).parent().hide().siblings().show().parent().removeClass("edit");
+            });
+
+            $(document).on("click", ".edit-con-save", function () {
+                $(this).parent().siblings().find("span").text($(this).prev().children().val());
+                $(this).parent().hide().siblings().show().parent().removeClass("edit");
+            });
+
+            //归档
+            $("#btn-event-gui").click(function () {
+                $(this).parent().parent().find(":checked").each(function (index, ele) {
+                    $(ele).parent().parent().parent().remove();
+                    $("#delete-con .event-ck").append('<div class="checkbox"><div class="checkbox-con"><label><input type="checkbox"> <span>' + $(ele).next().text() + '</span></label><i class="icon-pencil"></i></div><div class="edit-con"><div class="form-group form-event-input"><input type="text" name="event-new-text" autofocus class="form-control event-new-text"></div><button class="btn btn-default btn-green edit-con-save" disabled>保存</button><button type="button" class="btn btn-default edit-con-cancel">取消</button></div></div>');
+                });
+            });
+
+            $(".user-quit").click(function () {
+                localStorage.clear();
+            })
+
+        }();
+    </script>
+</body>
+</html>

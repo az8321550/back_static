@@ -1,0 +1,191 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/create.css" rel="stylesheet" />
+</head>
+<body data-spy="scroll" data-target="#create-nav-content" data-offset="400">
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../../static/dmp/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li><a href="#">营销活动</a></li>
+            <li class="active"><a href="index.html">活动任务</a></li>
+            <li><a href="list.html">活动明细</a></li>
+            <li><a href="#">会员标签</a></li>
+            <li><a href="#">模板管理</a></li>
+            <li><a href="#">渠道管理</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="#">营销概况</a></li>
+            <li><a href="#">营销数据</a></li>
+            <li><a href="#">消息</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix navigation">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li><a href="#">促销活动</a></li>
+                            <li class="active">创建营销活动</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="form-horizontal" id="main-form" style="padding-top:40px;padding-left:20px;">
+            <div class="group-title">基本信息:</div>
+            <div class="form-group">
+                <div class="valicon">
+                    <label class="col-md-1 control-label" for="activeName">当前事件：</label>
+                    <div class="col-md-4">
+                        <input id="activeName" name="activeName" type="text" class="form-control" />
+                        <span class="required">*</span>
+                    </div>
+                </div>
+                <div class="valicon">
+                    <label class="col-md-1 control-label" for="activeType">业务类型：</label>
+                    <div class="col-md-2">
+                        <input type="text" placeholder="123" name="activeType" class="form-control" id="activeType" />
+                        <span class="required">*</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="activeTheme">活动名称：</label>
+                <div class="col-md-7">
+                    <input type="text" id="activeTheme" name="activeTheme" class="form-control" />
+                    <span class="required">*</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="beginTime">开始时间：</label>
+                <div class="col-md-3">
+                    <input id="beginTime" name="beginTime" type="text" readonly class="form-control time" />
+                    <span class="required">*</span>
+                </div>
+                <label class="col-md-1 control-label" for="endTime">结束时间：</label>
+                <div class="col-md-3">
+                    <input id="endTime" name="endTime" type="text" readonly class="form-control" />
+                    <span class="required">*</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="object">活动目的：</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="object" name="object" placeholder="最多输入100个汉字" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="detail">活动描述：</label>
+                <div class="col-md-7">
+                    <textarea class="form-control" rows="4" id="detail" name="detail" placeholder="最多输入300个汉字"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="remark">备注：</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" id="remark" name="remark" placeholder="最多输入100个汉字" />
+                </div>
+            </div>
+            <div class="group-title">发送计划与渠道:</div>
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="plan">发送计划：</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" readonly id="plan" name="plan" placeholder="请选择" />
+                </div>
+                <label class="col-md-1 control-label" for="channel">发送渠道：</label>
+                <div class="col-md-3">
+                    <select class="form-control" id="channel" name="channel">
+                        <option>短信</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-1 col-md-11">
+                    <button class="btn btn-primary">提交</button>
+                    <button class="btn btn-default">取消</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script src="../../static/dmp/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script>
+        !function () {
+
+            //验证js jquery-validation
+            //rule是规则
+            //messages是提示信息
+            $(".time").datetimepicker({
+                autoclose: true,
+                todayBtn: true
+            });
+
+            $("#main-form").validate({
+                rules: {
+                    activeName: {
+                        required: true
+                    },
+                    activeType: {
+                        required: true
+                    },
+                    beginTime: {
+                        required: true
+                    },
+                    endTime: {
+                        required: true
+                    }
+                },
+                messages: {
+                    activeName: {
+                        required: "请输入当前事件"
+                    },
+                    activeType: {
+                        required: "请输入活动提示信息"
+                    },
+                    beginTime: {
+                        required: "请选择开始时间",
+                    },
+                    endTime: {
+                        required: "请选择结束时间"
+                    }
+                }
+            });
+
+        }();
+    </script>
+</body>
+</html>

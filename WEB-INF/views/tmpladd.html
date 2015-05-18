@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/setting.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../../static/dmp/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li class="active"><a href="tmplactive.html">活动模板</a></li>
+            <li><a href="tmpltype.html">模板分类</a></li>
+            <li><a href="tmplargu.html">模板参数</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="list.html">营销中心</a></li>
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li class="active">新建模板</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content-title clearfix mb20">
+                        <div class="title fontblue">新建模板</div>
+                    </div>
+                    <form class="form-horizontal" id="main-form">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="templatename">模板名称：</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="templatename" id="templatename" />
+                                <span class="required">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="tmplType">模板分类：</label>
+                            <div class="col-md-3">
+                                <select class="form-control" id="tmplType" name="tmplType">
+                                    <option>+顶级目录</option>
+                                    <option>+顶级目录</option>
+                                    <option>+顶级目录</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="tmplDetail">模版描述：</label>
+                            <div class="col-md-6">
+                                <input type="text" id="tmplDetail" name="tmplDetail" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="templatecontent">模板内容：</label>
+                            <div class="col-md-6">
+                                <div id="codecon">
+                                    <textarea rows="10" id="templatecontent" name="templatecontent" class="form-control templatecontent"></textarea>
+                                </div>
+                                <div id="viewcon" class="viewcon">
+                                    <div class="viewdiv"></div>
+                                </div>
+                                <div class="tmplbtn active" id="codebtn">代码模式</div>
+                                <div class="tmplbtn" id="viewbtn">预览模式</div>
+                            </div>
+                            <label class="col-md-1 templatebtn">
+                                <button class="btn btn-default" id="tmplbtn" type="button"><<</button>
+                            </label>
+                            <div class="col-md-3">
+                                <div class="multi">
+                                    <div class="multi-item">+ 会员指标</div>
+                                    <div class="multi-item" data-value="{{abc}}"></div>
+                                    <div class="multi-item" data-value="{{abc}}">- 客户编码</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 注册时间</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 性别</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 生日</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 星座</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 注册所在区</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 第一次消费时间</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 第一次消费金额</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 最近一次访问时间</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-1 col-md-11 submit  pt20 mybtn">
+                                <button class="btn btn-success">新建</button>
+                                <button class="btn btn-default">返回</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/dmp/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        !function () {
+
+            $("#main-form").validate({
+                rules: {
+                    templatename: {
+                        required: true
+                    }
+                },
+                messages: {
+                    templatename: {
+                        required: "请输入模板名称"
+                    }
+                }
+            });
+
+            //双击选参数
+            $(document).on("dblclick", ".multi-item", function () {
+                var argu = $(this).data("value");
+                if (argu) {
+                    var textarea = $("#templatecontent");
+                    textarea.val(textarea.val() + argu);
+                }
+            });
+
+            $(document).on("click", ".multi-item", function () {
+                if ($(this).data("value")) {
+                    $(this).siblings().removeClass("active").end().addClass("active");
+                }
+            });
+
+            $("#tmplbtn").click(function () {
+                if ($(".multi-item.active")) {
+                    var argu = $(".multi-item.active").data("value");
+                    if (argu) {
+                        $("#templatecontent").val(textarea.val() + argu);
+                    }
+                }
+            });
+
+            //代码模式
+            $("#codebtn").click(function () {
+                $("#codecon").show().next().hide();
+                $("#codebtn").addClass("active").next().removeClass("active");
+            });
+
+            //预览模式
+            $("#viewbtn").click(function () {
+                $("#codecon").hide().next().show();
+                $("#codebtn").removeClass("active").next().addClass("active");
+            });
+
+        }();
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <style>
+        .edm-label{
+            display: inline-block;margin-top:6px;margin-bottom:4px;
+        }
+        .edm-input{
+            display: inline-block;
+            width: 400px;
+        }
+        .edm-file-text{
+            display: none;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#create-nav-content" data-offset="400">
+<div class="sider">
+    <div class="home-menu">
+        <a href="index.html">
+            <i class="icon icon-home"></i>
+        </a>
+    </div>
+    <div class="main-name">
+        数字营销平台
+    </div>
+    <div class="user clearfix">
+        <img src="../../static/dmp/images/header.png" />
+        Admin_Super
+    </div>
+    <ul class="menu">
+        <li class="active"><a href="list.html">渠道管理</a></li>
+    </ul>
+    <ul class="menu set-menu">
+        <li><a href="list.html">营销中心</a></li>
+        <li><a href="taglist.html">会员中心</a></li>
+        <li><a href="tmplactive.html">模板中心</a></li>
+    </ul>
+</div>
+<div class="content">
+    <div class="clearfix navigation">
+        <div class="col-xs-12">
+            <div id="list-top">
+                <div class="breadcrumb-con">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                        <li><a href="#">常规业务</a></li>
+                        <li class="active">新建渠道</li>
+                    </ol>
+                    <div class="search-con">
+                        <form>
+                            <input class="text" type="text" placeholder="快速检索" />
+                            <button class="button"><i class="icon icon-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="form-horizontal create-form" id="main-form">
+        <div class="group-title">邮件生成器:</div>
+        <div class="form-group">
+            <label class="col-md-1 control-label">邮件模板：</label>
+            <p class="col-md-4 form-control-static">开售模板一</p>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 control-label">邮件标题：</label>
+            <p class="col-md-10 form-control-static">唯品会特卖快讯：X月X日上午10点以下品牌与您相约，记得准时抢购哦</p>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 control-label">模板路径：</label>
+            <p class="col-md-10 form-control-static"> /apps/dat/web/storage/216.vipshop.com/web/mail/model/onSale_1_1_1_2011-2-12.</p>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 control-label">生成时间：</label>
+            <p class="col-md-10 form-control-static">2014-01-26 17:32</p>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 control-label">html：</label>
+            <div class="col-md-5">
+                <textarea rows="10" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-9 mybtn pt20">
+                <a href="#" class="btn btn-success">预览</a>
+                <button class="btn btn-default">返回</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<form id="upload-form" method="post" enctype="multipart/form-data">
+    <input type="file" name="up" id="up" />
+</form>
+
+<script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+<script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../static/dmp/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+<script src="../../static/dmp/scripts/app.js"></script>
+<script src="../../static/dmp/plugins/bootstrap-bootbox/bootbox.js"></script>
+<script src="../../static/dmp/plugins/jquery.form/jquery.form.js"></script>
+<script>
+    !function () {
+
+        //验证
+        $("#main-form").validate({
+            rules: {
+                title: {
+                    required: true
+                }
+            },
+            messages: {
+                title: {
+                    required: "请输入邮件标题"
+                }
+            }
+        });
+
+        $(".btn-up").click(function () {
+            $("#up").click().data("target",this);
+        });
+
+        $("#up").change(function(){
+            target=$($(this).data("target"));
+            $("#upload-form").ajaxSubmit(function (result) {
+                $("#up").val("");
+                target.parent().hide().next().show();
+            });
+        });
+
+        $(".file-delete").click(function () {
+            $(".edm-file-con").show().next().hide();
+            return false;
+        })
+
+
+    }();
+</script>
+</body>
+</html>

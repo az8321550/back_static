@@ -1,0 +1,2561 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/select2/select2.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/jquery-color/css/colpick.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/create.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/tag.css" rel="stylesheet" />
+</head>
+<body data-spy="scroll" data-target="#create-nav-content" data-offset="300">
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../../static/dmp/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li class="active"><a href="list.html">营销活动</a></li>
+            <li><a href="backlist.html">不过滤活动</a></li>
+            <li><a href="activelist.html">活动任务</a></li>
+            <li><a href="typelist.html">业务类型</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix navigation">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li><a href="#">促销活动</a></li>
+                            <li class="active">创建营销活动</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="create-con">
+            <div class="create-nav" id="create-nav-content">
+                <div class="create-nav-title">
+                    +创建
+                    <b>营销活动</b>
+                </div>
+                <ul class="nav create-nav-content clearfix">
+                    <li class="active">
+                        <span>1</span>
+                        <a href="#tab1">创建活动</a>
+                    </li>
+                    <li>
+                        <span>2</span>
+                        <a href="#tab2">选择会员</a>
+                    </li>
+                    <li>
+                        <span>3</span>
+                        <a href="#tab3">选择模版</a>
+                    </li>
+                    <li>
+                        <span>4</span>
+                        <a href="javascript:;">等待审核</a>
+                    </li>
+                </ul>
+                <div class="create-nav-btn">
+                    <button class="btn btn-default" disabled id="btn-save-now">暂 存</button>
+                </div>
+                <div class="create-warning">
+                    注意：
+                    <strong>
+                    </strong>
+                </div>
+            </div>
+            <div class="create-content">
+                <div class="clearfix" id="tab1">
+                    <div class="">
+                        <form class="form-horizontal border" id="main-form">
+                            <div class="group-title mt0">基本信息:</div>
+                            <div class="form-group">
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="activeName">当前事件：</label>
+                                    <div class="col-md-4 col-nd-6">
+                                        <select id="activeName" name="activeName" class="form-control">
+                                            <option value="0">请选择</option>
+                                            <option value="1">当前事件1</option>
+                                            <option value="2">当前事件2</option>
+                                            <option value="3">当前事件3</option>
+                                        </select>
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="activeType">业务类型：</label>
+                                    <div class="col-md-2 col-nd-3">
+                                        <select id="activeType" name="activeType" class="form-control">
+                                            <option value="1">短信</option>
+                                            <option value="2">邮件</option>
+                                            <option value="3">Push</option>
+                                        </select>
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="activeTheme">活动名称：</label>
+                                    <div class="col-md-7 col-nd-10">
+                                        <input type="text" id="activeTheme" name="activeTheme" class="form-control" />
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="beginTime">开始日期：</label>
+                                    <div class="col-md-3 col-nd-4">
+                                        <input id="beginTime" readonly name="beginTime" type="text" class="form-control time" />
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="endTime">结束日期：</label>
+                                    <div class="col-md-3 col-nd-4">
+                                        <input id="endTime" readonly name="endTime" type="text" class="form-control time" />
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="object">活动目的：</label>
+                                <div class="col-md-7 col-nd-10">
+                                    <input type="text" class="form-control" id="object" name="object" placeholder="最多输入100个汉字" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="detail">活动描述：</label>
+                                <div class="col-md-7 col-nd-10">
+                                    <textarea class="form-control" rows="4" id="detail" name="detail" placeholder="最多输入300个汉字"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="remark">备注：</label>
+                                <div class="col-md-7 col-nd-10">
+                                    <input type="text" class="form-control" id="remark" name="remark" placeholder="最多输入100个汉字" />
+                                </div>
+                            </div>
+                            <div class="group-title">发送计划与渠道:</div>
+                            <div class="form-group">
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="plan">发送计划：</label>
+                                    <div class="col-md-3 re" id="plancon">
+                                        <input type="text" class="form-control" readonly id="plan" name="plan" data-toggle="con" data-target="#plancon" placeholder="请选择" />
+                                        <div class="movecontent" style="left:15px;top:34px;width:480px;">
+                                            <div class="form-horizontal pt20">
+                                                <div class="plan-list-con">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-2">执行时间:</label>
+                                                        <div class="col-md-3">
+                                                            <select id="con-select2-hour" class="form-control"></select>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <select class="form-control" id="con-select2-minite">
+                                                                <option></option>
+                                                                <option value="1">1分</option>
+                                                                <option value="2">2分</option>
+                                                                <option value="3">3分</option>
+                                                                <option value="4">4分</option>
+                                                                <option value="5">5分</option>
+                                                                <option value="6">6分</option>
+                                                                <option value="7">7分</option>
+                                                                <option value="8">8分</option>
+                                                                <option value="9">9分</option>
+                                                                <option value="10">10分</option>
+                                                                <option value="11">11分</option>
+                                                                <option value="12">12分</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3 re">
+                                                            <input type="text" class="form-control" placeholder="发送比例">
+                                                            <div class="icon-remove plan-remove"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group plan-btn-con">
+                                                    <button type="button" class="btn btn-default">添加发送时间</button>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">重复:</label>
+                                                    <div class="col-md-10">
+                                                        <select class="form-control" id="planselect" name="planselect">
+                                                            <option value="4">不重复</option>
+                                                            <option value="1">每日定时发送</option>
+                                                            <option value="2">每周定时发送</option>
+                                                            <option value="3">每月定时发送</option>
+                                                            <option value="5">当天分批发送</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">开始日期:</label>
+                                                    <div class="col-md-10">
+                                                        <input type="text" id="plan-begintime" class="form-control time" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">结束日期:</label>
+                                                    <div class="col-md-10">
+                                                        <input type="text" id="plan-endtime" class="form-control time" />
+                                                    </div>
+                                                </div>
+                                                <div class="plan-tab active" id="plan-tab1">
+
+
+                                                </div>
+                                                <div class="plan-tab" id="plan-tab2">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-2">选择星期:</label>
+                                                        <div class="col-md-10 plan-week">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期一
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期二
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期三
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期四
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期五
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期六
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期日
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="plan-tab" id="plan-tab3">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-2">选择日期:</label>
+                                                        <div class="col-md-10 plan-day">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 2
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 3
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 4
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 5
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 6
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 7
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 8
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 9
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 10
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 11
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 12
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 13
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 14
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 15
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 16
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 17
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 18
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 19
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 20
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 21
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 22
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 23
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 24
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 25
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 26
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 27
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 28
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 29
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 30
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 31
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">提示:</label>
+                                                    <div class="col-md-10 plan-label">
+                                                        活动执行时间的范围只能在[8:00-23:00]之间
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="channel">发送渠道：</label>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id="channel" name="channel">
+                                            <option value="1">亿业</option>
+                                            <option value="2">汉启</option>
+                                            <option value="3">自建</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="valicon">
+                                    <div id="for-mail" style="display:none;">
+                                        <label class="col-md-1 control-label" for="activeTarget">活动对象：</label>
+                                        <div class="col-md-2">
+                                            <select class="form-control" id="activeTarget" name="activeTarget">
+                                                <option>新客</option>
+                                                <option>老客</option>
+                                            </select>
+                                            <span class="required">*</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">跟踪标识：</label>
+                                <div class="col-md-3 re">
+                                    <input type="text" class="form-control" id="file-up-text" placeholder="请输入..." />
+                                    <textarea rows="5" class="form-control" style="display:none;resize:none;" id="file-up-text-detail"></textarea>
+                                    <i id="file-remove" class="icon-remove" style="position:absolute;right:20px;top:10px;color:red;cursor:pointer;display:none;"></i>
+                                    <span class="required">*</span>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="file" class="mt6" id="file-up" style="display:inline;width:72px;" />
+                                    <a class="ml10" href="#" id="show-track-detail" style="display:none;">详情</a>
+                                    <a class="ml10" href="#">下载导入模版</a>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix" id="tab2">
+                    <div>
+                        <div class="group-title">选择会员:</div>
+                        <div class="tag-sel">
+                            <div class="form-group clearfix">
+                                <div class="tag-chose clearfix">
+                                    <button type="button" class="btn btn-default tag-nowtime" data-toggle="dialog" data-target="#dialog-tag" data-right="-960px">临时标签</button>
+                                    <button type="button" class="btn btn-default btn-csv" data-toggle="modal" data-target="#myModal2">CSV导入</button>
+                                    <div class="tag-chose-title">请选择：</div>
+                                    <div class="clearfix oparegroup">
+                                        <div class="dropdown dd-range">
+                                            <a role="button" class="btn btn-default" data-toggle="dropdown" href="#">并集 <b class="caret"></b></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a tabindex="-1">交集</a></li>
+                                                <li><a tabindex="-1">并集</a></li>
+                                            </ul>
+                                        </div>
+                                        <div id="chosenumbtn" class="chosenumbtn">已选人数？</div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="tag-depart">
+                                    <!--<select class="form-control">
+                                        <option>全部部门</option>
+                                        <option>全部部门2</option>
+                                        <option>全部部门3</option>
+                                        <option>全部部门4</option>
+                                    </select>-->
+                                    <ul class="nav nav-pills nav-stacked nav-create" id="tag-nav">
+                                        <li class="active">
+                                            <a href="javascript:;">
+                                                <span class="badge pull-right">42</span>
+                                                最常使用
+                                            </a>
+                                        </li>
+                                        <li><a href="javascript:;"><span class="badge pull-right">20</span>自建组1</a></li>
+                                        <li><a href="javascript:;"><span class="badge pull-right">36</span>自建组2</a></li>
+                                        <li><a href="javascript:;"><span class="badge pull-right">42</span>自建组3</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tag-group">
+                                    <div class="clearfix">
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="tag-search" placeholder="模糊搜索" />
+                                        </div>
+                                    </div>
+                                    <div class="tag-nav-detail active" id="tag-nav1">
+                                        <div class="tag-list clearfix">
+                                            <span data-id="111">私密特卖</span>
+                                            <span>爱丽奢</span>
+                                            <span>母婴偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>近期生日会员</span>
+                                            <span>VVIP</span>
+                                            <span>汽车频道偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>私密特卖</span>
+                                            <div class="tag-list-split clearfix"></div>
+                                            <span>爱丽奢</span>
+                                            <span>母婴偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>近期生日会员</span>
+                                            <span>VVIP</span>
+                                            <span>汽车频道偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>私密特卖</span>
+                                            <span>爱丽奢</span>
+                                            <span>母婴偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>近期生日会员</span>
+                                            <span>VVIP</span>
+                                            <span>汽车频道偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>私密特卖</span>
+                                            <span>爱丽奢</span>
+                                            <span>母婴偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>近期生日会员</span>
+                                            <span>VVIP</span>
+                                            <span>汽车频道偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>私密特卖</span>
+                                            <span>爱丽奢</span>
+                                            <span>母婴偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>近期生日会员</span>
+                                            <span>VVIP</span>
+                                            <span>汽车频道偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>私密特卖</span>
+                                            <span>爱丽奢</span>
+                                            <span>母婴偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>近期生日会员</span>
+                                            <span>VVIP</span>
+                                            <span>汽车频道偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>私密特卖</span>
+                                            <span>爱丽奢</span>
+                                            <span>母婴偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>近期生日会员</span>
+                                            <span>VVIP</span>
+                                            <span>汽车频道偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>私密特卖</span>
+                                            <span>爱丽奢</span>
+                                            <span>母婴偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                            <span>近期生日会员</span>
+                                            <span>VVIP</span>
+                                            <span>汽车频道偏好</span>
+                                            <span>家居常购</span>
+                                            <span>美妆常购</span>
+                                        </div>
+                                    </div>
+                                    <div class="tag-nav-detail" id="tag-nav2">
+                                        <div class="tag-list clearfix">
+                                            <span data-id="111">222222222</span>
+                                            <span data-id="111">222222222</span>
+                                            <span data-id="111">222222222</span>
+                                            <span data-id="111">222222222</span>
+                                        </div>
+                                    </div>
+                                    <div class="tag-nav-detail" id="tag-nav3">
+                                        <div class="tag-list clearfix">
+                                            <span data-id="111">333333333333</span>
+                                            <span data-id="111">333333333333</span>
+                                            <span data-id="111">333333333333</span>
+                                            <span data-id="111">333333333333</span>
+                                        </div>
+                                    </div>
+                                    <div class="tag-nav-detail" id="tag-nav4">
+                                        <div class="tag-list clearfix">
+                                            <span data-id="111">444444444444</span>
+                                            <span data-id="111">444444444444</span>
+                                            <span data-id="111">444444444444</span>
+                                            <span data-id="111">444444444444</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix" id="tab3" data-move-x="500px">
+                    <div class="group-title">填写或选择模板:</div>
+                    <form class="form-horizontal" id="tmpl-con">
+                        <div class="tempchosecon">
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="templatename">模板名称：</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="templatename" id="templatename" />
+                                </div>
+                                <div class="col-xs-10">
+                                    <button class="btn btn-warning mr10" id="my-tpml" type="button">我的模板</button>
+                                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modal-msgTest">发送测试</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="tmplDetail">模版描述：</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="tmplDetail" name="tmplDetail" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="tmplDetail">目标客户端：</label>
+                            <div class="col-md-2">
+                                <select multiple class="form-control select-multi" id="select-multi1">
+                                    <option value="1">特卖会</option>
+                                    <option value="2">唯品团</option>
+                                    <option value="3">爱丽奢</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="select-multi-con">
+                                    <div class="select-multi-item">
+                                        <button type="button" data-target="#select-multi1" data-result="#select-multi2" class="btn btn-default mt22 btn-sm select-moveleft">
+                                            <i class="icon-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="select-multi-item">
+                                        <button type="button" data-target="#select-multi1" data-result="#select-multi2" class="btn btn-default mt6 btn-sm select-moveleftall">
+                                            <i class="icon-double-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="select-multi-item">
+                                        <button type="button" data-target="#select-multi1" data-result="#select-multi2" class="btn btn-default mt6 btn-sm select-moveright">
+                                            <i class="icon-angle-left"></i>
+                                        </button>
+                                    </div>
+                                    <div class="select-multi-item">
+                                        <button type="button" data-target="#select-multi1" data-result="#select-multi2" class="btn btn-default mt6 btn-sm select-moverightall">
+                                            <i class="icon-double-angle-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <select multiple class="form-control select-multi" id="select-multi2">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="tmplDetail">目标平台：</label>
+                            <div class="col-md-2">
+                                <select multiple class="form-control select-multi" id="select-multi3">
+                                    <option value="1">特卖会</option>
+                                    <option value="2">唯品团</option>
+                                    <option value="3">爱丽奢</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="select-multi-con">
+                                    <div class="select-multi-item">
+                                        <button type="button" data-target="#select-multi3" data-result="#select-multi4" class="btn btn-default mt22 btn-sm select-moveleft">
+                                            <i class="icon-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="select-multi-item">
+                                        <button type="button" data-target="#select-multi3" data-result="#select-multi4" class="btn btn-default mt6 btn-sm select-moveleftall">
+                                            <i class="icon-double-angle-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="select-multi-item">
+                                        <button type="button" data-target="#select-multi3" data-result="#select-multi4" class="btn btn-default mt6 btn-sm select-moveright">
+                                            <i class="icon-angle-left"></i>
+                                        </button>
+                                    </div>
+                                    <div class="select-multi-item">
+                                        <button type="button" data-target="#select-multi3" data-result="#select-multi4" class="btn btn-default mt6 btn-sm select-moverightall">
+                                            <i class="icon-double-angle-left"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <select multiple class="form-control select-multi" id="select-multi4">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">参数类型：</label>
+                            <div class="col-md-2">
+                                <select class="form-control">
+                                    <option>默认主页</option>
+                                    <option>默认主页</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="target-con">
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="tmplDetail">跳转目标：</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="tmplDetail" name="tmplDetail" class="form-control" placeholder="请输入华东仓活动ID" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="tmplDetail">跳转目标：</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="tmplDetail" name="tmplDetail" class="form-control" placeholder="请输入华南仓活动ID" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="tmplDetail">跳转目标：</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="tmplDetail" name="tmplDetail" class="form-control" placeholder="请输入华中仓活动ID" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phone-only-justy">
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">发送标题：</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="字数在10个字以内" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">标题颜色：</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control color-pick" />
+                                </div>
+                                <label class="col-md-1 control-label">正文颜色：</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control color-pick" />
+                                </div>
+                                <label class="col-md-1 control-label">背景颜色：</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control color-pick" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label re">
+                                发送内容：
+                                <div class="just-for-ios"></div>
+                                <div class="just-for-ios-con">
+                                    <div class="just-for-con clearfix"></div>
+                                </div>
+                            </label>
+                            <div class="col-md-6">
+                                <div id="codecon">
+                                    <textarea rows="10" id="templatecontent" name="templatecontent" class="form-control templatecontent"></textarea>
+                                </div>
+                                <div id="viewcon" class="viewcon">
+                                    <div class="viewdiv"></div>
+                                </div>
+                                <div class="tmplbtn active" id="codebtn">代码模式</div>
+                                <div class="tmplbtn" id="viewbtn">预览模式</div>
+                                <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal3">保存到模版</button>
+                                <div class="tmpl-ck">
+                                    <label><input type="checkbox"> 多文案发送</label>
+                                </div>
+                            </div>
+                            <label class="col-md-1 templatebtn">
+                                <button class="btn btn-default" id="templateChose" type="button"><<</button>
+                            </label>
+                            <div class="col-md-3">
+                                <div class="multi">
+                                    <div class="multi-item" data-value="{{abc}}">+ 会员指标</div>
+                                    <div class="multi-item" data-value="{{abc}}"></div>
+                                    <div class="multi-item" data-value="{{abc}}">- 客户编码</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 注册时间</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 性别</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 生日</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 星座</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 注册所在区</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 第一次消费时间</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 第一次消费金额</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 最近一次访问时间</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label re">
+                                发送内容：
+                                <div class="just-for-ios"></div>
+                                <div class="just-for-ios-con">
+                                    <div class="just-for-con clearfix"></div>
+                                </div>
+                            </label>
+                            <div class="col-md-6">
+                                <div id="codecon">
+                                    <textarea rows="10" id="templatecontent" name="templatecontent" class="form-control templatecontent"></textarea>
+                                </div>
+                                <div id="viewcon" class="viewcon">
+                                    <div class="viewdiv"></div>
+                                </div>
+                                <div class="tmplbtn active" id="codebtn">代码模式</div>
+                                <div class="tmplbtn" id="viewbtn">预览模式</div>
+                                <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal3">保存到模版</button>
+                                <div class="tmpl-ck">
+                                    <label><input type="checkbox"> 多文案发送</label>
+                                </div>
+                            </div>
+                            <label class="col-md-1 templatebtn">
+                                <button class="btn btn-default" id="templateChose" type="button"><<</button>
+                            </label>
+                            <div class="col-md-3">
+                                <div class="multi">
+                                    <div class="multi-item" data-value="{{abc}}">+ 会员指标</div>
+                                    <div class="multi-item" data-value="{{abc}}"></div>
+                                    <div class="multi-item" data-value="{{abc}}">- 客户编码</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 注册时间</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 性别</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 生日</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 星座</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 注册所在区</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 第一次消费时间</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 第一次消费金额</div>
+                                    <div class="multi-item" data-value="{{abc}}">- 最近一次访问时间</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="chose-tmpl pt20">
+                        <div class="clearfix">
+                            <div class="col-md-12">
+                                <button class="btn btn-default pull-left" id="tempchosebtn">返回</button>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>+顶级目录</option>
+                                        <option>+顶级目录2</option>
+                                        <option>+顶级目录3</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" placeholder="模板名称" class="form-control" />
+                                </div>
+                                <button class="btn btn-warning">搜索</button>
+                            </div>
+                        </div>
+                        <div class="clearfix pt20">
+
+                            <div class="col-md-6">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th width="10%" class="text-center">选择</th>
+                                        <th width="56%">名称</th>
+                                        <th width="22%">描述</th>
+                                        <th width="10%"></th>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-ck text-center"><label><input type="checkbox" /></label></td>
+                                        <td title="会员生日邮件模板">会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                </table>
+                                <div class="clearfix">
+                                    <ul class="pagination">
+                                        <li><a href="#">&laquo;</a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">&raquo;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div id="tmplcodecon">
+                                    <textarea rows="10" id="tmplview" name="tmplview" readonly class="form-control tmplview">您的订单 $[orderID] 预计收货时间延迟1-2天，不便之处敬请谅解，感谢您的支持</textarea>
+                                </div>
+                                <div id="tmplviewcon" class="tmplviewcon">
+                                    <div class="tmplviewdiv"></div>
+                                </div>
+                                <div class="tmplbtn active" id="tmplcodebtn">代码模式</div>
+
+                                <div class="tmplbtn" id="tmplviewbtn">预览模式</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix" id="tab4" data-move-y="-100px">
+                    <div class="submit mybtn">
+                        <button class="btn btn-success" type="button" id="submit">提交审核</button>
+                        <button class="btn btn-default">取&nbsp;&nbsp;消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="main-dialog" id="main-dialog">
+        <div class="event-manage">
+            <div class="col-xs-12">
+                <div class="event-top clearfix">
+                    <div class="event-icon">
+                        <i class="icon icon-tag"></i>
+                    </div>
+                    <div class="title">
+                        标签信息
+                    </div>
+                </div>
+                <div class="tag-detail">
+                    <span>私密特卖</span><b>: [</b><br /><br />
+                    年龄段: 25-29岁;<br />
+                    最近购买时间: 1-3个月;<br />
+                    最近3个月消费金额: 5000以上;<br />
+                    购买过品类: 包箱;<br />
+                    购买过品牌: GUCCI;<br />
+                    <br />
+                    其它条件: 不限
+                    <br /><br />
+                    <b>] 的用户</b>
+                </div>
+                <div class="create-new">
+                    检索目标会员人数
+                </div>
+                <div class="clearfix">
+                    <div class="pt20 mybtn pull-right">
+                        <button class="btn btn-success">确定</button>
+                        <button class="btn btn-default" type="button" data-toggle="dialog-close" id="define-btn">自定义</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-dialog" id="dialog-tag">
+        <div class="event-manage">
+            <div class="col-xs-12">
+                <div class="event-top clearfix">
+                    <div class="event-icon">
+                        <i class="icon icon-tag"></i>
+                    </div>
+                    <div class="title">
+                        临时标签
+                    </div>
+                </div>
+                <div class="tag-main">
+                    <div class="tag-hd">
+                        <div class="tag-bd clearfix">
+                            <div class="pull-left">
+                                <input type="text" class="form-control" id="search-text" placeholder="搜索" />
+                            </div>
+                            <div class="pull-left">
+                                <ul id="tag-tab-nav" class="nav nav-tabs">
+                                    <li class="active"><a href="#tab1" data-toggle="tab">基本项<span>3</span></a></li>
+                                    <li><a href="#tab2" data-toggle="tab">行为项<span>0</span></a></li>
+                                    <li><a href="#tab3" data-toggle="tab">数值项<span>0</span></a></li>
+                                    <li><a href="#tab4" data-toggle="tab">安克诚<span>0</span></a></li>
+                                    <li class="not"><a href="#tab-search" id="tab-search-a" data-toggle="tab">搜索结果</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tag-tab1">
+                            <div class="tag-con">
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">常用设备：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>PC</span>
+                                        <span>移动</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">性别(<i>单选</i>)：</strong>
+                                    <div data-multi="true" class="tag-con-item clearfix">
+                                        <span>男</span>
+                                        <span>女</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">年龄段：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域(<i>单选</i>)：</strong>
+                                    <div data-multi="true" class="tag-con-item clearfix">
+                                        <span data-value="1">华南</span>
+                                        <span data-value="2">华东</span>
+                                        <span data-value="3">华北</span>
+                                        <span data-value="4">西南</span>
+                                        <span data-value="5">东北</span>
+                                        <span data-value="6">西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">设备：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>高端机型</span>
+                                        <span>中端机型</span>
+                                        <span>低端机型</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab2">
+                            <div class="tag-con">
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">购物会员：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>是</span>
+                                        <span>否</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">会员等级（<i>单选</i>)：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>铁牌会员</span>
+                                        <span>铜牌会员</span>
+                                        <span>银牌会员</span>
+                                        <span>金牌会员</span>
+                                        <span>钻石会员</span>
+                                        <span>皇冠会员</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">年龄段(<i>单选</i>)：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">设备：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>高端机型</span>
+                                        <span>中端机型</span>
+                                        <span>低端机型</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab3">
+                            <div class="tag-con">
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">产品特性（<i>单选</i>）：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>健康舒适</span>
+                                        <span>有机天然</span>
+                                        <span>怡人芬芳</span>
+                                        <span>保湿滋润</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">会员等级（<i>单选</i>）：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>铁牌会员</span>
+                                        <span>铜牌会员</span>
+                                        <span>银牌会员</span>
+                                        <span>金牌会员</span>
+                                        <span>钻石会员</span>
+                                        <span>皇冠会员</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">渠道标识：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>唯一访问</span>
+                                        <span>多访问</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">客户类别：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>新客</span>
+                                        <span>老客</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab4">
+                            <div class="tag-con">
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">家庭状况（<i>单选</i>）：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>未婚</span>
+                                        <span>已婚</span>
+                                        <span>未育</span>
+                                        <span>已育</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">售卖频道（<i>单选</i>）：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>特卖会</span>
+                                        <span>奢侈品</span>
+                                        <span>唯品团</span>
+                                        <span>美妆</span>
+                                        <span>移动端</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tag-all clearfix">
+                            <div class="tag-all-title">自定义： 【<span id="customStr"></span> 】用户</div>
+                            <div class="tag-num" id="tag-num">
+                                目标会员：
+                                <span>？</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="pt20 mybtn pull-right re">
+                            <button class="btn btn-success" type="button" id="tag-nowtime-btn">确定</button>
+                            <button class="btn btn-default" type="button" id="tag-nowtime-reset">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-dialog" id="dialog-tag-define">
+        <div class="event-manage">
+            <div class="col-xs-12">
+                <div class="event-top clearfix">
+                    <div class="event-icon">
+                        <i class="icon icon-tag"></i>
+                    </div>
+                    <div class="title">
+                        自定标签
+                    </div>
+                </div>
+                <div class="tag-main">
+                    <div class="tag-hd">
+                        <div class="tag-bd clearfix">
+                            <div class="pull-left">
+                                <input type="text" class="form-control" id="search-text" placeholder="搜索" />
+                            </div>
+                            <div class="pull-left">
+                                <ul id="tag-tab-nav" class="nav nav-tabs">
+                                    <li class="active"><a href="#tab1" data-toggle="tab">基本项<span>3</span></a></li>
+                                    <li><a href="#tab2" data-toggle="tab">行为项<span>0</span></a></li>
+                                    <li><a href="#tab3" data-toggle="tab">数值项<span>0</span></a></li>
+                                    <li><a href="#tab4" data-toggle="tab">安克诚<span>0</span></a></li>
+                                    <li class="not"><a href="#tab-search" id="tab-search-a" data-toggle="tab">搜索结果</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tag-tab1">
+                            <div class="tag-con">
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">常用设备：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>PC</span>
+                                        <span>移动</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">性别(<i>单选</i>)：</strong>
+                                    <div data-multi="true" class="tag-con-item clearfix">
+                                        <span>男</span>
+                                        <span>女</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">年龄段：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域(<i>单选</i>)：</strong>
+                                    <div data-multi="true" class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">设备：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>高端机型</span>
+                                        <span>中端机型</span>
+                                        <span>低端机型</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab2">
+                            <div class="tag-con">
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">购物会员：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>是</span>
+                                        <span>否</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">会员等级（<i>单选</i>)：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>铁牌会员</span>
+                                        <span>铜牌会员</span>
+                                        <span>银牌会员</span>
+                                        <span>金牌会员</span>
+                                        <span>钻石会员</span>
+                                        <span>皇冠会员</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">年龄段(<i>单选</i>)：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>19-24岁</span>
+                                        <span>25-29岁</span>
+                                        <span>30-34岁</span>
+                                        <span>35-44岁</span>
+                                        <span>45-59岁</span>
+                                        <span>60岁以上</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>华南</span>
+                                        <span>华东</span>
+                                        <span>华北</span>
+                                        <span>西南</span>
+                                        <span>东北</span>
+                                        <span>西北</span>
+                                        <span>港澳台</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">设备：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>高端机型</span>
+                                        <span>中端机型</span>
+                                        <span>低端机型</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab3">
+                            <div class="tag-con">
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">产品特性（<i>单选</i>）：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>健康舒适</span>
+                                        <span>有机天然</span>
+                                        <span>怡人芬芳</span>
+                                        <span>保湿滋润</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">会员等级（<i>单选</i>）：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>铁牌会员</span>
+                                        <span>铜牌会员</span>
+                                        <span>银牌会员</span>
+                                        <span>金牌会员</span>
+                                        <span>钻石会员</span>
+                                        <span>皇冠会员</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">渠道标识：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>唯一访问</span>
+                                        <span>多访问</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">客户类别：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>新客</span>
+                                        <span>老客</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab4">
+                            <div class="tag-con">
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">家庭状况（<i>单选</i>）：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>未婚</span>
+                                        <span>已婚</span>
+                                        <span>未育</span>
+                                        <span>已育</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <strong class="tag-con-title">售卖频道（<i>单选</i>）：</strong>
+                                    <div class="tag-con-item clearfix">
+                                        <span>特卖会</span>
+                                        <span>奢侈品</span>
+                                        <span>唯品团</span>
+                                        <span>美妆</span>
+                                        <span>移动端</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tag-all clearfix">
+                            <div class="tag-all-title">自定义： 【<span> 男，19-24岁，华东，使用高端机型</span> 】用户</div>
+                            <div class="tag-num" id="tag-num">
+                                目标会员：
+                                <span>？</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="pt20 mybtn pull-right re">
+                            <button class="btn btn-success" type="button" id="tag-define-btn">确定</button>
+                            <button class="btn btn-default" type="button">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">指定会员人数</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="tag-table-con">
+                        <div class="tag-table">
+                            <div class="tag-table-container">
+                                <div class="tag-table-list clearfix">
+                                    <div class="tag-table-item2">标签</div>
+                                    <div class="tag-table-item4">分类</div>
+                                </div>
+                                <div class="tag-table-list clearfix">
+                                    <div class="tag-table-item2">私密特卖</div>
+                                    <div class="tag-table-item4">固定标签</div>
+                                </div>
+                                <div class="tag-table-list clearfix">
+                                    <div class="tag-table-item2">私密特卖</div>
+                                    <div class="tag-table-item4">固定标签</div>
+                                </div>
+                                <div class="tag-table-list clearfix">
+                                    <div class="tag-table-item2">私密特卖</div>
+                                    <div class="tag-table-item4">固定标签</div>
+                                </div>
+                                <div class="tag-table-list clearfix">
+                                    <div class="tag-table-item2">私密特卖</div>
+                                    <div class="tag-table-item4">固定标签</div>
+                                </div>
+                                <div class="tag-table-list clearfix">
+                                    <div class="tag-table-item2">私密特卖</div>
+                                    <div class="tag-table-item4">固定标签</div>
+                                </div>
+                                <div class="tag-table-list clearfix">
+                                    <div class="tag-table-item2">私密特卖</div>
+                                    <div class="tag-table-item4">固定标签</div>
+                                </div>
+                            </div>
+                            <div class="tag-table-list tag-table-foot clearfix">
+                                <div class="tag-table-foot-all">合计：</div>
+                                <div class="tag-table-item5">8</div>
+                                <div class="tag-table-item6 temppadding"><input type="text" class="form-control" value="12" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal2" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">CSV导入</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="file_ifr" src="fileupload.html" frameborder="0" height="200px" width="100%" scrolling="no"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="btn-csv-save">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal3" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">保存到模版</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="csv-text">模版名称：</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="csv-text" name="csv-text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2">模版描述：</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="csv-text" name="csv-text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2">模版目录：</label>
+                            <div class="col-xs-5">
+                                <select class="form-control" id="tempSaveDir" name="tempSaveDir">
+                                    <option>+顶级目录</option>
+                                    <option>+顶级目录2</option>
+                                    <option>+顶级目录3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-msgTest" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">发送测试</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-xs-2">发送内容：</label>
+                            <div class="col-xs-10">
+                                <textarea class="form-control" rows="8"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script id="plan-tmpl" type="text/template">
+        <div class="form-group">
+            <label class="control-label col-md-2">执行时间:</label>
+            <div class="col-md-3">
+                <select id="con-select2-hour" class="form-control"></select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control" id="con-select2-minite">
+                    <option></option>
+                    <option value="1">1分</option>
+                    <option value="2">2分</option>
+                    <option value="3">3分</option>
+                    <option value="4">4分</option>
+                    <option value="5">5分</option>
+                    <option value="6">6分</option>
+                    <option value="7">7分</option>
+                    <option value="8">8分</option>
+                    <option value="9">9分</option>
+                    <option value="10">10分</option>
+                    <option value="11">11分</option>
+                    <option value="12">12分</option>
+                </select>
+            </div>
+            <div class="col-md-3 re">
+                <input type="text" class="form-control" placeholder="发送比例">
+                <div class="icon-remove plan-remove"></div>
+            </div>
+        </div>
+    </script>
+    <script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap-bootbox/bootbox.js"></script>
+    <script src="../../static/dmp/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../../static/dmp/plugins/jquery-mockjax/jquery.mockjax.js"></script>
+    <script src="../../static/dmp/plugins/select2/select2.min.js"></script>
+    <script src="../../static/dmp/plugins/jquery.smoove.js/jquery.smoove.min.js"></script>
+    <script src="../../static/dmp/plugins/jquery-color/js/colpick.js"></script>
+    <script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        !function () {
+
+
+            $(".plan-btn-con .btn").click(function(){
+                if($(".plan-list-con").children().length==5){
+                    return;
+                }
+                $(".plan-list-con").append($("#plan-tmpl").html());
+            })
+
+            $(document).on("click",".plan-remove",function(){
+                if($(".plan-list-con").children().length==1){
+                    return;
+                }
+                $(this).parent().parent().remove();
+            })
+
+            //smoove.js滚动效果
+            $("#tab3,#tab4").smoove();
+
+            //模似ajax 动态页面请删除
+            $.mockjax({
+                url: "tagNum.html",
+                type: "post",
+                responseTime: 1000,
+                responseText: JSON.stringify({num:888})
+            });
+            $.mockjax({
+                url: "vipNum.html",
+                type: "post",
+                responseTime: 1000,
+                responseText: JSON.stringify({ num: 888 })
+            });
+
+            $("#beginTime,#endTime,.time").datetimepicker({
+                startDate: new Date(),
+                minView: 2,
+                format: "yyyy-mm-dd"
+            });
+
+            //$('#beginTime').on('changeDate', function () {
+            //    $(this).trigger("focusout");
+            //});
+            //$('#endTime').on('changeDate', function () {
+            //    $(this).trigger("focusout");
+            //});
+
+            $('#beginTime').on('changeDate', function(){
+                $("#endTime").focus();
+            });
+
+            $(".tag-title").click(function () {
+                var _next = $(this).next();
+                if (_next.css("display") == "block") {
+                    _next.hide();
+                } else {
+                    _next.show();
+                }
+            });
+
+            //选择类型
+            $("#activeType").change(function () {
+                $("#channel").val($(this).val());
+                if ($(this).val() == "2") {
+                    $("#for-mail").show();
+                } else {
+                    $("#for-mail").hide();
+                }
+            });
+
+            //发送计划
+            $("#plancon").bind("con.hide", function () {
+                $("#plan").val(
+                    $("#planselect").find("option:selected").text() + " " +
+                    ($("#con-select2-hour").val() ? ($("#con-select2-hour").val() + "时") : "") +
+                    ($("#con-select2-minite").val() ? ($("#con-select2-minite").val() + "分") : "")
+                    );
+            });
+
+            $("#plancon").bind("con.show", function () {
+                //不允许时间比今天早
+                var now = new Date();
+                var beginTime = new Date($("#beginTime").val());
+                var tempArr = [],
+                    hour = 8;
+                if (now.toDateString() == beginTime.toDateString()) {
+                    if (now.getHours() > hour) {
+                        hour = now.getHours();
+                    }
+                }
+                for (var i = hour; i < 23; i++) {
+                    tempArr.push("<option value='" + i + "'>" + i + "时</option>")
+                }
+                $("#con-select2-hour").html("<option></option>"+tempArr.join("")).select2();
+            });
+
+            $("#planselect").change(function () {
+
+                if($("#planselect").val() == 5){
+                    alert(123)
+                }
+                var temp_id = "plan-tab" + $(this).val();
+                if ($(".plan-tab.active").attr("id") == temp_id) {
+
+                } else {
+                    $(".plan-tab.active").removeClass("active");
+                    var element = $("#" + temp_id);
+                    element.addClass("active");
+                }
+            });
+
+            $(document).on("click", ".tag-chose-item", function () {
+                $(".tag-chose-item.selected").removeClass("selected");
+                $(this).addClass("selected");
+            });
+
+
+            $(document).on("click", ".tag-chose-close", function (e) {
+                $(this).parent().parent().remove();
+                backChoseNum();
+                e.stopPropagation();
+                if ($(".tag-chose-item").length==0) {
+                    $(".tag-chose-title").text("请选择").css("color","red");
+                    $(".oparegroup").hide();
+                    $(".btn-csv").show();
+                    $(".tag-nowtime").show();
+                    $(".tag-depart").parent().show();
+                    $(".chosenumbtn2").remove();
+                }
+                if ($(".tag-chose-item").length == 1) {
+                    $(".dd-range").hide();
+                } else {
+                    $(".dd-range").show();
+                }
+                return false;
+            });
+
+
+            $(".tag-list span").click(function () {
+                $(".oparegroup").before('<div class="tag-chose-item" data-toggle="dialog" data-target="#main-dialog"><span id="123">' + $(this).text() + '</span><div class="tag-chose-close">x</div></div>');
+                $(".tag-chose-title").text("已选择").css("color", "#666666");
+                $(".btn-csv").hide();
+                $(".oparegroup").show();
+                if ($(".tag-chose-item").length == 1) {
+                    $(".dd-range").hide();
+                } else {
+                    $(".dd-range").show();
+                }
+                backChoseNum();
+            });
+
+            $("#submit").click(function () {
+                if ((new Date($("#endTime").val()).getTime() - new Date($("#beginTime").val()).getTime()) / (1000 * 60 * 60 * 24 * 30) > 3) {
+                    bootbox.alert("不能超过3个月");
+                    return false;
+                }
+                if (!valiPlan()) {
+                    return false;
+                }
+                $("#main-form").submit();
+                $("#tmpl-con").submit();
+            });
+
+            //验证
+            $("#main-form").validate({
+                rules: {
+                    activeTheme: {
+                        required:true
+                    },
+                    beginTime: {
+                        required: true
+                    },
+                    endTime: {
+                        required: true
+                    },
+                    plan:{
+                        required: true
+                    }
+                },
+                messages: {
+                    activeTheme: {
+                        required: "请输入活动名称"
+                    },
+                    beginTime: {
+                        required: "请选择开始日期",
+                    },
+                    endTime: {
+                        required: "请选择结束日期"
+                    },
+                    plan: {
+                        required: "请选择发送计划"
+                    }
+                },
+                invalidHandler: function (event, validator) {
+                    var temptext = [];
+                    var temp = 0;
+                    for (var item in validator.invalid) {
+                        if (temp == 0) {
+                            $("body").animate({ "scrollTop": $("#" + item).offset().top-100 },300);
+                        }
+                        temp++;
+                        temptext.push("<label for='" + item + "'>" + validator.invalid[item] + "</label><br/>");
+                    }
+                    $(".create-warning").show().find("strong").html(temptext.join(""));
+                }
+            });
+
+            //发送内容验证
+            $("#tmpl-con").validate({
+                rules: {
+                    templatecontent: {
+                        required:true
+                    }
+                },
+                messages: {
+                    templatecontent: {
+                        required: "请输入发送内容"
+                    }
+                }
+            });
+
+            //选择模版
+            $("#my-tpml").click(function () {
+                $(".chose-tmpl").show();
+                $("#tmpl-con").hide();
+            });
+            $("#tempchosebtn").click(function () {
+                $(".chose-tmpl").hide();
+                $("#tmpl-con").show();
+                if ($(this).text() == "确定") {
+                    $(".tempchosecon").addClass("active");
+                    var tempNode = $(".table-ck input:checked").parent().parent();
+                    $("#templatename").val(tempNode.next().text());
+                    $("#tmplDetail").val(tempNode.next().next().text());
+                }
+            });
+            $(document).on("click", ".table-ck input", function () {
+                $(".table-ck input").not($(this)).removeAttr("checked");
+                setTempchosebtn();
+            });
+            var setTempchosebtn = function () {
+                if ($(".table-ck input:checked").length > 0) {
+                    $("#tempchosebtn").text("确定");
+                } else {
+                    $("#tempchosebtn").text("返回");
+                }
+            }
+
+            //导航标签
+            $(".create-nav-content a").click(function () {
+                $("body,html").animate({ "scrollTop": $($(this).attr("href")).offset().top - 70 }, 200);
+                return false;
+            });
+
+
+            $("#tag-search").bind("input", function () {
+                var text = $(this).val().toLowerCase();
+                $(".tag-list span").each(function (index, element) {
+                    element = $(element);
+                    if (element.text().toLowerCase().indexOf(text) > -1)
+                        element.show();
+                    else
+                        element.hide();
+                });
+            });
+
+            //双击选参数
+            $(document).on("dblclick", ".multi-item", function () {
+                var argu = $(this).data("value");
+                if (argu) {
+                    var textarea = $("#templatecontent");
+                    textarea.val(textarea.val() + argu);
+                }
+            });
+
+            $(document).on("click", ".multi-item", function () {
+                if ($(this).data("value")) {
+                    $(this).siblings().removeClass("active").end().addClass("active");
+                }
+            });
+
+            $("#tmplbtn").click(function () {
+                if ($(".multi-item.active")) {
+                    var argu = $(".multi-item.active").data("value");
+                    if (argu) {
+                        $("#templatecontent").val(textarea.val() + argu);
+                    }
+                }
+            });
+
+            //代码模式
+            $("#codebtn").click(function () {
+                $("#codecon").show().next().hide();
+                $("#codebtn").addClass("active").next().removeClass("active");
+            });
+
+            //预览模式
+            $("#viewbtn").click(function () {
+                $("#codecon").hide().next().show();
+                $("#codebtn").removeClass("active").next().addClass("active");
+            });
+
+            //模版查看代码模式
+            $("#tmplcodebtn").click(function () {
+                $("#tmplcodecon").show().next().hide();
+                $("#tmplcodebtn").addClass("active").next().removeClass("active");
+            });
+
+            //模版查看预览模式
+            $("#tmplviewbtn").click(function () {
+                $("#tmplcodecon").hide().next().show();
+                $("#tmplcodebtn").removeClass("active").next().addClass("active");
+            });
+
+
+            //已选人数
+            $("#chosenumbtn").click(function () {
+                var _this = $(this);
+                if (!_this.data("edit")) {
+                    $.post("vipNum.html").success(function (result) {
+                        _this.html("<span style='color:red;'>" + $.parseJSON(result).num + "</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class='chosenumbtnedit'>修改</span><span class='chosenumcon'><input type='text' placeholder='行动组人数' /><input type='text' placeholder='对照组人数' /><i class='file-item-close'>x</i></span>").data("edit", "edit");
+                    });
+                    //$.ajax({
+                    //    url: "vipNum.html",
+                    //    type: "post",
+                    //    global: false,
+                    //    success: function (result) {
+                    //        var tempNum = $.parseJSON(result).num;
+                    //        if (!tempNum == -1) {
+                    //            _this.html("<span style='color:red;'>" + $.parseJSON(result).num + "</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class='chosenumbtnedit'>修改</span>").data("edit", "edit");
+                    //        }
+                    //    }
+                    //});
+
+                    _this.html("<span style='color:red;'>统计中</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>修改</span>").data("edit", "edit");
+                }
+            });
+            $(document).on("click", ".chosenumbtnedit", function () {
+                var tempParent=$(this).parents(".file-item");
+                var tempParent2=$(this).parents(".chosenumbtn");
+                if(tempParent.length){
+                    tempParent.find(".chosenumcon").show().addClass("active");
+                    $(this).hide();
+                }
+                if(tempParent2.length){
+                    tempParent2.find(".chosenumcon").show().addClass("active");
+                    $(this).hide();
+                }
+            });
+            $(document).on("click",".file-item-close",function(){
+                $(this).parent().hide().removeClass("active").prev().show();
+            })
+
+            //已选人数恢复
+            var backChoseNum = function () {
+                //已选人数返回
+                $("#chosenumbtn").html("已选人数？").data("edit", "");
+            };
+
+
+            //已选人数
+            $("#tag-num").click(function () {
+                if (!$(".tag-con-item .icon-ok-sign").length) {
+                    bootbox.alert("请先选择指标!");
+                    return;
+                }
+                var _this = $(this);
+                $.post("tagNum.html").success(function (result) {
+                    _this.find("span").text($.parseJSON(result).num);
+                });
+                _this.data("edit", "edit").find("span").text("统计中");
+            });
+
+            //已选人数恢复
+            var backChoseNum = function () {
+                $("#tag-num").find("span").text("？");
+            };
+
+            $(document).on("click", ".tag-con-item span", function () {
+                var _this = $(this);
+                if (_this.parent().data("multi")) {
+                    $(this).siblings().removeClass("select").end().toggleClass("select");
+                }
+                else {
+                    $(this).toggleClass("select");
+                }
+                backChoseNum();
+
+                tagIconSelected(_this);
+
+                addCustomSpan(_this);
+            });
+
+            var addCustomSpan = function (tag) {
+                var tempArr = [];
+                $(".tab-content").find(".tag-con-item span.select").each(function (index, ele) {
+                    tempArr.push("<span data-value='" + $(ele).data("value") + "'>" + $(ele).text() + "</span>");
+                });
+                $("#customStr").html("").append(tempArr.join("，"));
+            };
+
+            var tagIconSelected = function (_this) {
+                if (_this.parent().find(".select").length) {
+                    var tempSelected = _this.parent().parent().find(".tag-con-title");
+                    if (!tempSelected.find(".icon").length) {
+                        _this.parent().parent().find(".tag-con-title").prepend('<i class="icon icon-ok-sign"></i>');
+                    }
+                } else {
+                    _this.parent().parent().find(".icon").remove();
+                }
+
+                $(".nav-tabs li.active span").text($(".tab-pane.active .icon").length);
+            };
+
+            $("#tag-nav li").click(function () {
+                var now_tagcon=$(".tag-nav-detail").hide().eq($(this).index()).show();
+                $(this).siblings().removeClass("active").end().addClass("active");
+                if (!now_tagcon.children().length) {
+
+                }
+            });
+
+            //自定义
+            $("#define-btn").click(function () {
+                app.showDialog("#dialog-tag-define");
+                setTimeout(function () {
+                    $("body").css("overflow", "hidden");
+                }, 310);
+            });
+            $("#btn-csv-save").click(function () {
+                if (!$(".file-item").length) {
+                    $(".oparegroup").before('<div class="clearfix file-item"><div class="tag-chose-item"><span>123</span><div class="tag-chose-close">x</div></div><div id="chosenumbtn" class="chosenumbtn"><span style="color:red;"><span class="chosenumbtnedit">修改</span><span class="chosenumcon"><input type="text" placeholder="行动组人数" /><input type="text" placeholder="对照组人数" /><i class="file-item-close">x</i></span></div><div class="chosenumbtn2">共xxx条</div><button id="btn-file-up" class="btn btn-default">继续导入</button></div>');
+                } else if ($(".file-item").length == 5) {
+                    bootbox.alert("最多5个");
+                    return false
+                }else{
+                    $(".oparegroup").before('<div class="clearfix file-item file-item-indent"><div class="tag-chose-item"><span>123</span><div class="tag-chose-close">x</div></div><div id="chosenumbtn" class="chosenumbtn"><span style="color:red;"><span class="chosenumbtnedit">修改</span><span class="chosenumcon"><input type="text" placeholder="行动组人数" /><input type="text" placeholder="对照组人数" /><i class="file-item-close">x</i></span></div><div class="chosenumbtn2">共xxx条</div><button id="btn-file-up" class="btn btn-default">继续导入</button></div>');
+                }
+                backChoseNum();
+                $(".btn-csv").hide();
+                $(".tag-nowtime").hide();
+                $(".tag-depart").parent().hide();
+                $(".tag-chose-title").text("已导入").css("color", "#666666");
+
+                document.getElementById("file_ifr").contentWindow.document.getElementById("submit").click();
+
+                //$('#myModal2').modal('toggle');
+            });
+
+            //继续导入
+            $(document).on("click", "#btn-file-up", function () {
+                var e = $.Event("click");
+                $(".btn-csv").trigger(e);
+            });
+
+            $("#con-select2-hour,#con-select2-minite").select2();
+
+            //临时标签确定
+            $("#tag-define-btn").click(function () {
+                bootbox.dialog({
+                    message: "当前标签已发生修改,请选择修改类型:",
+                    title: "提示",
+                    buttons: {
+                        success: {
+                            label: "更新标签",
+                            className: "btn-default",
+                            callback: function () {
+                                app.dialogHide("#dialog-tag-define");
+                            }
+                        },
+                        cancel: {
+                            label: "临时使用",
+                            className: "btn-primary",
+                            callback: function () {
+                                app.dialogHide("#dialog-tag-define");
+                                $(".tag-chose-item.selected").removeClass(".selected").find("span").html(function () {
+                                    if ($(this).html().indexOf("<em")==-1)
+                                        return "<em style='color:orange;font-style:normal;'>（临）</em>" + $(this).text();
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+
+            $("#templateChose").click(function () {
+                var argu = $(".multi-item.active").data("value");
+                if (argu) {
+                    var textarea = $("#templatecontent");
+                    textarea.val(textarea.val() + argu);
+                }
+            });
+
+            //上传文件
+            var fileUpload = function () {
+                var fileData = new FormData();
+                fileData.append("file", $("#file")[0]);
+
+                var xhr = new XMLHttpRequest();
+                xhr.send(fileData);
+                xhr.open("post", "url.php", true);
+            };
+
+            $("#tag-nowtime-btn").click(function () {
+                app.dialogHide($("#dialog-tag"));
+                $(".oparegroup").before('<div class="tag-chose-item" data-toggle="dialog" data-target="#main-dialog"><span>临时标签</span><div class="tag-chose-close">x</div></div>');
+            });
+
+            //暂存
+            $("#activeName").change(function () {
+                if ($("#activeTheme").val()) {
+                    $("#btn-save-now").removeAttr("disabled");
+                }
+            });
+
+            $("#activeTheme").bind("input", function () {
+                if ($("#activeName").val()!=0) {
+                    $("#btn-save-now").removeAttr("disabled");
+                }
+            });
+
+            $("#btn-save-now").click(function () {
+
+                //保存进度条
+                $("body").append('<div id="loading"><i class="icon-spinner icon-spin"></i><span class="csv-in">导入中...</span></div>');
+
+                $("#beginTime").rules("remove", "required");
+                $("#endTime").rules("remove", "required");
+                $("#plan").rules("remove", "required");
+                //$("#main-form").submit();
+
+                //console.log($("#main-form").serializeArray())
+
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#main-form").serializeArray(),
+                    dataType: "json",
+                    timeout: 15000
+                }).success(function () {
+                    console.log("123");
+                });
+
+                //$("#main-form").serializeArray();
+
+            });
+
+            //重置
+            $("#tag-nowtime-reset").click(function () {
+                var tempParent = $(this).parentsUntil(".tab-content");
+                tempParent.find("span.select").removeClass("select");
+                tempParent.find(".icon-ok-sign").remove();
+                tempParent.find("input").val();
+            });
+
+            //发送计划不重复
+            var valiPlan = function () {
+                if ($("#planselect").val() == 4) {
+                    if ($("#plan-begintime").val() != $("#plan-endtime").val()) {
+                        bootbox.alert("发送计划不重复开始时间必须与结束时间相同");
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            var getAllTag = function () {
+                var result = [];
+                $(".tag-chose-item").each(function (index, ele) {
+                    result.push($(ele).data("id"));
+                });
+
+                console.log(result.join(","));
+            }
+
+            //重置
+            var reset = function () {
+                $(".tag-con>.clearfix").each(function (index, ele) {
+                    $(ele).find("input").each(function (index, ele2) {
+                        $(ele2).val("");
+                    });
+                    $(ele).find("span.select").removeClass("select");
+                    $(ele).find(".icon-ok-sign").remove();
+                    $("#customStr").html("").parent().attr("title", "");
+                    $("#dialog-tag .nav-tabs li span").text("0");
+                });
+            }
+
+            //跟踪标识
+            $("#file-up").change(function () {
+                if (!$(this).val())
+                    return;
+                $("#file-up-text").val($(this).val());
+                $(this).hide();
+                $("#file-remove").show();
+            });
+
+            $("#file-remove").click(function () {
+                $("#file-up").show();
+                $(this).hide();
+                $("#show-track-detail").hide();
+                $("#file-up-text").val("");
+                $("#file-up-text-detail").val("");
+                if ($("#show-track-detail").text() == "缩起") {
+                    $("#show-track-detail").click();
+                }
+            });
+            $("#file-up-text").on("keyup", function () {
+                if ($(this).val()) {
+                    $("#file-up").hide();
+                    $("#file-remove").show();
+                    $("#show-track-detail").show();
+                } else {
+                    $("#file-up").show();
+                    $("#file-remove").hide();
+                    $("#show-track-detail").hide();
+                    $("#file-up-text").val("");
+                }
+            });
+
+            $("#show-track-detail").click(function () {
+                if ($(this).text() == "详情") {
+                    $("#file-up-text-detail").show().val($("#file-up-text").hide().val());
+                    $(this).text("缩起");
+                } else {
+                    $("#file-up-text").show().val($("#file-up-text-detail").hide().val());
+                    $(this).text("详情");
+                }
+                return false;
+            });
+
+            var smileData= [{"img":"Smiley/E011.png","code":"[UE011]"},{"img":"Smiley/E00E.png","code":"[UE00E]"},{"img":"Bell/E006.png","code":"[UE006]"},{"img":"Smiley/E003.png","code":"[UE003]"},{"img":"Smiley/E00D.png","code":"[UE00D]"},{"img":"Smiley/E00E.png","code":"[UE00E]"},{"img":"Smiley/E011.png","code":"[UE011]"},{"img":"Smiley/E022.png","code":"[UE022]"},{"img":"Smiley/E03E.png","code":"[UE03E]"},{"img":"Smiley/E04E.png","code":"[UE04E]"},{"img":"Smiley/E056.png","code":"[UE056]"},{"img":"Smiley/E106.png","code":"[UE106]"},{"img":"Smiley/E107.png","code":"[UE107]"},{"img":"Smiley/E111.png","code":"[UE111]"},{"img":"Smiley/E115.png","code":"[UE115]"},{"img":"Smiley/E11D.png","code":"[UE11D]"},{"img":"Smiley/E14C.png","code":"[UE14C]"},{"img":"Smiley/E201.png","code":"[UE201]"},{"img":"Smiley/E230.png","code":"[UE230]"},{"img":"Smiley/E231.png","code":"[UE231]"},{"img":"Smiley/E253.png","code":"[UE253]"},{"img":"Smiley/E31D.png","code":"[UE31D]"},{"img":"Smiley/E31E.png","code":"[UE31E]"},{"img":"Smiley/E31F.png","code":"[UE31F]"},{"img":"Smiley/E327.png","code":"[UE327]"},{"img":"Smiley/E328.png","code":"[UE328]"},{"img":"Smiley/E329.png","code":"[UE329]"},{"img":"Smiley/E32A.png","code":"[UE32A]"},{"img":"Smiley/E32B.png","code":"[UE32B]"},{"img":"Smiley/E32C.png","code":"[UE32C]"},{"img":"Smiley/E32D.png","code":"[UE32D]"},{"img":"Smiley/E32E.png","code":"[UE32E]"},{"img":"Smiley/E330.png","code":"[UE330]"},{"img":"Smiley/E331.png","code":"[UE331]"},{"img":"Smiley/E335.png","code":"[UE335]"},{"img":"Smiley/E337.png","code":"[UE337]"},{"img":"Smiley/E405.png","code":"[UE405]"},{"img":"Smiley/E409.png","code":"[UE409]"},{"img":"Smiley/E414.png","code":"[UE414]"},{"img":"Smiley/E415.png","code":"[UE415]"},{"img":"Smiley/E417.png","code":"[UE417]"},{"img":"Smiley/E418.png","code":"[UE418]"},{"img":"Smiley/E41C.png","code":"[UE41C]"},{"img":"Smiley/E41F.png","code":"[UE41F]"},{"img":"Smiley/E420.png","code":"[UE420]"},{"img":"Smiley/E422.png","code":"[UE422]"},{"img":"Smiley/E423.png","code":"[UE423]"},{"img":"Smiley/E424.png","code":"[UE424]"},{"img":"Smiley/E425.png","code":"[UE425]"},{"img":"Smiley/E426.png","code":"[UE426]"},{"img":"Smiley/E427.png","code":"[UE427]"},{"img":"Smiley/E428.png","code":"[UE428]"},{"img":"Smiley/E429.png","code":"[UE429]"},{"img":"Smiley/E51C.png","code":"[UE51C]"},{"img":"Smiley/E51F.png","code":"[UE51F]"},{"img":"Smiley/E536.png","code":"[UE536]"},{"img":"Flower/E030.png","code":"[UE030]"},{"img":"Flower/E04A.png","code":"[UE04A]"},{"img":"Flower/E04C.png","code":"[UE04C]"},{"img":"Flower/E110.png","code":"[UE110]"},{"img":"Flower/E118.png","code":"[UE118]"},{"img":"Flower/E13D.png","code":"[UE13D]"},{"img":"Flower/E303.png","code":"[UE303]"},{"img":"Flower/E306.png","code":"[UE306]"},{"img":"Flower/E307.png","code":"[UE307]"},{"img":"Flower/E447.png","code":"[UE447]"},{"img":"Bell/E006.png","code":"[UE006]"},{"img":"Bell/E007.png","code":"[UE007]"},{"img":"Bell/E008.png","code":"[UE008]"},{"img":"Bell/E034.png","code":"[UE034]"},{"img":"Bell/E035.png","code":"[UE035]"},{"img":"Bell/E10E.png","code":"[UE10E]"},{"img":"Bell/E112.png","code":"[UE112]"},{"img":"Bell/E11E.png","code":"[UE11E]"},{"img":"Bell/E12F.png","code":"[UE12F]"},{"img":"Bell/E13E.png","code":"[UE13E]"},{"img":"Bell/E142.png","code":"[UE142]"},{"img":"Bell/E302.png","code":"[UE302]"},{"img":"Bell/E30C.png","code":"[UE30C]"},{"img":"Bell/E310.png","code":"[UE310]"},{"img":"Bell/E312.png","code":"[UE312]"},{"img":"Bell/E314.png","code":"[UE314]"},{"img":"Bell/E317.png","code":"[UE317]"},{"img":"Bell/E319.png","code":"[UE319]"},{"img":"Bell/E31A.png","code":"[UE31A]"},{"img":"Bell/E31B.png","code":"[UE31B]"},{"img":"Bell/E31C.png","code":"[UE31C]"},{"img":"Bell/E322.png","code":"[UE322]"},{"img":"Bell/E323.png","code":"[UE323]"},{"img":"Bell/E325.png","code":"[UE325]"},{"img":"Bell/E34B.png","code":"[UE34B]"},{"img":"Bell/E437.png","code":"[UE437]"},{"img":"Bell/E442.png","code":"[UE442]"},{"img":"Vehicle/E43D.png","code":"[UE43D]"},{"img":"Vehicle/E501.png","code":"[UE501]"},{"img":"Number/E02B.png","code":"[UE02B]"},{"img":"Number/E02D.png","code":"[UE02D]"},{"img":"Number/E204.png","code":"[UE204]"},{"img":"Number/E212.png","code":"[UE212]"},{"img":"Number/E21C.png","code":"[UE21C]"},{"img":"Number/E21D.png","code":"[UE21D]"},{"img":"Number/E21E.png","code":"[UE21E]"},{"img":"Number/E21F.png","code":"[UE21F]"},{"img":"Number/E220.png","code":"[UE220]"},{"img":"Number/E221.png","code":"[UE221]"},{"img":"Number/E222.png","code":"[UE222]"},{"img":"Number/E223.png","code":"[UE223]"},{"img":"Number/E224.png","code":"[UE224]"},{"img":"Number/E225.png","code":"[UE225]"},{"img":"Number/E24C.png","code":"[UE24C]"}];
+            //mmp全量表情
+            /*var emoji=[];
+            $("img").each(function(){
+                var img=$(this).attr("src");
+                var code= $(this).parent().parent().next().next().next().next().find("td").eq($(this).parent().index()).text();
+                code="U"+code;
+                emoji.push({"img":img,"code":code});
+            })
+            console.log(JSON.stringify(emoji))
+
+
+            var emoji1= [{"img":"smiles/smiles_01_01.png","code":"UE415"},{"img":"smiles/smiles_01_02.png","code":"UE056"},{"img":"smiles/smiles_01_03.png","code":"UE057"},{"img":"smiles/smiles_01_04.png","code":"UE414"},{"img":"smiles/smiles_01_05.png","code":"UE405"},{"img":"smiles/smiles_01_06.png","code":"UE106"},{"img":"smiles/smiles_01_07.png","code":"UE418"},{"img":"smiles/smiles_01_08.png","code":"UE417"},{"img":"smiles/smiles_01_09.png","code":"UE40D"},{"img":"smiles/smiles_01_10.png","code":"UE40A"},{"img":"smiles/smiles_01_11.png","code":"UE404"},{"img":"smiles/smiles_02_01.png","code":"UE105"},{"img":"smiles/smiles_02_02.png","code":"UE409"},{"img":"smiles/smiles_02_03.png","code":"UE40E"},{"img":"smiles/smiles_02_04.png","code":"UE402"},{"img":"smiles/smiles_02_05.png","code":"UE108"},{"img":"smiles/smiles_02_06.png","code":"UE403"},{"img":"smiles/smiles_02_07.png","code":"UE058"},{"img":"smiles/smiles_02_08.png","code":"UE407"},{"img":"smiles/smiles_02_09.png","code":"UE401"},{"img":"smiles/smiles_02_10.png","code":"UE40F"},{"img":"smiles/smiles_02_11.png","code":"UE40B"},{"img":"smiles/smiles_03_01.png","code":"UE406"},{"img":"smiles/smiles_03_02.png","code":"UE413"},{"img":"smiles/smiles_03_03.png","code":"UE411"},{"img":"smiles/smiles_03_04.png","code":"UE412"},{"img":"smiles/smiles_03_05.png","code":"UE410"},{"img":"smiles/smiles_03_06.png","code":"UE107"},{"img":"smiles/smiles_03_07.png","code":"UE059"},{"img":"smiles/smiles_03_08.png","code":"UE416"},{"img":"smiles/smiles_03_09.png","code":"UE408"},{"img":"smiles/smiles_03_10.png","code":"UE40C"},{"img":"smiles/smiles_03_11.png","code":"UE11A"},{"img":"smiles/smiles_04_01.png","code":"UE10C"},{"img":"smiles/smiles_04_02.png","code":"UE32C"},{"img":"smiles/smiles_04_03.png","code":"UE32A"},{"img":"smiles/smiles_04_04.png","code":"UE32D"},{"img":"smiles/smiles_04_05.png","code":"UE328"},{"img":"smiles/smiles_04_06.png","code":"UE32B"},{"img":"smiles/smiles_04_07.png","code":"UE022"},{"img":"smiles/smiles_04_08.png","code":"UE023"},{"img":"smiles/smiles_04_09.png","code":"UE327"},{"img":"smiles/smiles_04_10.png","code":"UE329"},{"img":"smiles/smiles_04_11.png","code":"UE32E"},{"img":"smiles/smiles_05_01.png","code":"UE335"},{"img":"smiles/smiles_05_02.png","code":"UE334"},{"img":"smiles/smiles_05_03.png","code":"UE337"},{"img":"smiles/smiles_05_04.png","code":"UE336"},{"img":"smiles/smiles_05_05.png","code":"UE13C"},{"img":"smiles/smiles_05_06.png","code":"UE330"},{"img":"smiles/smiles_05_07.png","code":"UE331"},{"img":"smiles/smiles_05_08.png","code":"UE326"},{"img":"smiles/smiles_05_09.png","code":"UE03E"},{"img":"smiles/smiles_05_10.png","code":"UE11D"},{"img":"smiles/smiles_05_11.png","code":"UE05A"},{"img":"smiles/smiles_06_01.png","code":"UE00E"},{"img":"smiles/smiles_06_02.png","code":"UE421"},{"img":"smiles/smiles_06_03.png","code":"UE420"},{"img":"smiles/smiles_06_04.png","code":"UE00D"},{"img":"smiles/smiles_06_05.png","code":"UE010"},{"img":"smiles/smiles_06_06.png","code":"UE011"},{"img":"smiles/smiles_06_07.png","code":"UE41E"},{"img":"smiles/smiles_06_08.png","code":"UE012"},{"img":"smiles/smiles_06_09.png","code":"UE422"},{"img":"smiles/smiles_06_10.png","code":"UE22E"},{"img":"smiles/smiles_06_11.png","code":"UE22F"},{"img":"smiles/smiles_07_01.png","code":"UE231"},{"img":"smiles/smiles_07_02.png","code":"UE230"},{"img":"smiles/smiles_07_03.png","code":"UE427"},{"img":"smiles/smiles_07_04.png","code":"UE41D"},{"img":"smiles/smiles_07_05.png","code":"UE00F"},{"img":"smiles/smiles_07_06.png","code":"UE41F"},{"img":"smiles/smiles_07_07.png","code":"UE14C"},{"img":"smiles/smiles_07_08.png","code":"UE201"},{"img":"smiles/smiles_07_09.png","code":"UE115"},{"img":"smiles/smiles_07_10.png","code":"UE428"},{"img":"smiles/smiles_07_11.png","code":"UE51F"},{"img":"smiles/smiles_08_01.png","code":"UE429"},{"img":"smiles/smiles_08_02.png","code":"UE424"},{"img":"smiles/smiles_08_03.png","code":"UE423"},{"img":"smiles/smiles_08_04.png","code":"UE253"},{"img":"smiles/smiles_08_05.png","code":"UE426"},{"img":"smiles/smiles_08_06.png","code":"UE111"},{"img":"smiles/smiles_08_07.png","code":"UE425"},{"img":"smiles/smiles_08_08.png","code":"UE31E"},{"img":"smiles/smiles_08_09.png","code":"UE31F"},{"img":"smiles/smiles_08_10.png","code":"UE31D"},{"img":"smiles/smiles_08_11.png","code":"UE001"},{"img":"smiles/smiles_09_01.png","code":"UE002"},{"img":"smiles/smiles_09_02.png","code":"UE005"},{"img":"smiles/smiles_09_03.png","code":"UE004"},{"img":"smiles/smiles_09_04.png","code":"UE51A"},{"img":"smiles/smiles_09_05.png","code":"UE519"},{"img":"smiles/smiles_09_06.png","code":"UE518"},{"img":"smiles/smiles_09_07.png","code":"UE515"},{"img":"smiles/smiles_09_08.png","code":"UE516"},{"img":"smiles/smiles_09_09.png","code":"UE517"},{"img":"smiles/smiles_09_10.png","code":"UE51B"},{"img":"smiles/smiles_09_11.png","code":"UE152"},{"img":"smiles/smiles_10_01.png","code":"UE04E"},{"img":"smiles/smiles_10_02.png","code":"UE51C"},{"img":"smiles/smiles_10_03.png","code":"UE51E"},{"img":"smiles/smiles_10_04.png","code":"UE11C"},{"img":"smiles/smiles_10_05.png","code":"UE536"},{"img":"smiles/smiles_10_06.png","code":"UE003"},{"img":"smiles/smiles_10_07.png","code":"UE41C"},{"img":"smiles/smiles_10_08.png","code":"UE41B"},{"img":"smiles/smiles_10_09.png","code":"UE419"},{"img":"smiles/smiles_10_10.png","code":"UE41A"}]
+            var emoji2= [{"img":"flowers/flowers_01_01.png","code":"UE04A"},{"img":"flowers/flowers_01_02.png","code":"UE04B"},{"img":"flowers/flowers_01_03.png","code":"UE049"},{"img":"flowers/flowers_01_04.png","code":"UE048"},{"img":"flowers/flowers_01_05.png","code":"UE04C"},{"img":"flowers/flowers_01_06.png","code":"UE13D"},{"img":"flowers/flowers_01_07.png","code":"UE443"},{"img":"flowers/flowers_01_08.png","code":"UE43E"},{"img":"flowers/flowers_01_09.png","code":"UE04F"},{"img":"flowers/flowers_01_10.png","code":"UE052"},{"img":"flowers/flowers_01_11.png","code":"UE053"},{"img":"flowers/flowers_02_01.png","code":"UE524"},{"img":"flowers/flowers_02_02.png","code":"UE52C"},{"img":"flowers/flowers_02_03.png","code":"UE52A"},{"img":"flowers/flowers_02_04.png","code":"UE531"},{"img":"flowers/flowers_02_05.png","code":"UE050"},{"img":"flowers/flowers_02_06.png","code":"UE527"},{"img":"flowers/flowers_02_07.png","code":"UE051"},{"img":"flowers/flowers_02_08.png","code":"UE10B"},{"img":"flowers/flowers_02_09.png","code":"UE52B"},{"img":"flowers/flowers_02_10.png","code":"UE52F"},{"img":"flowers/flowers_02_11.png","code":"UE109"},{"img":"flowers/flowers_03_01.png","code":"UE528"},{"img":"flowers/flowers_03_02.png","code":"UE01A"},{"img":"flowers/flowers_03_03.png","code":"UE134"},{"img":"flowers/flowers_03_04.png","code":"UE530"},{"img":"flowers/flowers_03_05.png","code":"UE529"},{"img":"flowers/flowers_03_06.png","code":"UE526"},{"img":"flowers/flowers_03_07.png","code":"UE52D"},{"img":"flowers/flowers_03_08.png","code":"UE521"},{"img":"flowers/flowers_03_09.png","code":"UE523"},{"img":"flowers/flowers_03_10.png","code":"UE52E"},{"img":"flowers/flowers_03_11.png","code":"UE055"},{"img":"flowers/flowers_04_01.png","code":"UE525"},{"img":"flowers/flowers_04_02.png","code":"UE10A"},{"img":"flowers/flowers_04_03.png","code":"UE522"},{"img":"flowers/flowers_04_04.png","code":"UE019"},{"img":"flowers/flowers_04_05.png","code":"UE054"},{"img":"flowers/flowers_04_06.png","code":"UE520"},{"img":"flowers/flowers_04_07.png","code":"UE306"},{"img":"flowers/flowers_04_08.png","code":"UE030"},{"img":"flowers/flowers_04_09.png","code":"UE304"},{"img":"flowers/flowers_04_10.png","code":"UE110"},{"img":"flowers/flowers_04_11.png","code":"UE032"},{"img":"flowers/flowers_05_01.png","code":"UE305"},{"img":"flowers/flowers_05_02.png","code":"UE303"},{"img":"flowers/flowers_05_03.png","code":"UE118"},{"img":"flowers/flowers_05_04.png","code":"UE447"},{"img":"flowers/flowers_05_05.png","code":"UE119"},{"img":"flowers/flowers_05_06.png","code":"UE307"},{"img":"flowers/flowers_05_07.png","code":"UE308"},{"img":"flowers/flowers_05_08.png","code":"UE444"},{"img":"flowers/flowers_05_09.png","code":"UE441"}]
+            var emoji3= [{"img":"bells/bells_01_01.png","code":"UE436"},{"img":"bells/bells_01_02.png","code":"UE437"},{"img":"bells/bells_01_03.png","code":"UE438"},{"img":"bells/bells_01_04.png","code":"UE43A"},{"img":"bells/bells_01_05.png","code":"UE439"},{"img":"bells/bells_01_06.png","code":"UE43B"},{"img":"bells/bells_01_07.png","code":"UE117"},{"img":"bells/bells_01_08.png","code":"UE440"},{"img":"bells/bells_01_09.png","code":"UE442"},{"img":"bells/bells_01_10.png","code":"UE446"},{"img":"bells/bells_01_11.png","code":"UE445"},{"img":"bells/bells_02_01.png","code":"UE11B"},{"img":"bells/bells_02_02.png","code":"UE448"},{"img":"bells/bells_02_03.png","code":"UE033"},{"img":"bells/bells_02_04.png","code":"UE112"},{"img":"bells/bells_02_05.png","code":"UE325"},{"img":"bells/bells_02_06.png","code":"UE312"},{"img":"bells/bells_02_07.png","code":"UE310"},{"img":"bells/bells_02_08.png","code":"UE126"},{"img":"bells/bells_02_09.png","code":"UE127"},{"img":"bells/bells_02_10.png","code":"UE008"},{"img":"bells/bells_02_11.png","code":"UE03D"},{"img":"bells/bells_03_01.png","code":"UE00C"},{"img":"bells/bells_03_02.png","code":"UE12A"},{"img":"bells/bells_03_03.png","code":"UE00A"},{"img":"bells/bells_03_04.png","code":"UE00B"},{"img":"bells/bells_03_05.png","code":"UE009"},{"img":"bells/bells_03_06.png","code":"UE316"},{"img":"bells/bells_03_07.png","code":"UE129"},{"img":"bells/bells_03_08.png","code":"UE141"},{"img":"bells/bells_03_09.png","code":"UE142"},{"img":"bells/bells_03_10.png","code":"UE317"},{"img":"bells/bells_03_11.png","code":"UE128"},{"img":"bells/bells_04_01.png","code":"UE14B"},{"img":"bells/bells_04_02.png","code":"UE211"},{"img":"bells/bells_04_03.png","code":"UE114"},{"img":"bells/bells_04_04.png","code":"UE145"},{"img":"bells/bells_04_05.png","code":"UE144"},{"img":"bells/bells_04_06.png","code":"UE03F"},{"img":"bells/bells_04_07.png","code":"UE313"},{"img":"bells/bells_04_08.png","code":"UE116"},{"img":"bells/bells_04_09.png","code":"UE10F"},{"img":"bells/bells_04_10.png","code":"UE104"},{"img":"bells/bells_04_11.png","code":"UE103"},{"img":"bells/bells_05_01.png","code":"UE101"},{"img":"bells/bells_05_02.png","code":"UE102"},{"img":"bells/bells_05_03.png","code":"UE13F"},{"img":"bells/bells_05_04.png","code":"UE140"},{"img":"bells/bells_05_05.png","code":"UE11F"},{"img":"bells/bells_05_06.png","code":"UE12F"},{"img":"bells/bells_05_07.png","code":"UE031"},{"img":"bells/bells_05_08.png","code":"UE30E"},{"img":"bells/bells_05_09.png","code":"UE311"},{"img":"bells/bells_05_10.png","code":"UE113"},{"img":"bells/bells_05_11.png","code":"UE30F"},{"img":"bells/bells_06_01.png","code":"UE13B"},{"img":"bells/bells_06_02.png","code":"UE42B"},{"img":"bells/bells_06_03.png","code":"UE42A"},{"img":"bells/bells_06_04.png","code":"UE018"},{"img":"bells/bells_06_05.png","code":"UE016"},{"img":"bells/bells_06_06.png","code":"UE015"},{"img":"bells/bells_06_07.png","code":"UE014"},{"img":"bells/bells_06_08.png","code":"UE42C"},{"img":"bells/bells_06_09.png","code":"UE42D"},{"img":"bells/bells_06_10.png","code":"UE017"},{"img":"bells/bells_06_11.png","code":"UE013"},{"img":"bells/bells_07_01.png","code":"UE20E"},{"img":"bells/bells_07_02.png","code":"UE20C"},{"img":"bells/bells_07_03.png","code":"UE20F"},{"img":"bells/bells_07_04.png","code":"UE20D"},{"img":"bells/bells_07_05.png","code":"UE131"},{"img":"bells/bells_07_06.png","code":"UE12B"},{"img":"bells/bells_07_07.png","code":"UE130"},{"img":"bells/bells_07_08.png","code":"UE12D"},{"img":"bells/bells_07_09.png","code":"UE324"},{"img":"bells/bells_07_10.png","code":"UE301"},{"img":"bells/bells_07_11.png","code":"UE148"},{"img":"bells/bells_08_01.png","code":"UE502"},{"img":"bells/bells_08_02.png","code":"UE03C"},{"img":"bells/bells_08_03.png","code":"UE30A"},{"img":"bells/bells_08_04.png","code":"UE042"},{"img":"bells/bells_08_05.png","code":"UE040"},{"img":"bells/bells_08_06.png","code":"UE041"},{"img":"bells/bells_08_07.png","code":"UE12C"},{"img":"bells/bells_08_08.png","code":"UE007"},{"img":"bells/bells_08_09.png","code":"UE31A"},{"img":"bells/bells_08_10.png","code":"UE13E"},{"img":"bells/bells_08_11.png","code":"UE31B"},{"img":"bells/bells_09_01.png","code":"UE006"},{"img":"bells/bells_09_02.png","code":"UE302"},{"img":"bells/bells_09_03.png","code":"UE319"},{"img":"bells/bells_09_04.png","code":"UE321"},{"img":"bells/bells_09_05.png","code":"UE322"},{"img":"bells/bells_09_06.png","code":"UE314"},{"img":"bells/bells_09_07.png","code":"UE503"},{"img":"bells/bells_09_08.png","code":"UE10E"},{"img":"bells/bells_09_09.png","code":"UE318"},{"img":"bells/bells_09_10.png","code":"UE43C"},{"img":"bells/bells_09_11.png","code":"UE11E"},{"img":"bells/bells_10_01.png","code":"UE323"},{"img":"bells/bells_10_02.png","code":"UE31C"},{"img":"bells/bells_10_03.png","code":"UE034"},{"img":"bells/bells_10_04.png","code":"UE035"},{"img":"bells/bells_10_05.png","code":"UE045"},{"img":"bells/bells_10_06.png","code":"UE338"},{"img":"bells/bells_10_07.png","code":"UE047"},{"img":"bells/bells_10_08.png","code":"UE30C"},{"img":"bells/bells_10_09.png","code":"UE044"},{"img":"bells/bells_10_10.png","code":"UE30B"},{"img":"bells/bells_10_11.png","code":"UE043"},{"img":"bells/bells_11_01.png","code":"UE120"},{"img":"bells/bells_11_02.png","code":"UE33B"},{"img":"bells/bells_11_03.png","code":"UE33F"},{"img":"bells/bells_11_04.png","code":"UE341"},{"img":"bells/bells_11_05.png","code":"UE34C"},{"img":"bells/bells_11_06.png","code":"UE344"},{"img":"bells/bells_11_07.png","code":"UE342"},{"img":"bells/bells_11_08.png","code":"UE33D"},{"img":"bells/bells_11_09.png","code":"UE33E"},{"img":"bells/bells_11_10.png","code":"UE340"},{"img":"bells/bells_11_11.png","code":"UE34D"},{"img":"bells/bells_12_01.png","code":"UE339"},{"img":"bells/bells_12_02.png","code":"UE147"},{"img":"bells/bells_12_03.png","code":"UE343"},{"img":"bells/bells_12_04.png","code":"UE33C"},{"img":"bells/bells_12_05.png","code":"UE33A"},{"img":"bells/bells_12_06.png","code":"UE43F"},{"img":"bells/bells_12_07.png","code":"UE34B"},{"img":"bells/bells_12_08.png","code":"UE046"},{"img":"bells/bells_12_09.png","code":"UE345"},{"img":"bells/bells_12_10.png","code":"UE346"},{"img":"bells/bells_12_11.png","code":"UE348"},{"img":"bells/bells_13_01.png","code":"UE347"},{"img":"bells/bells_13_02.png","code":"UE34A"},{"img":"bells/bells_13_03.png","code":"UE349"}]
+            var emoji4= [{"img":"cars/cars_01_01.png","code":"UE036"},{"img":"cars/cars_01_02.png","code":"UE157"},{"img":"cars/cars_01_03.png","code":"UE038"},{"img":"cars/cars_01_04.png","code":"UE153"},{"img":"cars/cars_01_05.png","code":"UE155"},{"img":"cars/cars_01_06.png","code":"UE14D"},{"img":"cars/cars_01_07.png","code":"UE156"},{"img":"cars/cars_01_08.png","code":"UE501"},{"img":"cars/cars_01_09.png","code":"UE158"},{"img":"cars/cars_01_10.png","code":"UE43D"},{"img":"cars/cars_01_11.png","code":"UE037"},{"img":"cars/cars_02_01.png","code":"UE504"},{"img":"cars/cars_02_02.png","code":"UE44A"},{"img":"cars/cars_02_03.png","code":"UE146"},{"img":"cars/cars_02_04.png","code":"UE154"},{"img":"cars/cars_02_05.png","code":"UE505"},{"img":"cars/cars_02_06.png","code":"UE506"},{"img":"cars/cars_02_07.png","code":"UE122"},{"img":"cars/cars_02_08.png","code":"UE508"},{"img":"cars/cars_02_09.png","code":"UE509"},{"img":"cars/cars_02_10.png","code":"UE03B"},{"img":"cars/cars_02_11.png","code":"UE04D"},{"img":"cars/cars_03_01.png","code":"UE449"},{"img":"cars/cars_03_02.png","code":"UE44B"},{"img":"cars/cars_03_03.png","code":"UE51D"},{"img":"cars/cars_03_04.png","code":"UE44C"},{"img":"cars/cars_03_05.png","code":"UE124"},{"img":"cars/cars_03_06.png","code":"UE121"},{"img":"cars/cars_03_07.png","code":"UE433"},{"img":"cars/cars_03_08.png","code":"UE202"},{"img":"cars/cars_03_09.png","code":"UE135"},{"img":"cars/cars_03_10.png","code":"UE01C"},{"img":"cars/cars_03_11.png","code":"UE01D"},{"img":"cars/cars_04_01.png","code":"UE10D"},{"img":"cars/cars_04_02.png","code":"UE136"},{"img":"cars/cars_04_03.png","code":"UE42E"},{"img":"cars/cars_04_04.png","code":"UE01B"},{"img":"cars/cars_04_05.png","code":"UE15A"},{"img":"cars/cars_04_06.png","code":"UE159"},{"img":"cars/cars_04_07.png","code":"UE432"},{"img":"cars/cars_04_08.png","code":"UE430"},{"img":"cars/cars_04_09.png","code":"UE431"},{"img":"cars/cars_04_10.png","code":"UE42F"},{"img":"cars/cars_04_11.png","code":"UE01E"},{"img":"cars/cars_05_01.png","code":"UE039"},{"img":"cars/cars_05_02.png","code":"UE435"},{"img":"cars/cars_05_03.png","code":"UE01F"},{"img":"cars/cars_05_04.png","code":"UE125"},{"img":"cars/cars_05_05.png","code":"UE03A"},{"img":"cars/cars_05_06.png","code":"UE14E"},{"img":"cars/cars_05_07.png","code":"UE252"},{"img":"cars/cars_05_08.png","code":"UE137"},{"img":"cars/cars_05_09.png","code":"UE209"},{"img":"cars/cars_05_10.png","code":"UE133"},{"img":"cars/cars_05_11.png","code":"UE150"},{"img":"cars/cars_06_01.png","code":"UE320"},{"img":"cars/cars_06_02.png","code":"UE123"},{"img":"cars/cars_06_03.png","code":"UE132"},{"img":"cars/cars_06_04.png","code":"UE143"},{"img":"cars/cars_06_05.png","code":"UE50B"},{"img":"cars/cars_06_06.png","code":"UE514"},{"img":"cars/cars_06_07.png","code":"UE513"},{"img":"cars/cars_06_08.png","code":"UE50C"},{"img":"cars/cars_06_09.png","code":"UE50D"},{"img":"cars/cars_06_10.png","code":"UE511"},{"img":"cars/cars_06_11.png","code":"UE50F"},{"img":"cars/cars_07_01.png","code":"UE512"},{"img":"cars/cars_07_02.png","code":"UE510"},{"img":"cars/cars_07_03.png","code":"UE50E"}]
+            var emoji5= [{"img":"numbers/numbers_01_01.png","code":"UE21C"},{"img":"numbers/numbers_01_02.png","code":"UE21D"},{"img":"numbers/numbers_01_03.png","code":"UE21E"},{"img":"numbers/numbers_01_04.png","code":"UE21F"},{"img":"numbers/numbers_01_05.png","code":"UE220"},{"img":"numbers/numbers_01_06.png","code":"UE221"},{"img":"numbers/numbers_01_07.png","code":"UE222"},{"img":"numbers/numbers_01_08.png","code":"UE223"},{"img":"numbers/numbers_01_09.png","code":"UE224"},{"img":"numbers/numbers_01_10.png","code":"UE225"},{"img":"numbers/numbers_01_11.png","code":"UE210"},{"img":"numbers/numbers_02_01.png","code":"UE232"},{"img":"numbers/numbers_02_02.png","code":"UE233"},{"img":"numbers/numbers_02_03.png","code":"UE235"},{"img":"numbers/numbers_02_04.png","code":"UE234"},{"img":"numbers/numbers_02_05.png","code":"UE236"},{"img":"numbers/numbers_02_06.png","code":"UE237"},{"img":"numbers/numbers_02_07.png","code":"UE238"},{"img":"numbers/numbers_02_08.png","code":"UE239"},{"img":"numbers/numbers_02_09.png","code":"UE23B"},{"img":"numbers/numbers_02_10.png","code":"UE23A"},{"img":"numbers/numbers_02_11.png","code":"UE23D"},{"img":"numbers/numbers_03_01.png","code":"UE23C"},{"img":"numbers/numbers_03_02.png","code":"UE24D"},{"img":"numbers/numbers_03_03.png","code":"UE212"},{"img":"numbers/numbers_03_04.png","code":"UE24C"},{"img":"numbers/numbers_03_05.png","code":"UE213"},{"img":"numbers/numbers_03_06.png","code":"UE214"},{"img":"numbers/numbers_03_07.png","code":"UE507"},{"img":"numbers/numbers_03_08.png","code":"UE203"},{"img":"numbers/numbers_03_09.png","code":"UE20B"},{"img":"numbers/numbers_03_10.png","code":"UE22A"},{"img":"numbers/numbers_03_11.png","code":"UE22B"},{"img":"numbers/numbers_04_01.png","code":"UE226"},{"img":"numbers/numbers_04_02.png","code":"UE227"},{"img":"numbers/numbers_04_03.png","code":"UE22C"},{"img":"numbers/numbers_04_04.png","code":"UE22D"},{"img":"numbers/numbers_04_05.png","code":"UE215"},{"img":"numbers/numbers_04_06.png","code":"UE216"},{"img":"numbers/numbers_04_07.png","code":"UE217"},{"img":"numbers/numbers_04_08.png","code":"UE218"},{"img":"numbers/numbers_04_09.png","code":"UE228"},{"img":"numbers/numbers_04_10.png","code":"UE151"},{"img":"numbers/numbers_04_11.png","code":"UE138"},{"img":"numbers/numbers_05_01.png","code":"UE139"},{"img":"numbers/numbers_05_02.png","code":"UE13A"},{"img":"numbers/numbers_05_03.png","code":"UE208"},{"img":"numbers/numbers_05_04.png","code":"UE14F"},{"img":"numbers/numbers_05_05.png","code":"UE20A"},{"img":"numbers/numbers_05_06.png","code":"UE434"},{"img":"numbers/numbers_05_07.png","code":"UE309"},{"img":"numbers/numbers_05_08.png","code":"UE315"},{"img":"numbers/numbers_05_09.png","code":"UE30D"},{"img":"numbers/numbers_05_10.png","code":"UE207"},{"img":"numbers/numbers_05_11.png","code":"UE229"},{"img":"numbers/numbers_06_01.png","code":"UE206"},{"img":"numbers/numbers_06_02.png","code":"UE205"},{"img":"numbers/numbers_06_03.png","code":"UE204"},{"img":"numbers/numbers_06_04.png","code":"UE12E"},{"img":"numbers/numbers_06_05.png","code":"UE250"},{"img":"numbers/numbers_06_06.png","code":"UE251"},{"img":"numbers/numbers_06_07.png","code":"UE14A"},{"img":"numbers/numbers_06_08.png","code":"UE149"},{"img":"numbers/numbers_06_09.png","code":"UE23F"},{"img":"numbers/numbers_06_10.png","code":"UE240"},{"img":"numbers/numbers_06_11.png","code":"UE241"},{"img":"numbers/numbers_07_01.png","code":"UE242"},{"img":"numbers/numbers_07_02.png","code":"UE243"},{"img":"numbers/numbers_07_03.png","code":"UE244"},{"img":"numbers/numbers_07_04.png","code":"UE245"},{"img":"numbers/numbers_07_05.png","code":"UE246"},{"img":"numbers/numbers_07_06.png","code":"UE247"},{"img":"numbers/numbers_07_07.png","code":"UE248"},{"img":"numbers/numbers_07_08.png","code":"UE249"},{"img":"numbers/numbers_07_09.png","code":"UE24A"},{"img":"numbers/numbers_07_10.png","code":"UE24B"},{"img":"numbers/numbers_07_11.png","code":"UE23E"},{"img":"numbers/numbers_08_01.png","code":"UE532"},{"img":"numbers/numbers_08_02.png","code":"UE533"},{"img":"numbers/numbers_08_03.png","code":"UE534"},{"img":"numbers/numbers_08_04.png","code":"UE535"},{"img":"numbers/numbers_08_05.png","code":"UE21A"},{"img":"numbers/numbers_08_06.png","code":"UE219"},{"img":"numbers/numbers_08_07.png","code":"UE21B"},{"img":"numbers/numbers_08_08.png","code":"UE02F"},{"img":"numbers/numbers_08_09.png","code":"UE024"},{"img":"numbers/numbers_08_10.png","code":"UE025"},{"img":"numbers/numbers_08_11.png","code":"UE026"},{"img":"numbers/numbers_09_01.png","code":"UE027"},{"img":"numbers/numbers_09_02.png","code":"UE028"},{"img":"numbers/numbers_09_03.png","code":"UE029"},{"img":"numbers/numbers_09_04.png","code":"UE02A"},{"img":"numbers/numbers_09_05.png","code":"UE02B"},{"img":"numbers/numbers_09_06.png","code":"UE02C"},{"img":"numbers/numbers_09_07.png","code":"UE02D"},{"img":"numbers/numbers_09_08.png","code":"UE02E"},{"img":"numbers/numbers_09_09.png","code":"UE332"},{"img":"numbers/numbers_09_10.png","code":"UE333"},{"img":"numbers/numbers_09_11.png","code":"UE24E"},{"img":"numbers/numbers_10_01.png","code":"UE24F"},{"img":"numbers/numbers_10_02.png","code":"UE537"}]
+            var data=$.extend(true,{},emoji1,emoji2,emoji3,emoji4,emoji5)
+            console.log(JSON.stringify(data))*/
+
+
+            $(".just-for-ios").click(function(){
+                if($(".just-for-ios-con").css("display")=="block"){
+                    $(".just-for-ios-con").hide();
+                }else{
+                    var tempSmile=[];
+                    for(var i=0;i<smileData.length;i++){
+                        tempSmile.push('<div class="ios-smile" data-code="'+smileData[i].code+'"><img src="../../static/dmp/images/create/'+smileData[i].img+'" /></div>')
+                    }
+                    $(".just-for-con").html(tempSmile.join(""));
+
+                    $(".just-for-ios-con").show();
+                    setTimeout(function(){
+                        $(window).on("click",function(e){
+                            if($(e.target).parents(".just-for-ios-con").length){
+
+                            }else{
+                                $(".just-for-ios-con").hide();
+                                $(window).off("click");
+                            }
+                        });
+                    },100)
+                }
+            });
+
+            $(".color-pick").colpick({
+                layout:'hex',
+                onSubmit:function(hsb,hex,rgb,el,bySetColor){
+                    $(el).css('border-color','#'+hex).css('color','#'+hex);
+                    if(!bySetColor) $(el).val("#"+hex);
+                    $(el).colpickHide();
+                },
+                onChange:function(hsb,hex,rgb,el,bySetColor) {
+                    $(el).css('border-color','#'+hex).css('color','#'+hex);
+                    if(!bySetColor) $(el).val("#"+hex);
+                }
+            });
+
+            $(document).on("click",".ios-smile",function(){
+
+                var tempEle=$("#templatecontent");
+                tempEle.val(tempEle.val()+$(this).data("code"));
+                $(".just-for-ios-con").hide();
+                $(window).off("click");
+            });
+
+            var emoji={"UE415":"smiles/smiles_01_01.png","UE056":"smiles/smiles_01_02.png","UE057":"smiles/smiles_01_03.png","UE414":"smiles/smiles_01_04.png","UE405":"smiles/smiles_01_05.png","UE106":"smiles/smiles_01_06.png","UE418":"smiles/smiles_01_07.png","UE417":"smiles/smiles_01_08.png","UE40D":"smiles/smiles_01_09.png","UE40A":"smiles/smiles_01_10.png","UE404":"smiles/smiles_01_11.png","UE105":"smiles/smiles_02_01.png","UE409":"smiles/smiles_02_02.png","UE40E":"smiles/smiles_02_03.png","UE402":"smiles/smiles_02_04.png","UE108":"smiles/smiles_02_05.png","UE403":"smiles/smiles_02_06.png","UE058":"smiles/smiles_02_07.png","UE407":"smiles/smiles_02_08.png","UE401":"smiles/smiles_02_09.png","UE40F":"smiles/smiles_02_10.png","UE40B":"smiles/smiles_02_11.png","UE406":"smiles/smiles_03_01.png","UE413":"smiles/smiles_03_02.png","UE411":"smiles/smiles_03_03.png","UE412":"smiles/smiles_03_04.png","UE410":"smiles/smiles_03_05.png","UE107":"smiles/smiles_03_06.png","UE059":"smiles/smiles_03_07.png","UE416":"smiles/smiles_03_08.png","UE408":"smiles/smiles_03_09.png","UE40C":"smiles/smiles_03_10.png","UE11A":"smiles/smiles_03_11.png","UE10C":"smiles/smiles_04_01.png","UE32C":"smiles/smiles_04_02.png","UE32A":"smiles/smiles_04_03.png","UE32D":"smiles/smiles_04_04.png","UE328":"smiles/smiles_04_05.png","UE32B":"smiles/smiles_04_06.png","UE022":"smiles/smiles_04_07.png","UE023":"smiles/smiles_04_08.png","UE327":"smiles/smiles_04_09.png","UE329":"smiles/smiles_04_10.png","UE32E":"smiles/smiles_04_11.png","UE335":"smiles/smiles_05_01.png","UE334":"smiles/smiles_05_02.png","UE337":"smiles/smiles_05_03.png","UE336":"smiles/smiles_05_04.png","UE13C":"smiles/smiles_05_05.png","UE330":"smiles/smiles_05_06.png","UE331":"smiles/smiles_05_07.png","UE326":"smiles/smiles_05_08.png","UE03E":"smiles/smiles_05_09.png","UE11D":"smiles/smiles_05_10.png","UE05A":"smiles/smiles_05_11.png","UE00E":"smiles/smiles_06_01.png","UE421":"smiles/smiles_06_02.png","UE420":"smiles/smiles_06_03.png","UE00D":"smiles/smiles_06_04.png","UE010":"smiles/smiles_06_05.png","UE011":"smiles/smiles_06_06.png","UE41E":"smiles/smiles_06_07.png","UE012":"smiles/smiles_06_08.png","UE422":"smiles/smiles_06_09.png","UE22E":"smiles/smiles_06_10.png","UE22F":"smiles/smiles_06_11.png","UE231":"smiles/smiles_07_01.png","UE230":"smiles/smiles_07_02.png","UE427":"smiles/smiles_07_03.png","UE41D":"smiles/smiles_07_04.png","UE00F":"smiles/smiles_07_05.png","UE41F":"smiles/smiles_07_06.png","UE14C":"smiles/smiles_07_07.png","UE201":"smiles/smiles_07_08.png","UE115":"smiles/smiles_07_09.png","UE428":"smiles/smiles_07_10.png","UE51F":"smiles/smiles_07_11.png","UE429":"smiles/smiles_08_01.png","UE424":"smiles/smiles_08_02.png","UE423":"smiles/smiles_08_03.png","UE253":"smiles/smiles_08_04.png","UE426":"smiles/smiles_08_05.png","UE111":"smiles/smiles_08_06.png","UE425":"smiles/smiles_08_07.png","UE31E":"smiles/smiles_08_08.png","UE31F":"smiles/smiles_08_09.png","UE31D":"smiles/smiles_08_10.png","UE001":"smiles/smiles_08_11.png","UE002":"smiles/smiles_09_01.png","UE005":"smiles/smiles_09_02.png","UE004":"smiles/smiles_09_03.png","UE51A":"smiles/smiles_09_04.png","UE519":"smiles/smiles_09_05.png","UE518":"smiles/smiles_09_06.png","UE515":"smiles/smiles_09_07.png","UE516":"smiles/smiles_09_08.png","UE517":"smiles/smiles_09_09.png","UE51B":"smiles/smiles_09_10.png","UE152":"smiles/smiles_09_11.png","UE04E":"smiles/smiles_10_01.png","UE51C":"smiles/smiles_10_02.png","UE51E":"smiles/smiles_10_03.png","UE11C":"smiles/smiles_10_04.png","UE536":"smiles/smiles_10_05.png","UE003":"smiles/smiles_10_06.png","UE41C":"smiles/smiles_10_07.png","UE41B":"smiles/smiles_10_08.png","UE419":"smiles/smiles_10_09.png","UE41A":"smiles/smiles_10_10.png","UE04A":"flowers/flowers_01_01.png","UE04B":"flowers/flowers_01_02.png","UE049":"flowers/flowers_01_03.png","UE048":"flowers/flowers_01_04.png","UE04C":"flowers/flowers_01_05.png","UE13D":"flowers/flowers_01_06.png","UE443":"flowers/flowers_01_07.png","UE43E":"flowers/flowers_01_08.png","UE04F":"flowers/flowers_01_09.png","UE052":"flowers/flowers_01_10.png","UE053":"flowers/flowers_01_11.png","UE524":"flowers/flowers_02_01.png","UE52C":"flowers/flowers_02_02.png","UE52A":"flowers/flowers_02_03.png","UE531":"flowers/flowers_02_04.png","UE050":"flowers/flowers_02_05.png","UE527":"flowers/flowers_02_06.png","UE051":"flowers/flowers_02_07.png","UE10B":"flowers/flowers_02_08.png","UE52B":"flowers/flowers_02_09.png","UE52F":"flowers/flowers_02_10.png","UE109":"flowers/flowers_02_11.png","UE528":"flowers/flowers_03_01.png","UE01A":"flowers/flowers_03_02.png","UE134":"flowers/flowers_03_03.png","UE530":"flowers/flowers_03_04.png","UE529":"flowers/flowers_03_05.png","UE526":"flowers/flowers_03_06.png","UE52D":"flowers/flowers_03_07.png","UE521":"flowers/flowers_03_08.png","UE523":"flowers/flowers_03_09.png","UE52E":"flowers/flowers_03_10.png","UE055":"flowers/flowers_03_11.png","UE525":"flowers/flowers_04_01.png","UE10A":"flowers/flowers_04_02.png","UE522":"flowers/flowers_04_03.png","UE019":"flowers/flowers_04_04.png","UE054":"flowers/flowers_04_05.png","UE520":"flowers/flowers_04_06.png","UE306":"flowers/flowers_04_07.png","UE030":"flowers/flowers_04_08.png","UE304":"flowers/flowers_04_09.png","UE110":"flowers/flowers_04_10.png","UE032":"flowers/flowers_04_11.png","UE305":"flowers/flowers_05_01.png","UE303":"flowers/flowers_05_02.png","UE118":"flowers/flowers_05_03.png","UE447":"flowers/flowers_05_04.png","UE119":"flowers/flowers_05_05.png","UE307":"flowers/flowers_05_06.png","UE308":"flowers/flowers_05_07.png","UE444":"flowers/flowers_05_08.png","UE441":"flowers/flowers_05_09.png","UE436":"bells/bells_01_01.png","UE437":"bells/bells_01_02.png","UE438":"bells/bells_01_03.png","UE43A":"bells/bells_01_04.png","UE439":"bells/bells_01_05.png","UE43B":"bells/bells_01_06.png","UE117":"bells/bells_01_07.png","UE440":"bells/bells_01_08.png","UE442":"bells/bells_01_09.png","UE446":"bells/bells_01_10.png","UE445":"bells/bells_01_11.png","UE11B":"bells/bells_02_01.png","UE448":"bells/bells_02_02.png","UE033":"bells/bells_02_03.png","UE112":"bells/bells_02_04.png","UE325":"bells/bells_02_05.png","UE312":"bells/bells_02_06.png","UE310":"bells/bells_02_07.png","UE126":"bells/bells_02_08.png","UE127":"bells/bells_02_09.png","UE008":"bells/bells_02_10.png","UE03D":"bells/bells_02_11.png","UE00C":"bells/bells_03_01.png","UE12A":"bells/bells_03_02.png","UE00A":"bells/bells_03_03.png","UE00B":"bells/bells_03_04.png","UE009":"bells/bells_03_05.png","UE316":"bells/bells_03_06.png","UE129":"bells/bells_03_07.png","UE141":"bells/bells_03_08.png","UE142":"bells/bells_03_09.png","UE317":"bells/bells_03_10.png","UE128":"bells/bells_03_11.png","UE14B":"bells/bells_04_01.png","UE211":"bells/bells_04_02.png","UE114":"bells/bells_04_03.png","UE145":"bells/bells_04_04.png","UE144":"bells/bells_04_05.png","UE03F":"bells/bells_04_06.png","UE313":"bells/bells_04_07.png","UE116":"bells/bells_04_08.png","UE10F":"bells/bells_04_09.png","UE104":"bells/bells_04_10.png","UE103":"bells/bells_04_11.png","UE101":"bells/bells_05_01.png","UE102":"bells/bells_05_02.png","UE13F":"bells/bells_05_03.png","UE140":"bells/bells_05_04.png","UE11F":"bells/bells_05_05.png","UE12F":"bells/bells_05_06.png","UE031":"bells/bells_05_07.png","UE30E":"bells/bells_05_08.png","UE311":"bells/bells_05_09.png","UE113":"bells/bells_05_10.png","UE30F":"bells/bells_05_11.png","UE13B":"bells/bells_06_01.png","UE42B":"bells/bells_06_02.png","UE42A":"bells/bells_06_03.png","UE018":"bells/bells_06_04.png","UE016":"bells/bells_06_05.png","UE015":"bells/bells_06_06.png","UE014":"bells/bells_06_07.png","UE42C":"bells/bells_06_08.png","UE42D":"bells/bells_06_09.png","UE017":"bells/bells_06_10.png","UE013":"bells/bells_06_11.png","UE20E":"bells/bells_07_01.png","UE20C":"bells/bells_07_02.png","UE20F":"bells/bells_07_03.png","UE20D":"bells/bells_07_04.png","UE131":"bells/bells_07_05.png","UE12B":"bells/bells_07_06.png","UE130":"bells/bells_07_07.png","UE12D":"bells/bells_07_08.png","UE324":"bells/bells_07_09.png","UE301":"bells/bells_07_10.png","UE148":"bells/bells_07_11.png","UE502":"bells/bells_08_01.png","UE03C":"bells/bells_08_02.png","UE30A":"bells/bells_08_03.png","UE042":"bells/bells_08_04.png","UE040":"bells/bells_08_05.png","UE041":"bells/bells_08_06.png","UE12C":"bells/bells_08_07.png","UE007":"bells/bells_08_08.png","UE31A":"bells/bells_08_09.png","UE13E":"bells/bells_08_10.png","UE31B":"bells/bells_08_11.png","UE006":"bells/bells_09_01.png","UE302":"bells/bells_09_02.png","UE319":"bells/bells_09_03.png","UE321":"bells/bells_09_04.png","UE322":"bells/bells_09_05.png","UE314":"bells/bells_09_06.png","UE503":"bells/bells_09_07.png","UE10E":"bells/bells_09_08.png","UE318":"bells/bells_09_09.png","UE43C":"bells/bells_09_10.png","UE11E":"bells/bells_09_11.png","UE323":"bells/bells_10_01.png","UE31C":"bells/bells_10_02.png","UE034":"bells/bells_10_03.png","UE035":"bells/bells_10_04.png","UE045":"bells/bells_10_05.png","UE338":"bells/bells_10_06.png","UE047":"bells/bells_10_07.png","UE30C":"bells/bells_10_08.png","UE044":"bells/bells_10_09.png","UE30B":"bells/bells_10_10.png","UE043":"bells/bells_10_11.png","UE120":"bells/bells_11_01.png","UE33B":"bells/bells_11_02.png","UE33F":"bells/bells_11_03.png","UE341":"bells/bells_11_04.png","UE34C":"bells/bells_11_05.png","UE344":"bells/bells_11_06.png","UE342":"bells/bells_11_07.png","UE33D":"bells/bells_11_08.png","UE33E":"bells/bells_11_09.png","UE340":"bells/bells_11_10.png","UE34D":"bells/bells_11_11.png","UE339":"bells/bells_12_01.png","UE147":"bells/bells_12_02.png","UE343":"bells/bells_12_03.png","UE33C":"bells/bells_12_04.png","UE33A":"bells/bells_12_05.png","UE43F":"bells/bells_12_06.png","UE34B":"bells/bells_12_07.png","UE046":"bells/bells_12_08.png","UE345":"bells/bells_12_09.png","UE346":"bells/bells_12_10.png","UE348":"bells/bells_12_11.png","UE347":"bells/bells_13_01.png","UE34A":"bells/bells_13_02.png","UE349":"bells/bells_13_03.png","UE036":"cars/cars_01_01.png","UE157":"cars/cars_01_02.png","UE038":"cars/cars_01_03.png","UE153":"cars/cars_01_04.png","UE155":"cars/cars_01_05.png","UE14D":"cars/cars_01_06.png","UE156":"cars/cars_01_07.png","UE501":"cars/cars_01_08.png","UE158":"cars/cars_01_09.png","UE43D":"cars/cars_01_10.png","UE037":"cars/cars_01_11.png","UE504":"cars/cars_02_01.png","UE44A":"cars/cars_02_02.png","UE146":"cars/cars_02_03.png","UE154":"cars/cars_02_04.png","UE505":"cars/cars_02_05.png","UE506":"cars/cars_02_06.png","UE122":"cars/cars_02_07.png","UE508":"cars/cars_02_08.png","UE509":"cars/cars_02_09.png","UE03B":"cars/cars_02_10.png","UE04D":"cars/cars_02_11.png","UE449":"cars/cars_03_01.png","UE44B":"cars/cars_03_02.png","UE51D":"cars/cars_03_03.png","UE44C":"cars/cars_03_04.png","UE124":"cars/cars_03_05.png","UE121":"cars/cars_03_06.png","UE433":"cars/cars_03_07.png","UE202":"cars/cars_03_08.png","UE135":"cars/cars_03_09.png","UE01C":"cars/cars_03_10.png","UE01D":"cars/cars_03_11.png","UE10D":"cars/cars_04_01.png","UE136":"cars/cars_04_02.png","UE42E":"cars/cars_04_03.png","UE01B":"cars/cars_04_04.png","UE15A":"cars/cars_04_05.png","UE159":"cars/cars_04_06.png","UE432":"cars/cars_04_07.png","UE430":"cars/cars_04_08.png","UE431":"cars/cars_04_09.png","UE42F":"cars/cars_04_10.png","UE01E":"cars/cars_04_11.png","UE039":"cars/cars_05_01.png","UE435":"cars/cars_05_02.png","UE01F":"cars/cars_05_03.png","UE125":"cars/cars_05_04.png","UE03A":"cars/cars_05_05.png","UE14E":"cars/cars_05_06.png","UE252":"cars/cars_05_07.png","UE137":"cars/cars_05_08.png","UE209":"cars/cars_05_09.png","UE133":"cars/cars_05_10.png","UE150":"cars/cars_05_11.png","UE320":"cars/cars_06_01.png","UE123":"cars/cars_06_02.png","UE132":"cars/cars_06_03.png","UE143":"cars/cars_06_04.png","UE50B":"cars/cars_06_05.png","UE514":"cars/cars_06_06.png","UE513":"cars/cars_06_07.png","UE50C":"cars/cars_06_08.png","UE50D":"cars/cars_06_09.png","UE511":"cars/cars_06_10.png","UE50F":"cars/cars_06_11.png","UE512":"cars/cars_07_01.png","UE510":"cars/cars_07_02.png","UE50E":"cars/cars_07_03.png","UE21C":"numbers/numbers_01_01.png","UE21D":"numbers/numbers_01_02.png","UE21E":"numbers/numbers_01_03.png","UE21F":"numbers/numbers_01_04.png","UE220":"numbers/numbers_01_05.png","UE221":"numbers/numbers_01_06.png","UE222":"numbers/numbers_01_07.png","UE223":"numbers/numbers_01_08.png","UE224":"numbers/numbers_01_09.png","UE225":"numbers/numbers_01_10.png","UE210":"numbers/numbers_01_11.png","UE232":"numbers/numbers_02_01.png","UE233":"numbers/numbers_02_02.png","UE235":"numbers/numbers_02_03.png","UE234":"numbers/numbers_02_04.png","UE236":"numbers/numbers_02_05.png","UE237":"numbers/numbers_02_06.png","UE238":"numbers/numbers_02_07.png","UE239":"numbers/numbers_02_08.png","UE23B":"numbers/numbers_02_09.png","UE23A":"numbers/numbers_02_10.png","UE23D":"numbers/numbers_02_11.png","UE23C":"numbers/numbers_03_01.png","UE24D":"numbers/numbers_03_02.png","UE212":"numbers/numbers_03_03.png","UE24C":"numbers/numbers_03_04.png","UE213":"numbers/numbers_03_05.png","UE214":"numbers/numbers_03_06.png","UE507":"numbers/numbers_03_07.png","UE203":"numbers/numbers_03_08.png","UE20B":"numbers/numbers_03_09.png","UE22A":"numbers/numbers_03_10.png","UE22B":"numbers/numbers_03_11.png","UE226":"numbers/numbers_04_01.png","UE227":"numbers/numbers_04_02.png","UE22C":"numbers/numbers_04_03.png","UE22D":"numbers/numbers_04_04.png","UE215":"numbers/numbers_04_05.png","UE216":"numbers/numbers_04_06.png","UE217":"numbers/numbers_04_07.png","UE218":"numbers/numbers_04_08.png","UE228":"numbers/numbers_04_09.png","UE151":"numbers/numbers_04_10.png","UE138":"numbers/numbers_04_11.png","UE139":"numbers/numbers_05_01.png","UE13A":"numbers/numbers_05_02.png","UE208":"numbers/numbers_05_03.png","UE14F":"numbers/numbers_05_04.png","UE20A":"numbers/numbers_05_05.png","UE434":"numbers/numbers_05_06.png","UE309":"numbers/numbers_05_07.png","UE315":"numbers/numbers_05_08.png","UE30D":"numbers/numbers_05_09.png","UE207":"numbers/numbers_05_10.png","UE229":"numbers/numbers_05_11.png","UE206":"numbers/numbers_06_01.png","UE205":"numbers/numbers_06_02.png","UE204":"numbers/numbers_06_03.png","UE12E":"numbers/numbers_06_04.png","UE250":"numbers/numbers_06_05.png","UE251":"numbers/numbers_06_06.png","UE14A":"numbers/numbers_06_07.png","UE149":"numbers/numbers_06_08.png","UE23F":"numbers/numbers_06_09.png","UE240":"numbers/numbers_06_10.png","UE241":"numbers/numbers_06_11.png","UE242":"numbers/numbers_07_01.png","UE243":"numbers/numbers_07_02.png","UE244":"numbers/numbers_07_03.png","UE245":"numbers/numbers_07_04.png","UE246":"numbers/numbers_07_05.png","UE247":"numbers/numbers_07_06.png","UE248":"numbers/numbers_07_07.png","UE249":"numbers/numbers_07_08.png","UE24A":"numbers/numbers_07_09.png","UE24B":"numbers/numbers_07_10.png","UE23E":"numbers/numbers_07_11.png","UE532":"numbers/numbers_08_01.png","UE533":"numbers/numbers_08_02.png","UE534":"numbers/numbers_08_03.png","UE535":"numbers/numbers_08_04.png","UE21A":"numbers/numbers_08_05.png","UE219":"numbers/numbers_08_06.png","UE21B":"numbers/numbers_08_07.png","UE02F":"numbers/numbers_08_08.png","UE024":"numbers/numbers_08_09.png","UE025":"numbers/numbers_08_10.png","UE026":"numbers/numbers_08_11.png","UE027":"numbers/numbers_09_01.png","UE028":"numbers/numbers_09_02.png","UE029":"numbers/numbers_09_03.png","UE02A":"numbers/numbers_09_04.png","UE02B":"numbers/numbers_09_05.png","UE02C":"numbers/numbers_09_06.png","UE02D":"numbers/numbers_09_07.png","UE02E":"numbers/numbers_09_08.png","UE332":"numbers/numbers_09_09.png","UE333":"numbers/numbers_09_10.png","UE24E":"numbers/numbers_09_11.png","UE24F":"numbers/numbers_10_01.png","UE537":"numbers/numbers_10_02.png"};
+            $("#viewbtn").click(function () {
+                var tempSmile= $("#templatecontent").val().replace(/\[(U\w{4})\]/g,function(matched,index,originalText){
+                    for(var i=0;i<smileData.length;i++){
+                        if(smileData[i].code==matched){
+                            matched.replace(/\[|\]/g,"")
+                            return '<img src="../../static/dmp/images/create/'+smileData[i].img+'" />';
+                        }
+                    }
+                })
+
+                $(".viewdiv").html(tempSmile)
+            });
+
+            $(".select-moveleft").click(function(){
+                var target=$($(this).data("target"));
+                var result=$($(this).data("result"));
+                if(!target.find("option:selected").length){
+                    return false;
+                }
+                if(!result.find("option[value="+target.val()+"]").length){
+                    result.append('<option value="'+target.val()+'">'+target.find("option:selected").text()+'</option>')
+                    target.find("option:selected").remove();
+                }
+            });
+            $(".select-moveleftall").click(function(){
+                var target=$($(this).data("target"));
+                var result=$($(this).data("result"));
+                result.append(target.html())
+                target.html("")
+            });
+            $(".select-moveright").click(function(){
+                var target=$($(this).data("target"));
+                var result=$($(this).data("result"));
+                if(!result.find("option:selected").length){
+                    return false;
+                }
+                if(!target.find("option[value="+result.val()+"]").length){
+                    target.append('<option value="'+result.val()+'">'+result.find("option:selected").text()+'</option>')
+                    result.find("option:selected").remove();
+                }
+            });
+            $(".select-moverightall").click(function(){
+                var target=$($(this).data("target"));
+                var result=$($(this).data("result"));
+                target.append(result.html())
+                result.html("")
+            });
+
+        }();
+    </script>
+</body>
+</html>

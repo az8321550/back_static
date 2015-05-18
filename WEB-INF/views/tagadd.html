@@ -1,0 +1,995 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/tag.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/select2/select2.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/jquery-autocomplete/autocomplete.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../../static/dmp/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li class="active"><a href="taglist.html">标签管理</a></li>
+            <li><a href="tagmanage.html">指标管理</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="list.html">营销中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li class="active">新建会员标签</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content-title clearfix mb20">
+                        <div class="title fontblue">新建会员标签</div>
+                    </div>
+                    <form class="form-horizontal" id="main-form">
+                        <div class="group-title mt0 mb20">基本信息</div>
+                        <div class="form-group">
+
+                            <div class="valicon">
+                                <label class="col-md-1 control-label" for="tagname">标签名称：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" name="tagname" id="tagname" placeholder="标签名称" />
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                            <div class="valicon">
+                                <label class="col-md-1 control-label" for="statu">状态：</label>
+                                <div class="col-md-2">
+                                    <select class="form-control" id="statu" name="statu">
+                                        <option>启用</option>
+                                        <option>停用</option>
+                                    </select>
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="tagtype">标签分类：</label>
+                            <div class="col-md-3 re" id="movecon">
+                                <input readonly type="text" class="form-control readonly" id="tagtype" name="tagtype" data-toggle="con" data-target="#movecon" placeholder="请选择" />
+                                <span class="required">*</span>
+                                <div class="movecontent" style="left:15px;top:0;">
+                                    <div class="clearfix">
+                                        <div class="moveinput">
+                                            <input type="text" class="form-control" id="newtype" placeholder="搜索或新建标签分类" />
+                                        </div>
+                                        <div class="movebtn">
+                                            <button class="btn btn-warning" disabled type="button" id="newtypebtn">新建</button>
+                                        </div>
+                                    </div>
+                                    <div class="movetagcon" id="movetagcon">
+                                        <div class="tagdir clearfix"><div class="tagdir-value">固有标签123</div><i class="icon-edit"></i></div>
+                                        <div class="tagdir clearfix"><div class="tagdir-value">自建标签</div><i class="icon-edit"></i></div>
+                                        <div class="tagdir clearfix"><div class="tagdir-value">固有标签</div><i class="icon-edit"></i></div>
+                                        <div class="tagdir clearfix"><div class="tagdir-value">自建标签</div><i class="icon-edit"></i></div>
+                                        <div class="tagdir clearfix"><div class="tagdir-value">固有标签</div><i class="icon-edit"></i></div>
+                                        <div class="tagdir clearfix"><div class="tagdir-value">自建标签</div><i class="icon-edit"></i></div>
+                                        <div class="tagdir clearfix"><div class="tagdir-value">固有标签</div><i class="icon-edit"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="begintime">有效期：</label>
+                            <div class="col-md-3 begincon">
+                                <input type="text" id="begintime" name="begintime" class="form-control" />
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" id="endtime" name="endtime" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group border-bottom">
+                            <label class="col-md-1 control-label" for="depart">分配部门：</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="depart" name="depart" multiple>
+                                    <option value="1" data-more="总公司/唯品会/产品设计及运营">产品设计及运营</option>
+                                    <option value="2" data-more="总公司/唯品会/CRM管理部">CRM管理部</option>
+                                </select>
+                                <span class="required">*</span>
+                            </div>
+                        </div>
+                        <div class="group-title">对应指标值</div>
+                        <div class="clearfix border-bottom">
+                            <div class="col-md-10 col-nd-12">
+                                <div class="tag-hd">
+                                    <div class="tag-bd clearfix">
+                                        <div class="tag-bd-search">
+                                            <input type="text" class="form-control" id="search-text" placeholder="搜索" />
+                                        </div>
+                                        <div class="tag-bd-tag">
+                                            <ul id="tag-tab-nav" class="nav nav-tabs">
+                                                <li class="active"><a href="#tab1" data-toggle="tab">基本项<span>3</span></a></li>
+                                                <li><a href="#tab2" data-toggle="tab">行为项<span>0</span></a></li>
+                                                <li><a href="#tab3" data-toggle="tab">数值项<span>0</span></a></li>
+                                                <li><a href="#tab4" data-toggle="tab">安克诚<span>0</span></a></li>
+                                                <li class="not"><a href="#tab-search" id="tab-search-a" data-toggle="tab">搜索结果</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab1">
+                                        <div class="tag-con">
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">11111：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <input type="text" id="timepickrange" class="form-control width200 pull-left mr15 timepickrange" />
+                                                        <input type="text" id="timepickrange2" class="form-control width200 pull-left timepickrange2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">常用设备：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <input type="text" readonly id="timepickrange" class="form-control width200 pull-left mr15 timepickrange" />
+                                                        <input type="text" readonly id="timepickrange2" class="form-control width200 pull-left timepickrange2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">常用设备：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="pull-left re">
+                                                        <i class="icon-remove"></i>
+                                                        <input type="text" placeholder="请搜索" class="form-control width200 pull-left auto-complete mr20 mb10" />
+                                                    </div>
+                                                    <i class="icon-plus"></i>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">常用设备：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <input type="text" placeholder="请搜索" class="form-control width200 pull-left auto-complete mr20 mb10" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">上下限：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <input type="text" placeholder="请搜索" class="form-control width200 pull-left mr15 mb10" />
+                                                        <input type="text" placeholder="请搜索" class="form-control width200 pull-left mb10" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">常用设备：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>PC</span>
+                                                        <span>移动</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">性别(<i>单选</i>)：</strong>
+                                                <div data-multi="true" class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>男</span>
+                                                        <span>女</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">年龄段：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span data-value="aa">19-24岁</span>
+                                                        <span data-value="bb">25-29岁</span>
+                                                        <span>30-34岁</span>
+                                                        <span>35-44岁</span>
+                                                        <span>45-59岁</span>
+                                                        <span>60岁以上</span>
+                                                        <span>19-24岁</span>
+                                                        <span>25-29岁</span>
+                                                        <span>30-34岁</span>
+                                                        <span>35-44岁</span>
+                                                        <span>45-59岁</span>
+                                                        <span>60岁以上</span>
+                                                        <span>19-24岁</span>
+                                                        <span>25-29岁</span>
+                                                        <span>30-34岁</span>
+                                                        <span>35-44岁</span>
+                                                        <span>45-59岁</span>
+                                                        <span>60岁以上</span>
+                                                        <span>19-24岁</span>
+                                                        <span>25-29岁</span>
+                                                        <span>30-34岁</span>
+                                                        <span>35-44岁</span>
+                                                        <span>45-59岁</span>
+                                                        <span>60岁以上</span>
+                                                        <span>19-24岁</span>
+                                                        <span>25-29岁</span>
+                                                        <span>30-34岁</span>
+                                                        <span>35-44岁</span>
+                                                        <span>45-59岁</span>
+                                                        <span>60岁以上</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">
+                                                    所在区域(<i>单选</i>)               ：                    
+                                                </strong>
+                                                <div data-multi="true" class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <em class="tag-self">自定义</em>
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                    <div class="tag-hidecon clearfix arrow-left">
+                                                        <input type="text" placeholder="上限" class="timepickrange form-control width200 pull-left mr15">
+                                                        <input type="text" placeholder="下限" class="timepickrange2 form-control width200 pull-left">
+                                                        <em class="tag-other-back">返回预设</em>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>111</span>
+                                                        <span>222</span>
+                                                        <span>333</span>
+                                                        <span>444</span>
+                                                        <span>555</span>
+                                                        <span>666</span>
+                                                        <span>777</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">设备：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>高端机型</span>
+                                                        <span>中端机型</span>
+                                                        <span>低端机型</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        <div class="tag-con">
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">购物会员：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>是</span>
+                                                        <span>否</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">会员等级（<i>单选</i>)：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span id="test-tag">铁牌会员</span>
+                                                        <span>铜牌会员</span>
+                                                        <span>银牌会员</span>
+                                                        <span>金牌会员</span>
+                                                        <span>钻石会员</span>
+                                                        <span>皇冠会员</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">年龄段(<i>单选</i>)：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>19-24岁</span>
+                                                        <span>25-29岁</span>
+                                                        <span>30-34岁</span>
+                                                        <span>35-44岁</span>
+                                                        <span>45-59岁</span>
+                                                        <span>60岁以上</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">所在区域：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>华南</span>
+                                                        <span>华东</span>
+                                                        <span>华北</span>
+                                                        <span>西南</span>
+                                                        <span>东北</span>
+                                                        <span>西北</span>
+                                                        <span>港澳台</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">设备：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>高端机型</span>
+                                                        <span>中端机型</span>
+                                                        <span>低端机型</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab3">
+                                        <div class="tag-con">
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">产品特性（<i>单选</i>）：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>健康舒适</span>
+                                                        <span>有机天然</span>
+                                                        <span>怡人芬芳</span>
+                                                        <span>保湿滋润</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">会员等级（<i>单选</i>）：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>铁牌会员</span>
+                                                        <span>铜牌会员</span>
+                                                        <span>银牌会员</span>
+                                                        <span>金牌会员</span>
+                                                        <span>钻石会员</span>
+                                                        <span>皇冠会员</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">渠道标识：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>唯一访问</span>
+                                                        <span>多访问</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">客户类别：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>新客</span>
+                                                        <span>老客</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab4">
+                                        <div class="tag-con">
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">家庭状况（<i>单选</i>）：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>未婚</span>
+                                                        <span>已婚</span>
+                                                        <span>未育</span>
+                                                        <span>已育</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <strong class="tag-con-title">售卖频道（<i>单选</i>）：</strong>
+                                                <div class="tag-con-item clearfix">
+                                                    <div class="tag-true">
+                                                        <span>特卖会</span>
+                                                        <span>奢侈品</span>
+                                                        <span>唯品团</span>
+                                                        <span>美妆</span>
+                                                        <span>移动端</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="tab-search" class="tab-pane">
+                                        <div class="tag-con">
+
+                                        </div>
+                                    </div>
+                                    <div class="tag-all clearfix">
+                                        <div class="tag-all-title">自定义： 【 <span id="customStr"></span> 】用户</div>
+                                        <div class="tag-num" id="tag-num">
+                                            目标会员：
+                                            <span>？</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 submit pb20 pt20 mybtn">
+                                <button class="btn btn-success" type="submit" id="btn-create">新建</button>
+                                <button class="btn btn-default" type="button">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/dmp/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../../static/dmp/plugins/select2/select2.min.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap-bootbox/bootbox.js"></script>
+    <script src="../../static/dmp/plugins/jquery-autocomplete/jquery.autocomplete.min.js"></script>
+    <script src="../../static/dmp/plugins/jquery-mockjax/jquery.mockjax.js"></script>
+    
+    <script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        !function () {
+            $.mockjax({
+                url: "search.php",
+                type: "get",
+                responseTime: 0,
+                responseText: JSON.stringify({
+                    suggestions: ['Liberia', 'Libyan Arab Jamahiriya', 'Liechtenstein', 'Lithuania', 'Liberia', 'Libyan Arab Jamahiriya', 'Liechtenstein', 'Lithuania', 'Liberia', 'Libyan Arab Jamahiriya', 'Liechtenstein', 'Lithuania', 'Liberia', 'Libyan Arab Jamahiriya', 'Liechtenstein', 'Lithuania', 'Liberia', 'Libyan Arab Jamahiriya', 'Liechtenstein', 'Lithuania']
+                })
+            });
+            var initAjax = function (ele) {
+                $(ele).parent().parent().parent().data("value");
+                $(ele).autocomplete({
+                    serviceUrl: 'search.php',
+                    onSelect: function (suggestion) {
+                        $(this).trigger("tag_count");
+                    }
+                });
+            }
+            initAjax(".auto-complete");
+
+            $(".timepickrange").datetimepicker().next().datetimepicker();
+
+            $('.timepickrange').on('changeDate', function () {
+                var _this = $(this);
+                _this.next().datetimepicker({
+                    setStartDate: new Date(_this.val())
+                }).focus();
+            }).next().on('changeDate', function () {
+                $(this).trigger("tag_count");
+            });;
+
+
+            $("#begintime,#endtime").datetimepicker();
+
+            $("#main-form").validate({
+                rules: {
+                    //tagname: {
+                    //    required: true
+                    //},
+                    //depart: {
+                    //    required: true
+                    //}
+                },
+                messages: {
+                    tagname: {
+                        required: "请输入标签名称"
+                    },
+                    depart: {
+                        required: "请选择部门"
+                    }
+                },
+                submitHandler: function (form) {
+                    var tDmpTagNorms = [];
+
+
+                    var tempJson = {
+                        "tagname": $("#tagname").val(),
+                        "statu": $("#statu").val(),
+                        "tagtype": $("#tagtype").val(),
+                        "begintime": $("#begintime").val(),
+                        "endtime": $("#endtime").val(),
+                        "depart": $("#depart").val(),
+                        "tDmpTagNorms": [
+
+                        ]
+                    };
+
+                    $(".tag-con>.clearfix").each(function (index, ele) {
+                        var tempInput=$(ele).find("input");
+                        if (tempInput.length && (tempInput.val() || tempInput.last().val())) {
+                            var tempResult = [];
+                            $(ele).find("input").each(function (index, ele) {
+                                tempResult.push($(ele).val());
+                            });
+                            tempJson.tDmpTagNorms.push('{"normId":"123","normValueIds":"' + tempResult.join(",") + '"}');
+                        }else if ($(ele).find("span.select").length) {
+                            var tempResult = [];
+                            $(ele).find("span.select").each(function (index, ele) {
+                                          tempResult.push($(ele).data("value"));
+                            });
+                            tempJson.tDmpTagNorms.push('{"normId":"123","normValueIds":"' + tempResult.join(",") + '"}');
+                        }
+                    });
+
+                    console.log(tempJson);
+
+                }
+            });
+
+            $(document).on("click", ".icon-plus", function () {
+                var newEle = $('<div class="pull-left re"><i class="icon-remove"></i><input placeholder="请搜索" type="text" class="form-control width200 auto-complete pull-left mr20 mb10" /></div>');
+                $(this).before(newEle);
+                initAjax(newEle.find("input"));
+            });
+
+            $(document).on("click", ".icon-remove", function () {
+                if ($(this).parent().parent().find(".pull-left.re").length == 1) {
+                    return;
+                }
+                var tempNode = $(this).parent().parent().find("input");
+                $(this).parent().remove();
+                tempNode.trigger("tag_count");
+            });
+
+
+            //双击选参数
+            $(document).on("dblclick", ".multi-item", function () {
+                var argu = $(this).data("value");
+                if (argu) {
+                    var textarea = $("#templatecontent");
+                    textarea.val(textarea.val() + argu);
+                }
+            });
+
+            $(document).on("click", ".multi-item", function () {
+                if ($(this).data("value")) {
+                    $(this).siblings().removeClass("active").end().addClass("active");
+                }
+            });
+
+            $("#tmplbtn").click(function () {
+                if ($(".multi-item.active")) {
+                    var argu = $(".multi-item.active").data("value");
+                    if (argu) {
+                        $("#templatecontent").val(textarea.val() + argu);
+                    }
+                }
+            });
+
+            //选择标签
+            $(document).on("click", ".movetagcon .tagdir", function () {
+                $("#tagtype").val($(this).find(".tagdir-value").text());
+                app.hidecon($("#movecon"));
+                
+            });
+
+
+            //新建标签
+            $("#newtypebtn").click(function () {
+                $("#tagtype").val($("#newtype").val());
+                $("#newtype").val("");
+                app.hidecon($("#movecon"));
+            });
+
+            //修改标签
+            $(document).on("click", ".icon-edit", function () {
+                $(this).parent().prepend('<input type="text" value="' + $(this).siblings(".tagdir-value").text() + '" class="form-control tag-edit-input" /><i class="icon-ok"></i>').addClass("tag-edit");
+                return false;
+            });
+
+            //修改输入框点击事件
+            $(document).on("click", ".tag-edit-input", function () {
+                return false;
+            });
+
+            $(document).on("keydown", ".tag-edit-input", function (e) {
+                if (e.keyCode == 13) {
+                    return false;
+                }
+            });
+
+            $(document).on("click", ".icon-ok", function (e) {
+                $(this).siblings(".tagdir-value").text($(this).siblings(".tag-edit-input").val()).parent().removeClass("tag-edit");
+                $(this).siblings(".tag-edit-input").remove().end().remove();
+
+                return false;
+            });
+
+            $(document).on("blur", ".tag-con-item input", function () {
+                $(this).trigger("tag_count");
+            });
+            $(document).on("tag_count", ".tag-con-item input", function () {
+                var _this = $(this);
+                if (_this.val() == "0") {
+                    _this.val("").attr("placeholder", "请重新输入有效数字");
+                }
+                if (_this.val()) {
+                    var tempSelected = _this.parent().parent().siblings(".tag-con-title");
+                    if (!tempSelected.find(".icon").length) {
+                        tempSelected.prepend('<i class="icon icon-ok-sign"></i>');
+                    }
+                } else {
+                    if (_this.siblings("input").length == 0) {
+                        _this.parent().parent().parent().find(".icon").remove();
+                    }
+                    if (_this.siblings("input").val() == "") {
+                        _this.parent().parent().parent().find(".icon").remove();
+                    }
+                }
+
+                $("#tag-tab-nav").find("a[href=#" + _this.parents(".tab-pane").attr("id") + "] span").text(_this.parents(".tab-pane").find(".icon").length);
+                addCustomSpan();
+            });
+
+
+            $("#newtype").on("keyup", function (e) {
+                var _this = $(this);
+                $("#movetagcon").find(".tagdir").each(function (index, ele) {
+                    ele = $(ele).show();
+                    if (ele.text().indexOf(_this.val()) == -1) {
+                        ele.hide();
+                    }
+                });
+
+                var tempFlag = false;
+                $("#movetagcon .tagdir:visible").each(function (index, ele) {
+                    if ($(ele).text() == _this.val()) {
+                        tempFlag = true;
+                    }
+                });
+                if (tempFlag) {
+                    $("#newtypebtn").prop("disabled", "disabled");
+                } else {
+                    $("#newtypebtn").removeAttr("disabled");
+                }
+            });
+
+            $("#depart").select2({
+                formatResult: function (object) {
+                    return "<span style='color:#ff6600;margin-right:20px;'>" + object.text + "</span>" + "<span>" + $(object.element[0]).data("more") + "</span>";
+                }
+            });
+
+            //已选人数
+            $("#tag-num").click(function () {
+                //if (!$(".tag-con-item .icon-ok-sign").length) {
+                //    bootbox.alert("请先选择指标!");
+                //    return;
+                //}
+                var _this = $(this);
+                $.post("tagNum.html").success(function (result) {
+                    _this.find("span").text($.parseJSON(result).num);
+                });
+                _this.data("edit", "edit").find("span").html('统计中<i class="icon-spinner icon-spin" style="margin-left:5px;"></i>');
+            });
+
+            //已选人数恢复
+            var backChoseNum = function () {
+                $("#tag-num").find("span").text("？");
+            };
+
+            $(document).on("click", ".tag-con-item span", function () {
+                var _this = $(this);
+                if (_this.parent().parent().data("multi")) {
+                    $(this).siblings().removeClass("select").end().toggleClass("select");
+                }
+                else {
+                    $(this).toggleClass("select");
+                }
+                backChoseNum();
+                
+                tagIconSelected(_this);
+
+                addCustomSpan();
+            });
+
+            var tagIconSelected = function (_this) {
+                if (_this.parent().find(".select").length) {
+                    var tempSelected = _this.parent().parent().parent().find(".tag-con-title");
+                    if (!tempSelected.find(".icon").length) {
+                        _this.parent().parent().parent().find(".tag-con-title").prepend('<i class="icon icon-ok-sign"></i>');
+                    }
+                } else {
+                    _this.parent().parent().parent().find(".icon").remove();
+                }
+                var tempNum = _this.parents(".tab-pane").find(".icon").length;
+                if (tempNum) {
+                    $("#tag-tab-nav").find("a[href=#" + _this.parents(".tab-pane").attr("id") + "] span").text(tempNum).css("display", "inline-block");
+                } else {
+                    $("#tag-tab-nav").find("a[href=#" + _this.parents(".tab-pane").attr("id") + "] span").text(tempNum).hide();
+                }
+                
+            };
+
+            search_node = [];
+            active_node = 0;
+
+            $("#tag-tab-nav li:not(.not)").click(function () {
+                active_node = $(this).index();
+            });
+
+            //搜索
+            $("#search-text").bind("keyup", function (e) {
+                $("#tab-search .tag-con").html("");
+                var temp_text = $(this).val();
+                if (temp_text == "") {
+                    $("#tab-search-a").hide();
+                    $("#tag-tab-nav li").eq(active_node).find("a").click();
+                    return;
+                }
+                search_node.length = 0;
+                $(".tab-pane .clearfix .tag-con-title").each(function (index, ele) {
+                    var temp_node = $(ele);
+                    if (temp_node.text().indexOf(temp_text) != -1) {
+                        search_node.push(temp_node.parent());
+                    } else {
+                        //搜值中有没有符合条件的
+                        var flag = false;
+                        temp_node.next().find("span").each(function (index,ele2) {
+                            if ($(ele2).text().indexOf(temp_text) != -1) {
+                                flag = true;
+                                return false;
+                            }
+                        });
+                        if (flag) {
+                            search_node.push(temp_node.parent());
+                        }
+                    }
+                });
+
+                for (var i = 0; i < search_node.length; i++) {
+                    var tempNode = search_node[i].clone();
+                    $("#tab-search .tag-con").append(search_node[i].clone());
+                    if (search_node[i].find("input").length) {
+
+                        initAjax($("#tab-search .clearfix:last").find(".auto-complete"));
+
+                        $("#tab-search .clearfix:last").find(".timepickrange").datetimepicker().next().datetimepicker();
+
+                        $("#tab-search .clearfix:last").find(".timepickrange").on('changeDate', function () {
+                            $(this).next().datetimepicker().focus();
+                        }).next().on('changeDate', function () {
+                            $(this).trigger("keyup").trigger("tag_count");
+                        });
+
+                    }
+                }
+
+                $("#tab-search-a").css("display","inline-block").click();
+
+                
+            });
+            //$("#search-text").bind("keydown", function (e) {
+            //    if (e.which == 13) {
+            //        $(this).trigger("keyup");
+            //        return false;
+            //    }
+            //});
+
+            //搜索点击
+            $(document).on("click", "#tab-search .tag-true span", function () {
+                var temp_parent = $(this).parent().parent().parent();
+                search_node[temp_parent.index()].find("span").eq($(this).index()).click();
+            });
+
+            $(document).on("keyup", "#tab-search .tag-true input", function () {
+                var temp_parent = $(this).parent().parent().parent();
+                search_node[temp_parent.index()].find("input").eq($(this).index()).val($(this).val()).trigger("tag_count");
+            });
+
+            $(document).on("keyup", "#tab-search .tag-hidecon input", function () {
+                var temp_parent = $(this).parent().parent().parent();
+                search_node[temp_parent.index()].find("input").eq($(this).index()).val($(this).val()).trigger("tag_count");
+            });
+
+            $(document).on("click", "#tab-search .tag-self", function () {
+                var temp_parent = $(this).parent().parent().parent();
+                search_node[temp_parent.index()].find(".tag-self").click();
+            });
+
+            $(document).on("click", ".tag-self", function () {
+                var parent = $(this).parent().parent();
+                parent.find(".tag-hidecon").show();
+                parent.find(".tag-true").hide();
+            });
+
+            $(document).on("click", ".tag-other-back", function () {
+                var parent = $(this).parent().parent();
+                parent.find(".tag-hidecon").hide();
+                parent.find(".tag-true").show();
+            });
+
+
+            var addCustomSpan = function () {
+                var tempArr = [];
+                var tempArr2 = [];
+                $(".tab-pane:not(#tab-search) .icon-ok-sign").each(function (index, ele) {
+                    tempArr2.length = 0;
+                    tempArr.push("[");
+                    tempArr.push($(ele).parent().text().replace("(单选)", ""));
+                    var tempNode = $(ele).parent().siblings(),
+                        tempInput = tempNode.find("input");
+                    if (tempInput.length && (tempInput.first().val() || tempInput.last().val())) {
+                        if (tempInput.length == 2) {
+                            if (tempInput.first().val() && tempInput.last().val()) {
+                                tempInput.each(function (index, ele) {
+                                    if ($(ele).val()) {
+                                        tempArr2.push($(ele).val());
+                                    }
+                                });
+                            }
+                            if (tempInput.first().val() != "" && tempInput.last().val() == "") {
+                                tempArr2.push(">=" + tempInput.first().val());
+                            }
+                            if (tempInput.first().val() == "" && tempInput.last().val() != "") {
+                                tempArr2.push("<=" + tempInput.last().val());
+                            }
+                        } else {
+                            for (var i = 0; i < tempInput.length; i++) {
+                                tempArr2.push(tempInput.eq(i).val());
+                            }
+                        }
+                        
+                    } else {
+                        tempNode.find("span.select").each(function (index, ele) {
+                            tempArr2.push($(ele).text());
+                        });
+                    }
+                    tempArr.push(tempArr2.join("，"));
+                    tempArr.push("] ; ");
+                });
+                $("#customStr").html("").append(tempArr.join("")).parent().attr("title", tempArr.join(""));
+            };
+
+            console.log(new Date("1994-03-18 10:00").getDate());
+
+            //moment("1994-03-18 00:00:10").format("YYYY-MM-DD")
+
+        }();
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+.pager-bar {
+	float: right;
+	padding: 5px 10px 0 0;
+}
+.pager-info {
+	float: left;
+	font-size: 12px; 
+	padding-right: 20px;
+}
+.pager-first, .pager-prev, .pager-next, .pager-last,.pager-first-disabled, .pager-prev-disabled, .pager-next-disabled, .pager-last-disabled {
+	height: 16px;
+	width: 16px;
+	display: block;
+	float: left;
+	margin: 0 5px;
+}
+
+.pager-first, .pager-prev, .pager-next, .pager-last {
+	cursor: pointer;
+}
+
+.pager-first-disabled, .pager-prev-disabled, .pager-next-disabled, .pager-last-disabled {
+	cursor: default;
+}
+
+.pager-first {
+	background-image: url(../jmesa/images/table/firstPage.gif);
+}
+
+.pager-prev {
+	background-image: url(../jmesa/images/table/prevPage.gif);
+}
+
+.pager-next {
+	background-image: url(../jmesa/images/table/nextPage.gif);
+}
+
+.pager-last {
+	background-image: url(../jmesa/images/table/lastPage.gif);
+}
+
+.pager-first-disabled {
+	background-image: url(../jmesa/images/table/firstPageDisabled.gif);
+	cursor: default;
+}
+
+.pager-prev-disabled {
+	background-image: url(../jmesa/images/table/prevPageDisabled.gif);
+	cursor: default;
+}
+
+.pager-next-disabled {
+	background-image: url(../jmesa/images/table/nextPageDisabled.gif);
+	cursor: default;
+}
+
+.pager-last-disabled {
+	background-image: url(../jmesa/images/table/lastPageDisabled.gif);
+	cursor: default;
+}
+
+.error{color: Red; display: block; margin-left: 10px} 

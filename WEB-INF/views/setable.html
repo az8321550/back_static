@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/jquery-jqgrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/tagmanage.css" rel="stylesheet" />
+</head>
+<body>
+<div class="sider">
+    <div class="home-menu">
+        <a href="index.html">
+            <i class="icon icon-home"></i>
+        </a>
+    </div>
+    <div class="main-name">
+        数字营销平台
+    </div>
+    <div class="user clearfix">
+        <img src="../../static/dmp/images/header.png" />
+        Admin_Super
+    </div>
+    <ul class="menu">
+        <li><a href="taglist.html">标签管理</a></li>
+        <li class="active"><a href="tagmanage.html">指标管理</a></li>
+    </ul>
+    <ul class="menu set-menu">
+        <li><a href="list.html">营销中心</a></li>
+        <li><a href="tmplactive.html">模板中心</a></li>
+        <li><a href="waylist.html">渠道中心</a></li>
+    </ul>
+</div>
+<div class="content">
+    <div class="clearfix">
+        <div class="col-xs-12">
+            <div id="list-top">
+                <div class="breadcrumb-con">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                        <li><a href="#">常规业务</a></li>
+                        <li class="active">指标管理</li>
+                    </ol>
+                    <div class="search-con">
+                        <form>
+                            <input class="text" type="text" placeholder="快速检索" />
+                            <button class="button"><i class="icon icon-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content-title clearfix mb20">
+                    <span class="title fontblue">可配置项</span>
+                    <div class="group-small clearfix">
+                        <span class="title-small fontblue">消息类型</span>
+                        <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-add" type="button">添加</button>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix re">
+                <div class="tag-nav">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#" data-toggle="tab">消息类型</a></li>
+                        <li><a href="#" data-toggle="tab">参数类型</a></li>
+                        <li><a href="#" data-toggle="tab">字数限制</a></li>
+                    </ul>
+                </div>
+                <div class="data-con">
+                    <table id="data" class="ui-jqgrid"></table>
+                    <div id="pager"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="modal-add" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">添加配置</h4>
+            </div>
+            <div class="modal-body" style="padding-bottom:0;">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">消息ID：</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">消息类型：</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">说明：</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-edit" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">修改配置</h4>
+            </div>
+            <div class="modal-body" style="padding-bottom:0;">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">消息ID：</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">消息类型：</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">说明：</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                <button type="button" class="btn btn-warning">修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+<script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../static/dmp/plugins/bootstrap-bootbox/bootbox.js"></script>
+<script src="../../static/dmp/plugins/jquery-mockjax/jquery.mockjax.js"></script>
+<script src="../../static/dmp/plugins/jquery-jqgrid/jquery.jqGrid.js"></script>
+<script src="../../static/dmp/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+<script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+<script>
+    !function () {
+
+        //模拟ajax
+        $.mockjax({
+            url: "test.php",
+            type: "post",
+            responseTime: 0,
+            responseText: JSON.stringify({"page":1,"totalPage":1,"totalCount":888,"rows":[{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"},{"name1":1,"name2":"日常运营","name3":"说明","name4":"2014-10-13","name5":"xxx","name6":"1,2"}]})
+        });
+        $.mockjax({
+            url: "query.php",
+            type: "post",
+            responseTime: 0,
+            responseText: JSON.stringify({ "page": 1, "totalPage": 1, "totalCount": 888, "rows": [{ "id": 100, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 101, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 102, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 103, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 4, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 5, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 6, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }] })
+        });
+
+
+        //jqGrid配置
+        $("#data").jqGrid({
+            url: 'test.php',
+            multiselect: false,
+            rowNum: 40,
+            colNames: ['消息ID', '消息类型', '说明', '最后修改时间', '修改人', '操作'],
+            colModel: [
+                {name:"name1"},
+                {name:"name2"},
+                {name:"name3"},
+                {name:"name4"},
+                {name:"name5"},
+                {name:"name6",formatter: gridFormatter}
+            ],
+            loadComplete:false
+        });
+
+        function gridFormatter(value) {
+            var temp_arr = value.split(","),
+                    temp_html = [];
+            for (var i = 0; i < temp_arr.length; i++) {
+                switch (temp_arr[i]) {
+                    case "1":
+                        //编辑
+                        temp_html.push('<a class="mr10" href="#" data-toggle="modal" data-target="#modal-edit" title="编辑">编辑</a>');
+                        break;
+                    case "2":
+                        //删除
+                        temp_html.push('<a class="mr10" href="#" title="删除">删除</a>');
+                        break;
+                }
+            }
+            return temp_html.join("");
+        };
+
+        $(window).unbind("resize").resize(function () {
+            $("#data").setGridWidth($(".content").width() - 167);
+            $("#data").setGridHeight($(window).height() - $("#list-top").height() - 88);
+        });
+
+        $("#main-form").validate({
+            rules: {
+                typename: {
+                    required: true
+                },
+                level: {
+                    required: true
+                }
+            },
+            messages: {
+                typename: {
+                    required: "请输入活动类型名称"
+                },
+                level: {
+                    required: "请输入优先级"
+                }
+            }
+        });
+
+
+        $(".nav-tabs a").click(function () {
+            if (!$(this).parent().hasClass("active")) {
+                //重新筛选列表
+                if ($(this).text().indexOf("基础项") != -1) {
+                    $("#data").jqGrid('setGridParam', {
+                        url: "test.php"
+                    }).trigger("reloadGrid");
+                } else {
+                    $("#data").jqGrid('setGridParam', {
+                        //可以自定义查询地址-post的data不同
+                        url: "query.php",
+                        postData: { "search": "xxxx" },
+                        page: 1
+                    }).trigger("reloadGrid");
+                }
+            }
+        });
+
+
+    }();
+</script>
+</body>
+</html>

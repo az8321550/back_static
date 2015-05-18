@@ -1,0 +1,10 @@
+﻿
+@media all and (max-width:1366px) and (min-width:970px) {
+    .col-md-1 {
+        width:140px !important;
+    }
+
+    .col-md-offset-1 {
+        margin-left:140px !important;
+    }
+}

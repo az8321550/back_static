@@ -1,0 +1,128 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../../static/dmp/images/favicon.ico">
+    <link href="../../static/dmp/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/jquery-jqgrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="../../static/dmp/plugins/select2/select2.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/base.css" rel="stylesheet" />
+    <link href="../../static/dmp/styles/setting.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a>
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../../static/dmp/images/header.png" />
+            Admin_Super
+        </div>
+        <!--<ul class="menu" id="menu">
+            <div class="child-menu">
+                <li class="active"><a href="setting.html">用户管理</a></li>
+                <div class="child-menu">
+                    <li><a href="rolemanage.html">角色管理</a></li>
+                    <li><a href="rolemanage.html">角色管理</a></li>
+                    <li><a href="rolemanage.html">角色管理</a></li>
+                    <li><a href="rolemanage.html">角色管理</a></li>
+                </div>
+                <li><a href="rolemanage.html">角色管理</a></li>
+                <li><a href="rolemenu.html">菜单管理</a></li>
+                <li><a href="menubutton.html">按钮管理</a></li>
+                <li><a href="roleedit.html">权限配置</a></li>
+                <li><a href="rolewarning.html">权限异常</a></li>
+                <div class="menu-quick">
+                    <li><a href="list.html">111</a></li>
+                    <li><a href="taglist.html">222</a></li>
+                    <li><a href="tmplactive.html">333</a></li>
+                    <li><a href="waylist.html">444</a></li>
+                </div>
+            </div>
+        </ul>
+        <ul class="menu set-menu" id="quick-menu">
+            <li><a href="list.html">营销中心</a></li>
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+        </ul>-->
+        <ul class="menu" id="menu"></ul>
+    </div>
+    <div class="content">
+        
+
+    </div>
+
+    <script src="../../static/dmp/plugins/jquery/jquery.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/dmp/plugins/jquery-mockjax/jquery.mockjax.js"></script>
+    <script src="../../static/dmp/plugins/bootstrap-bootbox/bootbox.js"></script>
+    <script src="../../static/dmp/plugins/jquery-jqgrid/jquery.jqGrid.js"></script>
+    <script src="../../static/dmp/plugins/select2/select2.min.js"></script>
+    <script src="../../static/dmp/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../../static/dmp/scripts/app.js"></script><!--[if lt IE 9]><script src="../../static/dmp/plugins/respond/respond.min.js"></script><script src="../../static/dmp/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        //动态生成菜单
+        $(function () {
+            !function () {
+
+                var data = [{ "name": "营销门户", "id": 287, "type": 0, "leafs": [{ "name": "系统管理", "id": 3, "type": 0, "leafs": [{ "name": "用户管理", "id": 7, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysuser" }, { "name": "角色管理", "id": 6, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysrole" }, { "name": "菜单管理", "id": 5, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysresource" }, { "name": "按钮管理", "id": 275, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysFunction" }, { "name": "数据权限", "id": 31, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/dataright" }, { "name": "基础信息", "id": 14, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysbasetype" }, { "name": "职位管理", "id": 25, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysposition" }, { "name": "机构管理", "id": 15, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysorganize" }], "shortcutMenus": [{ "name": "基础信息", "id": 14, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysbasetype" }, { "name": "菜单管理", "id": 5, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysresource" }, { "name": "用户管理", "id": 7, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysuser" }, { "name": "角色管理", "id": 6, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysrole" }, { "name": "按钮管理", "id": 275, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysFunction" }, { "name": "日志管理", "id": 20, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/log" }, { "name": "数据权限", "id": 31, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/dataright" }, { "name": "职位管理", "id": 25, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysposition" }, { "name": "机构管理", "id": 15, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysorganize" }], "pid": 287, "url": "" }, { "name": "渠道中心", "id": 261, "type": 0, "leafs": [{ "name": "渠道管理", "id": 262, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 261, "url": "/dmp/channel/goChannelPage" }], "shortcutMenus": [], "pid": 287, "url": "" }, { "name": "模版中心", "id": 264, "type": 0, "leafs": [{ "name": "活动模版", "id": 265, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 264, "url": "/dmp/template/goTemplatePage" }, { "name": "模版分类", "id": 266, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 264, "url": "/dmp/template/goTemplateCategoryPage" }, { "name": "模版参数", "id": 267, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 264, "url": "/dmp/template/goTemplateParameterPage" }], "shortcutMenus": [], "pid": 287, "url": "" }, { "name": "营销中心", "id": 268, "type": 0, "leafs": [{ "name": "营销活动", "id": 278, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 268, "url": "/dmp/marketing/goMarketingPage" }, { "name": "业务类型", "id": 269, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 268, "url": "/dmp/marketing/goMarketingActPage" }], "shortcutMenus": [], "pid": 287, "url": "" }], "shortcutMenus": [{ "name": "1111信息", "id": 14, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysbasetype" }, { "name": "菜单2222", "id": 5, "type": 0, "leafs": [], "shortcutMenus": [], "pid": 3, "url": "/management/sysresource" }], "pid": 0, "url": "" }];
+
+                var htmlArr = [];
+
+                var generalMenu = function (tempData) {
+                    htmlArr.push('<div class="child-menu">');
+                    for (var i = 0; i < tempData.length; i++) {
+                        htmlArr.push('<li data-id="' + tempData[i].id + '"><a href="' + tempData[i].url + '">' + tempData[i].name + '</a></li>');
+                        if (tempData[i].leafs.length) {
+                            generalMenu(tempData[i].leafs);
+                        }
+                        if (tempData[i].shortcutMenus.length) {
+                            htmlArr.push('<div class="menu-quick">')
+                            for (var j = 0; j < tempData[i].shortcutMenus.length; j++) {
+                                htmlArr.push('<li data-id="' + tempData[i].shortcutMenus[j].id + '"><a href="' + tempData[i].shortcutMenus[j].url + '">' + tempData[i].shortcutMenus[j].name + '</a></li>')
+                            }
+                            htmlArr.push('</div>')
+                        }
+                    }
+                    htmlArr.push('</div>');
+                };
+                generalMenu(data);
+
+                $("#menu").append(htmlArr.join(""));
+
+                $(document).on("click", ".menu li", function () {
+                    var tempNode = $(this).next();
+
+                    //如果是快速入口
+                    if ($(this).parent().hasClass("menu-quick")) {
+                        $(".child-menu>li[data-id=" + $(this).data("id") + "]").click();
+                        return false;
+                    }
+
+                    if (tempNode.hasClass("child-menu")) {
+                        tempNode.show().siblings().hide();
+                        $(".menu-quick.shown").removeClass("shown").hide();
+                        if (tempNode.next().hasClass("menu-quick")) {
+                            tempNode.next().addClass("shown").show();
+                        }
+                        return false;
+                    }
+                    
+                });
+
+                $("#menu>.child-menu>li").click();
+
+            }();
+        });
+    </script>
+</body>
+</html>
