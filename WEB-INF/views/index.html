@@ -28,7 +28,15 @@
         </div>
         <ul class="menu">
             <li class="active"><a href="#">工作台</a></li>
-            <li><a class="nobody" href="list.html">营销中心</a></li>
+            <li>
+                <a href="list.html">营销中心<i class="icon-caret-down"></i></a>
+                <ul class="menu">
+                    <li><a href="#">子菜单1</a></li>
+                    <li><a href="#">子菜单2</a></li>
+                    <li><a href="#">子菜单3</a></li>
+                    <li><a href="#">子菜单4</a></li>
+                </ul>
+            </li>
             <li><a href="taglist.html">会员中心</a></li>
             <li><a href="tmplactive.html">模板中心</a></li>
             <li><a href="waylist.html">渠道中心</a></li>
@@ -356,6 +364,23 @@
 
             $(".user-quit").click(function () {
                 localStorage.clear();
+            })
+
+
+            //子菜单
+            $(document).on("click",".menu a", function () {
+                var _this=$(this);
+                var menu=_this.next(".menu");
+                if(menu.length){
+                    if(menu.hasClass("open")){
+                        menu.removeClass("open");
+                        menu.height(0)
+                    }else{
+                        menu.addClass("open");
+                        menu.height(menu.children().length*30)
+                    }
+                    return false;
+                }
             })
 
         }();

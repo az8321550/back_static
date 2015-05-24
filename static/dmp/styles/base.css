@@ -119,6 +119,25 @@ line-height:35px;
 text-indent:15px;
 text-decoration:none;
 }
+.menu .menu{
+    padding-left: 10px;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    -ms-transition:all .5s;
+    transition:all .5s;
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+}
+.menu .menu.open{
+    opacity: 1;
+    visibility: visible;
+}
+.menu .menu a{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+}
 .menu .menu-parent.acti{
     background:#2a8cd3;
 }
