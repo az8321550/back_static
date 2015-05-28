@@ -1,0 +1,948 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../static/images/favicon.ico">
+    <link href="../static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../static/plugins/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+    <link href="../static/styles/base.css" rel="stylesheet" />
+    <link href="../static/styles/create.css" rel="stylesheet" />
+</head>
+<body data-spy="scroll" data-target="#create-nav-content" data-offset="400">
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../static/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li class="active"><a href="list.html">营销活动</a></li>
+            <li><a href="backlist.html">客服反馈</a></li>
+            <li><a href="activelist.html">活动任务</a></li>
+            <li><a href="typelist.html">业务类型</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix navigation">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li><a href="#">促销活动</a></li>
+                            <li class="active">创建营销活动</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="create-con">
+            <div class="create-nav" id="create-nav-content">
+                <div class="create-nav-title">
+                    +创建
+                    <b>营销活动</b>
+                </div>
+                <ul class="nav create-nav-content clearfix">
+                    <li class="active">
+                        <span>1</span>
+                        <a href="#tab1">创建活动</a>
+                    </li>
+                    <li>
+                        <span>2</span>
+                        <a href="#tab2">选择会员</a>
+                    </li>
+                    <li>
+                        <span>3</span>
+                        <a href="#tab3">选择模版</a>
+                    </li>
+                    <li>
+                        <span>4</span>
+                        <a href="javascript:;">等待审核</a>
+                    </li>
+                </ul>
+                <div class="create-nav-btn">
+                    <button class="btn btn-default">暂 存</button>
+                </div>
+                <div class="create-warning">
+                    注意：
+                    <strong>
+                    </strong>
+                </div>
+            </div>
+            <div class="create-content">
+                <div class="clearfix" id="tab1">
+                    <div class="">
+                        <form class="form-horizontal border" id="main-form">
+                            <div class="group-title mt0">基本信息:</div>
+                            <div class="form-group">
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="activeName">当前事件：</label>
+                                    <div class="col-md-4">
+                                        <input id="activeName" name="activeName" type="text" class="form-control" />
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="activeType">业务类型：</label>
+                                    <div class="col-md-2">
+                                        <select id="activeType" name="activeType" class="form-control">
+                                            <option>业务类型</option>
+                                            <option>业务类型</option>
+                                        </select>
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="activeTheme">活动名称：</label>
+                                    <div class="col-md-4">
+                                        <input type="text" id="activeTheme" name="activeTheme" class="form-control" />
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                                <label class="col-md-1 control-label" for="activeTarget">活动对象：</label>
+                                <div class="col-md-2">
+                                    <select class="form-control" id="activeTarget" name="activeTarget">
+                                        <option>新客</option>
+                                        <option>老客</option>
+                                    </select>
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="beginTime">开始时间：</label>
+                                    <div class="col-md-3">
+                                        <input id="beginTime" name="beginTime" type="text" class="form-control" />
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                                <div class="valicon">
+                                    <label class="col-md-1 control-label" for="endTime">结束时间：</label>
+                                    <div class="col-md-3">
+                                        <input id="endTime" name="endTime" type="text" class="form-control" />
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="object">活动目的：</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="object" name="object" placeholder="最多输入100个汉字" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="detail">活动描述：</label>
+                                <div class="col-md-7">
+                                    <textarea class="form-control" rows="4" id="detail" name="detail" placeholder="最多输入300个汉字"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="remark">备注：</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="remark" name="remark" placeholder="最多输入100个汉字" />
+                                </div>
+                            </div>
+                            <div class="group-title">发送计划与渠道:</div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="plan">发送计划：</label>
+                                <div class="col-md-3 re">
+                                    <input type="text" class="form-control" readonly id="plan" name="plan" placeholder="请选择" />
+                                    <div class="plancon">
+                                        <div class="form-horizontal pt20">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">重复:</label>
+                                                <div class="col-md-10">
+                                                    <select class="form-control" id="planselect" name="planselect">
+                                                        <option value="1">每日定时发送</option>
+                                                        <option value="2">每周定时发送</option>
+                                                        <option value="3">每月定时发送</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">执行时间:</label>
+                                                <div class="col-md-5">
+                                                    <select class="form-control">
+                                                        <option>时</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <select class="form-control">
+                                                        <option>分</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">开始日期:</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control time" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">结束日期:</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control time" />
+                                                </div>
+                                            </div>
+                                            <div class="plan-tab active" id="plan-tab1">
+
+
+                                            </div>
+                                            <div class="plan-tab" id="plan-tab2">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">选择星期:</label>
+                                                    <div class="col-md-10 plan-week">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期一
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期二
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期三
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期四
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期五
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期六
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 星期日
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="plan-tab" id="plan-tab3">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">选择日期:</label>
+                                                    <div class="col-md-10 plan-day">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 2
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 3
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 4
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 5
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 6
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 7
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 8
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 9
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 10
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 11
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 12
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 13
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 14
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 15
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 16
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 17
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 18
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 19
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 20
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 21
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 22
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 23
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 24
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 25
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 26
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 27
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 28
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 29
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 30
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 31
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">提示:</label>
+                                                <div class="col-md-10 plan-label">
+                                                    活动执行时间的范围只能在[8:00-23:00]之间
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="col-md-1 control-label" for="channel">发送渠道：</label>
+                                <div class="col-md-3">
+                                    <select class="form-control" id="channel" name="channel">
+                                        <option>短信</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix" id="tab2">
+                    <div>
+                        <div class="group-title">选择会员:</div>
+                        <div class="tag-sel">
+                            <div class="form-group clearfix">
+                                <div class="tag-chose clearfix">
+                                    <button type="button" class="btn btn-default tag-nowtime" data-toggle="dialog" data-target="#dialog-tag" data-right="-960px">临时标签</button>
+                                    <div class="tag-chose-title">已选择：</div>
+                                    <div class="tag-chose-item" data-toggle="dialog" data-target="#main-dialog">
+                                        <span>私密特卖</span>
+                                        <div class="tag-chose-close">x</div>
+                                    </div>
+                                    <div class="dropdown">
+                                        <a role="button" class="btn btn-default" data-toggle="dropdown" href="#">并集 <b class="caret"></b></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a tabindex="-1" href="#">交集</a></li>
+                                            <li><a tabindex="-1" href="#">并集</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-default" type="button">已选人数</button>
+                                </div>
+                            </div>
+                            <div class="tag-group">
+                                <div class="tag-title">
+                                    <i class="icon icon-folder-open-alt"></i>
+                                    固定标签(20)
+                                    <i class="caret"></i>
+                                </div>
+                                <div class="tag-list clearfix">
+                                    <span>私密特卖</span>
+                                    <span>爱丽奢</span>
+                                    <span>母婴偏好</span>
+                                    <span>家居常购</span>
+                                    <span>美妆常购</span>
+                                    <span>近期生日会员</span>
+                                    <span>VVIP</span>
+                                    <span>汽车频道偏好</span>
+                                    <span>家居常购</span>
+                                    <span>美妆常购</span>
+                                </div>
+                            </div>
+                            <div class="tag-group">
+                                <div class="tag-title">
+                                    <i class="icon icon-folder-open-alt"></i>
+                                    自建标签 ( 24)
+                                    <i class="caret"></i>
+                                </div>
+                                <div class="tag-list clearfix">
+                                    <span>标签1</span>
+                                    <span>标签2</span>
+                                    <span>标签3</span>
+                                    <span>标签4</span>
+                                    <span>标签5</span>
+                                    <span>标签6</span>
+                                    <span>标签7</span>
+                                    <span>标签8</span>
+                                    <span>标签9</span>
+                                    <span>标签10</span>
+                                    <span>标签1</span>
+                                    <span>标签2</span>
+                                    <span>标签3</span>
+                                    <span>标签4</span>
+                                    <span>标签5</span>
+                                    <span>标签6</span>
+                                    <span>标签7</span>
+                                    <span>标签8</span>
+                                    <span>标签9</span>
+                                    <span>标签10</span>
+                                    <span>标签1</span>
+                                    <span>标签2</span>
+                                    <span>标签3</span>
+                                    <span>标签4</span>
+                                    <span>标签5</span>
+                                    <span>标签6</span>
+                                    <span>标签7</span>
+                                    <span>标签8</span>
+                                    <span>标签9</span>
+                                    <span>标签10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix" id="tab3">
+                    <div class="group-title">填写或选择模板:</div>
+                    <form class="form-horizontal" id="tmpl-con">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="templatename">模板名称：</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="templatename" id="templatename" />
+                            </div>
+                            <button class="btn btn-warning" id="my-tpml" type="button">我的模版</button>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="tmplDetail">模版描述：</label>
+                            <div class="col-md-6">
+                                <input type="text" id="tmplDetail" name="tmplDetail" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="templatecontent">模板内容：</label>
+                            <div class="col-md-6">
+                                <textarea rows="10" id="templatecontent" name="templatecontent" class="form-control templatecontent"></textarea>
+                                <div class="tmplbtn active">代码模式</div>
+                                <div class="tmplbtn">预览模式</div>
+                                <button class="btn btn-default" type="button">保存到模版</button>
+                            </div>
+                            <label class="col-md-1 templatebtn">
+                                <button class="btn btn-default" type="button"><<</button>
+                            </label>
+                            <div class="col-md-3">
+                                <div class="multi">
+                                    <div class="multi-item">+ 会员指标</div>
+                                    <div class="multi-item"></div>
+                                    <div class="multi-item">- 客户编码</div>
+                                    <div class="multi-item">- 注册时间</div>
+                                    <div class="multi-item">- 性别</div>
+                                    <div class="multi-item">- 生日</div>
+                                    <div class="multi-item">- 星座</div>
+                                    <div class="multi-item">- 注册所在区</div>
+                                    <div class="multi-item">- 第一次消费时间</div>
+                                    <div class="multi-item">- 第一次消费金额</div>
+                                    <div class="multi-item">- 最近一次访问时间</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="chose-tmpl pt20">
+                        <div class="clearfix">
+                            <div class="col-md-12">
+                                <button class="btn btn-default pull-left">确认</button>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>+顶级目录</option>
+                                        <option>+顶级目录2</option>
+                                        <option>+顶级目录3</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" placeholder="模板名称" class="form-control" />
+                                </div>
+                                <button class="btn btn-warning">搜索</button>
+                            </div>
+                        </div>
+                        <div class="clearfix pt20">
+
+                            <div class="col-md-6">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th class="text-center">选择</th>
+                                        <th>名称</th>
+                                        <th>描述</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <label>
+                                                <label><input type="checkbox" /></label>
+                                            </label>
+                                        </td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><label><input type="checkbox" /></label></td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><label><input type="checkbox" /></label></td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><label><input type="checkbox" /></label></td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><label><input type="checkbox" /></label></td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><label><input type="checkbox" /></label></td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><label><input type="checkbox" /></label></td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><label><input type="checkbox" /></label></td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><label><input type="checkbox" /></label></td>
+                                        <td>会员生日邮件模板</td>
+                                        <td>邮件模板描述</td>
+                                        <td><a href="#">预览</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <textarea rows="10" id="templatecontent" readonly name="templatecontent" class="form-control templatecontent">您的订单 $[orderID] 预计收货时间延迟1-2天，不便之处敬请谅解，感谢您的支持</textarea>
+                                <div class="tmplbtn active">代码模式</div>
+                                <div class="tmplbtn">预览模式</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix" id="tab4">
+                    <div class="submit mybtn">
+                        <button class="btn btn-success" type="button" id="submit">提交审核</button>
+                        <button class="btn btn-default">取&nbsp;&nbsp;消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="main-dialog" id="main-dialog">
+        <div class="event-manage">
+            <div class="col-xs-12">
+                <div class="event-top clearfix">
+                    <div class="event-icon">
+                        <i class="icon icon-tag"></i>
+                    </div>
+                    <div class="title">
+                        标签信息
+                    </div>
+                    <div class="btn-group">
+                        <div class="small-btn"><i class="icon icon-cog"></i></div>
+                        <div class="small-btn green"><i class="icon icon-plus"></i></div>
+                    </div>
+                </div>
+                <div class="tag-detail">
+                    <span>私密特卖</span><b>: [</b><br /><br />
+                    年龄段: 25-29岁;<br />
+                    最近购买时间: 1-3个月;<br />
+                    最近3个月消费金额: 5000以上;<br />
+                    购买过品类: 包箱;<br />
+                    购买过品牌: GUCCI;<br />
+                    <br />
+                    其它条件: 不限
+                    <br /><br />
+                    <b>] 的用户</b>
+                </div>
+                <div class="create-new">
+                    检索目标会员人数
+                </div>
+                <div class="clearfix">
+                    <div class="pt20 mybtn pull-right">
+                        <button class="btn btn-success">确定</button>
+                        <button class="btn btn-default">自定义</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-dialog" id="dialog-tag">
+        <div class="event-manage">
+            <div class="col-xs-12">
+                <div class="event-top clearfix">
+                    <div class="event-icon">
+                        <i class="icon icon-tag"></i>
+                    </div>
+                    <div class="title">
+                        临时标签
+                    </div>
+                    <div class="btn-group">
+                        <div class="tag-search">
+                            <form class="clearfix">
+                                <input type="text" class="" /><button><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag-main">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tag-tab1" data-toggle="tab">基本项<span>4</span></a></li>
+                        <li><a href="#tag-tab2" data-toggle="tab">行为项<span>3</span></a></li>
+                        <li><a href="#tag-tab3" data-toggle="tab">数值项<span>2</span></a></li>
+                        <li><a href="#tag-tab4" data-toggle="tab">安克诚<span>11</span></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tag-tab1">
+                            <div class="tag-con">
+                                <div>
+                                    <strong class="tag-con-title">常用设备：</strong>
+                                    <span>PC</span>
+                                    <span>移动</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">性别：</strong>
+                                    <span>男</span>
+                                    <span>女</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">年龄段(<i>单选</i>)：</strong>
+                                    <span>19-24岁</span>
+                                    <span>25-29岁</span>
+                                    <span>30-34岁</span>
+                                    <span>35-44岁</span>
+                                    <span>45-59岁</span>
+                                    <span>60岁以上</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <span>华南</span>
+                                    <span>华东</span>
+                                    <span>华北</span>
+                                    <span>西南</span>
+                                    <span>东北</span>
+                                    <span>西北</span>
+                                    <span>港澳台</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">设备：</strong>
+                                    <span>高端机型</span>
+                                    <span>中端机型</span>
+                                    <span>低端机型</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab2">
+                            <div class="tag-con">
+                                <div>
+                                    <strong class="tag-con-title">购物会员：</strong>
+                                    <span>是</span>
+                                    <span>否</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">会员等级（<i>单选</i>)：</strong>
+                                    <span>铁牌会员</span>
+                                    <span>铜牌会员</span>
+                                    <span>银牌会员</span>
+                                    <span>金牌会员</span>
+                                    <span>钻石会员</span>
+                                    <span>皇冠会员</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">年龄段(<i>单选</i>)：</strong>
+                                    <span>19-24岁</span>
+                                    <span>25-29岁</span>
+                                    <span>30-34岁</span>
+                                    <span>35-44岁</span>
+                                    <span>45-59岁</span>
+                                    <span>60岁以上</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">所在区域：</strong>
+                                    <span>华南</span>
+                                    <span>华东</span>
+                                    <span>华北</span>
+                                    <span>西南</span>
+                                    <span>东北</span>
+                                    <span>西北</span>
+                                    <span>港澳台</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">设备：</strong>
+                                    <span>高端机型</span>
+                                    <span>中端机型</span>
+                                    <span>低端机型</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab3">
+                            <div class="tag-con">
+                                <div>
+                                    <strong class="tag-con-title">产品特性（<i>多选</i>）：</strong>
+                                    <span>健康舒适</span>
+                                    <span>有机天然</span>
+                                    <span>怡人芬芳</span>
+                                    <span>保湿滋润</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">会员等级（<i>多选</i>）：</strong>
+                                    <span>铁牌会员</span>
+                                    <span>铜牌会员</span>
+                                    <span>银牌会员</span>
+                                    <span>金牌会员</span>
+                                    <span>钻石会员</span>
+                                    <span>皇冠会员</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">渠道标识：</strong>
+                                    <span>唯一访问</span>
+                                    <span>多访问</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">客户类别：</strong>
+                                    <span>新客</span>
+                                    <span>老客</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tag-tab4">
+                            <div class="tag-con">
+                                <div>
+                                    <strong class="tag-con-title">家庭状况（<i>多选</i>）：</strong>
+                                    <span>未婚</span>
+                                    <span>已婚</span>
+                                    <span>未育</span>
+                                    <span>已育</span>
+                                </div>
+                                <div>
+                                    <strong class="tag-con-title">售卖频道（<i>多选</i>）：</strong>
+                                    <span>特卖会</span>
+                                    <span>奢侈品</span>
+                                    <span>唯品团</span>
+                                    <span>美妆</span>
+                                    <span>移动端</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tag-all clearfix">
+                            <div class="tag-all-title">自定义： 【<span> 男，19-24岁，华东，使用高端机型</span> 】用户</div>
+                            <div class="tag-num">
+                                目标会员：
+                                <span>9999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="pt20 mybtn pull-right">
+                            <button class="btn btn-success">确定</button>
+                            <button class="btn btn-default">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/plugins/jquery/jquery.js"></script>
+    <script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../static/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../static/scripts/app.js"></script><!--[if lt IE 9]>
+    <script src="../static/plugins/respond/respond.min.js"></script>
+    <script src="../static/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        !function () {
+            $("#beginTime,#endTime,.time").datetimepicker({
+                autoclose: true,
+                todayBtn: true
+            });
+
+            $(".tag-title").click(function () {
+                var _next = $(this).next();
+                if (_next.css("display") == "block") {
+                    _next.hide();
+                } else {
+                    _next.show();
+                }
+            });
+
+            //发送计划
+            $("#plan").click(function (e) {
+                var _this = $(this).next();
+                _this.show();
+                setTimeout(function () {
+                    $("body").click(function (e) {
+
+                        var temp_flag = false;
+
+                        if ($(e.target).hasClass("plancon")) {
+                            temp_flag = true;
+                        }
+                        if (!temp_flag) {
+                            $(e.target).parents().each(function (index, ele) {
+                                if (ele.className === "plancon")
+                                    temp_flag = true;
+                            });
+                        }
+
+                        if (temp_flag) {
+
+                        } else {
+                            //关闭
+                            _this.hide();
+                            $("#plan").val($("#planselect").find("option:selected").text())
+                            $("body").unbind("click");
+                        }
+
+                    });
+
+                }, 100);
+            });
+
+            $("#planselect").change(function () {
+                var temp_id = "plan-tab" + $(this).val();
+                if ($(".plan-tab.active").attr("id") == temp_id) {
+
+                } else {
+                    $(".plan-tab.active").removeClass("active");
+                    var element = $("#" + temp_id);
+                    element.addClass("active");
+                }
+            });
+
+
+            $(document).on("click", ".tag-chose-close", function (e) {
+                $(this).parent().remove();
+                e.stopPropagation();
+                return false;
+            });
+
+
+            $(".tag-list span").click(function () {
+                $(".tag-chose .dropdown").before('<div class="tag-chose-item" data-toggle="dialog" data-target="#main-dialog"><span>' + $(this).text() + '</span><div class="tag-chose-close">x</div></div>');
+            });
+
+            $("#submit").click(function () {
+                $("#main-form").submit();
+            });
+
+            //验证
+            $("#main-form").validate({
+                rules: {
+                    activeName: {
+                        required: true
+                    },
+                    activeTheme: {
+                        required: true
+                    },
+                    beginTime: {
+                        required: true
+                    },
+                    endTime: {
+                        required: true
+                    }
+                },
+                messages: {
+                    activeName: {
+                        required: "请输入当前事件"
+                    },
+                    activeTheme: {
+                        required: "请输入活动名称"
+                    },
+                    beginTime: {
+                        required: "请选择开始时间",
+                    },
+                    endTime: {
+                        required: "请选择结束时间"
+                    }
+                },
+                invalidHandler: function (event, validator) {
+                    var temptext = [];
+                    for (var item in validator.invalid) {
+                        temptext.push(validator.invalid[item] + "<br/>");
+                    }
+                    $(".create-warning").show().find("strong").html(temptext.join(""));
+                }
+            });
+
+            //选择模版
+            $("#my-tpml").click(function () {
+                $(".chose-tmpl").show();
+                $("#tmpl-con").hide();
+            });
+
+            //导航标签
+            $(".create-nav-content a").click(function () {
+                return false;
+            });
+
+        }();
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../static/images/favicon.ico">
+    <link href="../static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../static/styles/base.css" rel="stylesheet" />
+    <link href="../static/styles/setting.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../static/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li><a href="list.html">营销活动</a></li>
+            <li><a href="activelist.html">活动任务</a></li>
+            <li class="active"><a href="typelist.html">业务类型</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li class="active">新建业务类型</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content-title clearfix mb20">
+                        <div class="title fontblue">新建业务类型</div>
+                    </div>
+                    <form class="form-horizontal" id="main-form">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="typeway">通道类型：</label>
+                            <div class="col-md-3">
+                                <select class="form-control" id="typeway" name="typeway">
+                                    <option>短信</option>
+                                    <option>邮件</option>
+                                </select>
+                                <span class="required">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="typename">活动类型名称：</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="typename" id="typename" />
+                                <span class="required">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="target">发送对象：</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="target" name="target" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="department">部门归属：</label>
+                            <div class="col-md-6">
+                                <input type="text" id="department" name="department" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="level">优先级：</label>
+                            <div class="col-md-6">
+                                <input type="text" id="level" name="level" class="form-control" />
+                                <span class="required">*</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="remark">备注：</label>
+                            <div class="col-md-6">
+                                <input type="text" id="remark" name="remark" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-1 col-md-11 mybtn">
+                                <button class="btn btn-success">新建</button>
+                                <button class="btn btn-default">返回</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="../static/plugins/jquery/jquery.js"></script>
+    <script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../static/scripts/app.js"></script><!--[if lt IE 9]>
+    <script src="../static/plugins/respond/respond.min.js"></script>
+    <script src="../static/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        !function () {
+
+            $("#main-form").validate({
+                rules: {
+                    typename: {
+                        required: true
+                    },
+                    level: {
+                        required: true
+                    }
+                },
+                messages: {
+                    typename: {
+                        required: "请输入活动类型名称"
+                    },
+                    level: {
+                        required: "请输入优先级"
+                    }
+                }
+            });
+
+
+        }();
+    </script>
+</body>
+</html>

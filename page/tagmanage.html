@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../static/images/favicon.ico">
+    <link href="../static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../static/plugins/jquery-jqgrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="../static/styles/base.css" rel="stylesheet" />
+    <link href="../static/styles/tagmanage.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../static/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li><a href="taglist.html">标签管理</a></li>
+            <li class="active"><a href="tagmanage.html">指标管理</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="list.html">营销中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li class="active">指标管理</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content-title clearfix mb20">
+                        <span class="title fontblue">指标管理</span>
+                        <div class="group-small clearfix">
+                            <a href="#" id="tag-stripe-btn" data-toggle="examine" data-msg="分割" class="btn btn-default btn-sm">指标值分割</a>
+                            <a href="#" class="btn btn-default btn-sm" data-toggle="examine" id="tag-down" data-multi="true" data-msg="导出">导出</a>
+                            <a href="#" class="btn btn-default btn-sm">同步</a>
+                            <div class="dropdown" style="display:inline-block;">
+                                <a role="button" class="btn btn-default btn-sm" data-toggle="dropdown" href="#">状态 <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a tabindex="-1" href="#">启用</a></li>
+                                    <li><a tabindex="-1" href="#">停用</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <a href="#" data-toggle="dialog" data-target="#main-dialog" class="btn btn-default btn-sm">筛 选 <b class="caret"></b></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix re">
+                    <div class="tag-nav">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#" data-toggle="tab">基础项</a></li>
+                            <li><a href="#" data-toggle="tab">行为项</a></li>
+                            <li><a href="#" data-toggle="tab">数值项</a></li>
+                            <li><a href="#" data-toggle="tab">安克诚</a></li>
+                        </ul>
+                    </div>
+                    <div class="data-con">
+                        <table id="data" class="ui-jqgrid"></table>
+                        <div id="pager"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="main-dialog" id="main-dialog">
+        <div class="event-manage">
+            <div class="col-xs-12">
+                <div class="event-top clearfix">
+                    <div class="event-icon">
+                        <i class="icon  icon-user"></i>
+                    </div>
+                    <div class="title">
+                        筛选指标
+                    </div>
+                </div>
+                <div class="pt20">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">指标名称：</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">类型：</label>
+                            <div class="col-md-10">
+                                <select class="form-control">
+                                    <option>类型1</option>
+                                    <option>类型2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">指标描述：</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="depart">是否多选：</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="depart" name="depart">
+                                    <option>是</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">状态：</label>
+                            <div class="col-md-10">
+                                <select class="form-control">
+                                    <option>启用</option>
+                                    <option>停用</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-1 col-md-11 mybtn">
+                                <div class="pull-right">
+                                    <button class="btn btn-success">筛选</button>
+                                    <button class="btn btn-default" type="button" data-toggle="dialog-close">返回</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">指标值分割</h4>
+                </div>
+                <div class="modal-body" style="padding-bottom:0;">
+                    <div class="modal-tabs active" id="modal-main">
+                        <table id="modal-main-table" class="table table-bordered table-striped nomargin">
+                            <tr>
+                                <th width="95">ID</th>
+                                <th width="95">指标</th>
+                                <th width="249">指标值</th>
+                                <th width="211">指标值名称</th>
+                                <th width="66">操作</th>
+                            </tr>
+                            <tr>
+                                <td>6034</td>
+                                <td>1138</td>
+                                <td>[object Object]</td>
+                                <td>0次</td>
+                                <td>
+                                    <button class="btn btn-default btn-xs btn-edit" type="button"><i class="icon-pencil"></i></button>
+                                    <button class="btn btn-default btn-xs" type="button"><i class="icon-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6034</td>
+                                <td>1138</td>
+                                <td>[object Object]</td>
+                                <td>0次</td>
+                                <td>
+                                    <button class="btn btn-default btn-xs btn-edit" type="button"><i class="icon-pencil"></i></button>
+                                    <button class="btn btn-default btn-xs" type="button"><i class="icon-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6034</td>
+                                <td>1138</td>
+                                <td>[object Object]</td>
+                                <td>0次</td>
+                                <td>
+                                    <button class="btn btn-default btn-xs btn-edit" type="button"><i class="icon-pencil"></i></button>
+                                    <button class="btn btn-default btn-xs" type="button"><i class="icon-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6034</td>
+                                <td>1138</td>
+                                <td>[object Object]</td>
+                                <td>0次</td>
+                                <td>
+                                    <button class="btn btn-default btn-xs btn-edit" type="button"><i class="icon-pencil"></i></button>
+                                    <button class="btn btn-default btn-xs" type="button"><i class="icon-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6034</td>
+                                <td>1138</td>
+                                <td>[object Object]</td>
+                                <td>0次</td>
+                                <td>
+                                    <button class="btn btn-default btn-xs btn-edit" type="button"><i class="icon-pencil"></i></button>
+                                    <button class="btn btn-default btn-xs" type="button"><i class="icon-trash"></i></button>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="clearfix">
+                            <button class="btn btn-warning pull-left mt20" type="button" id="modal-tag-new">新建</button>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">&laquo;</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-tabs" id="modal-tag-con">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-xs-2">指标值名称</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-2">类型</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>不需要经过处理的区间</option>
+                                        <option>不需要经过处理的区间2</option>
+                                        <option>不需要经过处理的区间3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-2">单位</label>
+                                <div class="col-xs-6">
+                                    <select class="form-control">
+                                        <option>不需要经过处理的区间</option>
+                                        <option>不需要经过处理的区间2</option>
+                                        <option>不需要经过处理的区间3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-2">指标值</label>
+                                <div class="col-xs-10">
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="modal-ok-btn">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/plugins/jquery/jquery.js"></script>
+    <script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/plugins/bootstrap-bootbox/bootbox.js"></script>
+    <script src="../static/plugins/jquery-mockjax/jquery.mockjax.js"></script>
+    <script src="../static/plugins/jquery-jqgrid/jquery.jqGrid.js"></script>
+    <script src="../static/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../static/scripts/app.js"></script><!--[if lt IE 9]>
+    <script src="../static/plugins/respond/respond.min.js"></script>
+    <script src="../static/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        !function () {
+
+            //模拟ajax
+            $.mockjax({
+                url: "test.php",
+                type: "post",
+                responseTime: 1000,
+                responseText: JSON.stringify({ "page": 1, "totalPage": 1, "totalCount": 888, "rows": [{ "id": 100, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 101, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 102, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 103, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 4, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 5, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 6, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }] })
+            });
+            $.mockjax({
+                url: "query.php",
+                type: "post",
+                responseTime: 200,
+                responseText: JSON.stringify({ "page": 1, "totalPage": 1, "totalCount": 888, "rows": [{ "id": 100, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 101, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 102, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 103, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 4, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 5, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 6, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }] })
+            });
+
+
+            //jqGrid配置
+            $("#data").jqGrid({
+                url: 'test.php',
+                datatype: "json",
+                mtype: "post",
+                multiselect: true,
+                multiselectWidth: 30,
+                height: $(window).height() - $("#list-top").height() - 88,
+                width: $(".content").width() - 167,
+                rowNum: 40,
+                rowList: [20, 40, 80],
+                colNames: ['指标ID', '指标名称', '类型', '指标值描述', '指标值', '是否多选', '状态', '使用次数', "同步时间"],
+                colModel: [
+                    {},
+                    { width: "300" },
+                    {},
+                    { width: "400" },
+                    { width: "400" },
+                    {},
+                    {},
+                    {},
+                    {}
+                ],
+                pager: "#pager",
+                altRows: true,
+                viewrecords: true,
+                ondblClickRow: function (rowid) {
+                    //rowid为选中的行的id
+                    location.href = "tagdetail.html?" + rowid;
+
+                }
+            });
+            $(window).unbind("resize").resize(function () {
+                $("#data").setGridWidth($(".content").width() - 167);
+                $("#data").setGridHeight($(window).height() - $("#list-top").height() - 88);
+            });
+
+            $("#main-form").validate({
+                rules: {
+                    typename: {
+                        required: true
+                    },
+                    level: {
+                        required: true
+                    }
+                },
+                messages: {
+                    typename: {
+                        required: "请输入活动类型名称"
+                    },
+                    level: {
+                        required: "请输入优先级"
+                    }
+                }
+            });
+
+
+            $(".nav-tabs a").click(function () {
+                if (!$(this).parent().hasClass("active")) {
+                    //重新筛选列表
+                    if ($(this).text().indexOf("基础项") != -1) {
+                        $("#data").jqGrid('setGridParam', {
+                            url: "test.php"
+                        }).trigger("reloadGrid");
+                    } else {
+                        $("#data").jqGrid('setGridParam', {
+                            //可以自定义查询地址-post的data不同
+                            url: "query.php",
+                            postData: { "search": "xxxx" },
+                            page: 1
+                        }).trigger("reloadGrid");
+                    }
+                }
+            });
+
+            $(document).on("dblclick", "#tag-stripe tr", function () {
+                $("#myModal2").modal("toggle");
+            });
+
+            //绑定导出的事件
+            $("#tag-down").bind("myclick", function () {
+                if ($(".check-all").parent().data("ck") == "ck") {
+                    alert("已勾选");
+                }
+                alert("123");
+            });
+
+            //分割
+            $("#tag-stripe-btn").bind("myclick", function () {
+                $("#myModal").modal("toggle");
+                backEdit();
+            });
+
+            $("#modal-tag-new").click(function () {
+                showEdit();
+            });
+
+            $("#modal-ok-btn").click(function () {
+                if ($("#modal-tag-con").hasClass("active")) {
+                    //保存分割
+
+                    backEdit();
+                } else {
+                    //不是分割
+
+                }
+
+
+            });
+
+            var showEdit = function () {
+                $("#modal-tag-con").addClass("active").siblings().removeClass("active");
+            };
+            var backEdit = function () {
+                $("#modal-main").addClass("active").siblings().removeClass("active");
+            };
+
+            //双击编辑
+            $(document).on("dblclick", "#modal-main-table tr", function () {
+                if ($(this).index() == 0) {
+                    return;
+                }
+                showEdit();
+            });
+
+            $(document).on("click", ".btn-edit", function () {
+                showEdit();
+            });
+
+            
+
+        }();
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../static/images/favicon.ico">
+    <link href="../static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../static/plugins/jquery-jqgrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="../static/styles/base.css" rel="stylesheet" />
+    <link href="../static/styles/setting.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../static/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li><a href="setting.html">用户管理</a></li>
+            <li><a href="rolemanage.html">角色管理</a></li>
+            <li><a href="rolemenu.html">菜单管理</a></li>
+            <li><a href="menubutton.html">按钮管理</a></li>
+            <li><a href="roleedit.html">权限配置</a></li>
+            <li class="active"><a href="#">权限异常</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="list.html">营销中心</a></li>
+            <li><a href="taglist.html">会员中心</a></li>
+            <li><a href="tmplactive.html">模板中心</a></li>
+            <li><a href="waylist.html">渠道中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="clearfix">
+            <div class="col-xs-12">
+                <div id="list-top">
+                    <div class="breadcrumb-con">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html"><i class="icon icon-home"></i></a></li>
+                            <li><a href="#">常规业务</a></li>
+                            <li><a href="#">系统配置</a></li>
+                            <li class="active">权限异常</li>
+                        </ol>
+                        <div class="search-con">
+                            <form>
+                                <input class="text" type="text" placeholder="快速检索" />
+                                <button class="button"><i class="icon icon-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content-title clearfix mb20">
+                        <span class="title fontblue">权限异常</span>
+                        <div class="group-small clearfix">
+                            <a href="#" class="btn btn-default btn-sm">导出</a>
+                            <div class="dropdown" style="display:inline-block;">
+                                <a role="button" class="btn btn-default btn-sm" data-toggle="dropdown" href="#">状态 <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a tabindex="-1" href="#">状态1</a></li>
+                                    <li><a tabindex="-1" href="#">状态2</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown" style="display:inline-block;">
+                                <a role="button" class="btn btn-default btn-sm" data-toggle="dropdown" href="#">标记 <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a tabindex="-1" href="#">标记1</a></li>
+                                    <li><a tabindex="-1" href="#">标记2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <a href="#" data-toggle="dialog" data-target="#main-dialog" class="btn btn-default btn-sm">筛 选 <b class="caret"></b></a>
+                        </div>
+                    </div>
+                </div>
+                <table id="data" class="ui-jqgrid"></table>
+                <div id="pager"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="main-dialog" id="main-dialog">
+        <div class="event-manage">
+            <div class="col-xs-12">
+                <div class="event-top clearfix">
+                    <div class="event-icon">
+                        <i class="icon  icon-user"></i>
+                    </div>
+                    <div class="title">
+                        异常筛选
+                    </div>
+                </div>
+                <div class="pt20">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">用户名称：</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">姓名：</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">标记：</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="userstatu">部门：</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="userstatu" name="userstatu">
+                                    <option>部门1</option>
+                                    <option>部门2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">用户状态：</label>
+                            <div class="col-md-10">
+                                <select class="form-control">
+                                    <option>启用</option>
+                                    <option>停用</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-1 col-md-11 mybtn">
+                                <div class="pull-right">
+                                    <button class="btn btn-success">筛选</button>
+                                    <button class="btn btn-default" type="button" data-toggle="dialog-close">返回</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/plugins/jquery/jquery.js"></script>
+    <script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/plugins/bootstrap-bootbox/bootbox.js"></script>
+    <script src="../static/plugins/jquery-mockjax/jquery.mockjax.js"></script>
+    <script src="../static/plugins/jquery-jqgrid/jquery.jqGrid.js"></script>
+    <script src="../static/scripts/app.js"></script><!--[if lt IE 9]>
+    <script src="../static/plugins/respond/respond.min.js"></script>
+    <script src="../static/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
+    <script>
+        !function () {
+
+            //模拟ajax
+            $.mockjax({
+                url: "test.php",
+                type: "post",
+                responseTime: 0,
+                responseText: JSON.stringify({ "page": 1, "totalPage": 1, "totalCount": 888, "rows": [{ "id": 0, "cell": ["未读", "001", "yolu.zhang", "张友录", "部门1", "部门2", "未读", "启用"] }, { "id": 1, "cell": ["未读", "001", "yolu.zhang", "张友录", "部门1", "部门2", "未读", "启用"] }, { "id": 2, "cell": ["未读", "001", "yolu.zhang", "张友录", "部门1", "部门2", "未读", "启用"] }, { "id": 3, "cell": ["未读", "001", "yolu.zhang", "张友录", "部门1", "部门2", "未读", "启用"] }, { "id": 4, "cell": ["已读", "001", "yolu.zhang", "张友录", "部门1", "部门2", "已读", "启用"] }, { "id": 5, "cell": ["已读", "001", "yolu.zhang", "张友录", "部门1", "部门2", "已读", "启用"] }, { "id": 6, "cell": ["已读", "001", "yolu.zhang", "张友录", "部门1", "部门2", "已读", "启用"] }] })
+            });
+
+            //jqGrid配置
+            $("#data").jqGrid({
+                url: 'test.php',
+                datatype: "json",
+                mtype: "post",
+                multiselect: true,
+                multiselectWidth: 30,
+                height: $(window).height() - $("#list-top").height() - 88,
+                width: $(".content").width() - 30,
+                rowNum: 40,
+                rowList: [20, 40, 80],
+                colNames: ['<div class="mail-read"></div>','ID', '用户名称 ', '姓名', '原部门', '新部门', '标记', '用户状态'],
+                colModel: [
+                    {width:"50",formatter: function (cellvalue, options, rowObject) {
+                            if (cellvalue == "未读") {
+                                return "<div class='mail-read'></div>";
+                            } else {
+                                return "<div class='mail-notread'></div>";
+                            }
+                        }
+                    },
+                    { name: "id" },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {}
+                ],
+                autowidth: false,
+                pager: "#pager",
+                altRows: true,
+                viewrecords: true,
+                gridComplete: function () {
+                    $(".ui-jqgrid-bdiv tr").each(function (index,ele) {
+                        if ($(ele).find("td").eq(7).text() == "未读") {
+                            $(ele).addClass("fontbold");
+                        }
+                    })
+                }
+            });
+
+        }();
+    </script>
+</body>
+</html>

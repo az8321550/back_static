@@ -1,0 +1,135 @@
+@charset "utf-8";
+/*=============================默认===========================*/
+*{margin:0px;padding:0px;border:none;}
+
+body{margin:0px;padding:0px;border:none;background:#ebebeb url(../images/index_bg.png) repeat-x;font-family:"宋体";font-size:12px;color:#666666;line-height:20px;}
+
+div,span,a,ul,ul li,p,h1,h2,h3,h4,h5,table,table tr td,img,form,input{margin:0;padding:0;border:none;font-family:"宋体";font-size:12px;color:#666666;line-height:20px;}
+
+ul{list-style:none;}
+
+input,select,checkbox{outline: none;}
+
+a{color:#666;text-decoration:none;font-size:12px;font-family:"宋体";line-height:20px;}
+
+a:hover{color:#000;}
+
+a#a_nonce{color:#06C;font-weight:bold;}
+
+a.blue{color:#06C;}
+
+.clear{clear:both;}
+
+.padding5{padding:5px;}
+
+.paddingt5{padding:5px 0px;}
+
+.over{overflow:hidden;}
+
+.bor{border:1px solid #cccccc;}
+
+.mar_centent{margin:0px auto;width:580px;}
+
+/*=============================外层容器===========================*/
+.content_bg{width:1026px;margin:28px auto 10px auto;overflow:hidden;}  /*背景内容层*/
+
+.cont_leftwrap{width:195px;float:left;}
+
+.cont_rightwrap{width:664px;float:left;}
+
+.rightwrap{width:864px;float:left;padding-left:5px;margin-top:5px;}   
+
+.back_title{height:20px;line-height:20px;background:#cccccc;font-weight:bold;color:#2f2f2f;text-align:center;}/*标题*/
+
+.back_content{padding:10px;min-height:400px;}
+
+.back_add{background:url(../images/add.png) 0px 0px no-repeat;padding-left:40px;margin-bottom:10px;}
+
+.back_add a{line-height:32px;height:32px;font-weight:bold;font-size:14px;}
+
+.back_add a:hover{color:#06C;}
+
+.f_text{width:110px;text-align:right;padding-right:10px;float:left;}
+
+.f_text2{width:120px;text-align:left;float:left;}
+
+.f_input{float:left;}
+
+.but_align{text-align:center;padding:5px 0px;}
+
+/*=============================主样式===========================*/
+.back_wrapper{min-height:500px;} 
+.handle{background:url(../images/back_ic5.png) 0px 1px no-repeat;float:right;margin:5px 0px 0px 5px;padding-left:20px;width:60px;}  /*操作管理*/
+.role{background:url(../images/back_ic6.png) 0px 1px no-repeat;float:right;margin:5px 0px 0px 5px;padding-left:20px;width:60px;}  /*角色管理*/
+.button_p{background:url(../images/tab.png) 0px 1px no-repeat;float:right;margin:5px 0px 0px 5px;padding-left:20px;width:60px;}/*按钮配置*/
+.cent_margin{width:950px;margin:0px auto;overflow:hidden;}/*头部外层*/
+.cent_margin a:hover{text-decoration:underline;color:#1366d7;}/*鼠标经过*/
+.int_textwrap{border:1px solid #cccccc;line-height:18px;height:18px;width:250px;padding:0px 2px;} /*输入框样式*/
+.int_textwrap2{border:1px solid #cccccc;line-height:18px;height:18px;width:150px;padding:0px 2px;} /*输入框样式*/
+.int_textarea{border:1px solid #cccccc;line-height:18px;height:70px;width:250px;padding:0px 2px;} /*文本集样式*/
+.cus_select{border:1px solid #cccccc;height:20px;line-height:20px;font-size:12px;color:#666666;margin:1px 10px 0px 0px;width:150px;}  /*下拉列表*/
+.rule_but{padding:10px 0px;background:url(../images/button_line.png) center bottom no-repeat;overflow:hidden;text-align:center;margin-top:50px;}/*按钮线条背景*/
+.rule_but2{padding:10px 0px;overflow:hidden;padding-left:120px;margin-top:50px;}/*按钮线条背景*/
+.rule_button2{width:93px;height:25px;line-height:25px;text-align:center;background:url(../images/rule_button.png) 0px 0px no-repeat;}/*按钮*/
+.rule_button{display:block;float:left;margin-left:5px;width:93px;height:25px;line-height:25px;text-align:center;background:url(../images/rule_button.png) 0px 0px no-repeat;}/*菜单按钮*/
+.r_button{background:url(../images/but_bg.png) no-repeat;line-height:20px;height:20px;text-align:center;width:137px;display:block;} /*灰色规则按钮*/
+.g_button{background:url(../images/index_button.png) no-repeat;width:57px;line-height:20px;height:20px;color:#333333;text-align:center;font-size:12px;}/*灰色按钮*/
+.back_bg{border:1px solid #cccccc;background:#fff;padding:10px;margin-top:10px;min-height:400px;}
+
+/*============================表格样式===========================*/
+table.table_style{border:1px solid #cccccc; border-collapse:collapse;}
+
+table.table_style tr.tr_bg{background:url(../images/table_titlebg.png) repeat-x;line-height:24px;border:1px solid #cccccc;color:#333333;}
+
+table.table_style tr td{border:1px solid #cccccc;border-collapse:collapse;text-align:center;}
+
+table.table_style tr.t_bg{background:#ededed;}
+
+table.table_style tr.t_edition{background:#eef6f9;}
+
+
+/*============================页尾信息===========================*/
+#footer{margin:20px auto;text-align:center;background:url(../images/footer_bg.png) left bottom repeat-x;padding-bottom:5px;}
+
+#footer ul{list-style-type:none;overflow:hidden;margin:0px auto 7px auto;width:300px;}
+
+#footer ul li{float:left;border-left:1px solid #666666;padding-right:10px;line-height:14px;}
+
+#footer ul li a{display:block;padding-left:10px;line-height:14px;}
+
+#foot_li{border:none;}
+
+/* ---------------------------------------------------导航样式-------------------------------------------------------------*/
+.c_subNav li .home{background:url(../images/back_ic2.png) 1px 3px no-repeat;} /*首页*/
+.c_subNav li .n_menu{background:url(../images/back_ic7.png) 1px 3px no-repeat;}  /*菜单管理*/
+.c_subNav li .personnel{background:url(../images/back_ic4.png) 1px 3px no-repeat;}  /*权限管理*/
+.c_subNav li .resource{background:url(../images/back_ic3.png) 1px 3px no-repeat;}  /*字典管理*/
+.c_subNav li .chart_p{background:url(../images/chart_pie.png) 1px 5px no-repeat;}/*图表配置*/
+.c_subNav li .table_p{background:url(../images/application_view_tile.png) 1px 5px no-repeat;}/*通用查询列表*/
+.c_subNav li .logout{background:url(../images/back_ic1.png) 1px 6px no-repeat;}  /*注销*/
+.c_subNav{width:150px;margin:5px 0px 0px 0px;float:left; padding-bottom:30px; }
+.c_subNav table{width:100%;border-collapse:collapse;}
+.c_subNav a{text-decoration:none;color:#333;}
+.c_subNav a:hover{color:#f60;}
+.c_subNav ul ul{position:absolute;visibility:hidden;right:-150px;top:-1px;}
+.c_subNav li{border-bottom:1px solid #ccc;position:relative;_position:static;float:left;width:100%;}
+.c_subNav a.li{position:relative;}
+.c_subNav li .option{display:block;line-height:20px;padding:3px 5px 3px 20px;cursor:pointer;font:12px Verdana;zoom:1;}
+.c_subNav li .option:hover{color:#f60;background-color:#ffa;}
+.c_subNav li .option span{display:block;padding-right:15px;background:url(../images/bullet_arrow.png) no-repeat 110px 2px;}
+.c_subNav li .option:hover span{background:url(../images/bullet_arrow_hover.png) no-repeat 110px 2px;}
+.c_subNav .li:hover{z-index:2;background:#f3f3f3;}
+.c_subNav .li:hover ul{visibility:visible;}
+.c_subNav .li:hover ul ul{visibility:hidden;}
+.c_subNav .li:hover ul{border:1px solid #ccc;border-width:1px 2px 2px 1px;width:150px;background:#fafafa;padding:2px;line-height:20px;}
+.c_subNav .li:hover li{border-bottom:none;}
+.c_subNav .li:hover li .option{padding:3px 5px;background:transparent;}
+.c_subNav .li:hover li .option:hover{background:#fff;color:#666666;border-left:5px solid #cccccc;padding-left:15px;}
+.c_subNav .li:hover li .option:hover span{background-position:right -30px;}
+.c_subNav .li:hover .li:hover ul{visibility:visible;left:145px;top:-2px;}
+/*---图标差异---*/
+.c_subNav .change .option{background-position:4px -95px;}
+.c_subNav .score .option{background-position:4px -120px;}
+.c_subNav .server .option{background-position:4px -145px;}
+.c_subNav .edit .option{background-position:4px -170px;}
+.c_subNav .sms .option{background-position:4px -195px;}

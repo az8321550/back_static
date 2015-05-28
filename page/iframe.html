@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>数字营销平台</title><link rel="shortcut icon" href="../static/images/favicon.ico">
+    <link href="../static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../static/plugins/jquery-jqgrid/ui.jqgrid.css" rel="stylesheet" />
+    <link href="../static/styles/base.css" rel="stylesheet" />
+    <link href="../static/plugins/select2/select2.css" rel="stylesheet" />
+</head>
+<body style="overflow:hidden"></body>
+    <div class="sider">
+        <div class="home-menu">
+            <a href="index.html">
+                <i class="icon icon-home"></i>
+            </a>
+        </div>
+        <div class="main-name">
+            数字营销平台
+        </div>
+        <div class="user clearfix">
+            <img src="../static/images/header.png" />
+            Admin_Super
+        </div>
+        <ul class="menu">
+            <li><a href="#">营销活动</a></li>
+            <li id="link1" class="active"><a href="#">活动任务</a></li>
+            <li id="link2"><a href="#">活动明细</a></li>
+            <li><a href="#">会员标签</a></li>
+            <li><a href="#">模板管理</a></li>
+            <li><a href="#">渠道管理</a></li>
+        </ul>
+        <ul class="menu set-menu">
+            <li><a href="#">营销概况</a></li>
+            <li><a href="#">营销数据</a></li>
+            <li><a href="#">消息</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        
+    </div>
+
+
+    <script src="../static/plugins/jquery/jquery.js"></script>
+    <script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/plugins/bootstrap-bootbox/bootbox.js"></script>
+    <script src="../static/plugins/jquery-mockjax/jquery.mockjax.js"></script>
+    <script src="../static/plugins/jquery-jqgrid/jquery.jqGrid.js"></script>
+    <script src="../static/plugins/select2/select2.min.js"></script>
+    <script src="../static/scripts/app.js"></script>
+    <script>
+        $("#iframe").height($(window).height());
+        
+        $("#link1").click(function () {
+            $.get("list.html", function (result) {
+                $(".content").html($(result).siblings(".content").html());
+                $(".content").append($(result).siblings("script:not[src]"));
+                //$(".content").append($(result).siblings("script"));
+                //$(".content").append($(result).siblings("link"));
+            });
+            $(this).addClass("active").siblings().removeClass("active");
+            return false;
+        });
+        
+        $("#link2").click(function () {
+            $.get("activelist.html", function (result) {
+                $(".content").html($(result).siblings(".content").html());
+                $(".content").append($(result).siblings("script:not[src]"));
+                //$(".content").append($(result).siblings("link"));
+            });
+            $(this).addClass("active").siblings().removeClass("active");
+            return false;
+        });
+
+    </script>
+</body>
+</html>
