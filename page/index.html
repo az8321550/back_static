@@ -416,7 +416,7 @@
 
             $(document).on("click",".menu li", function () {
                 var _this=$(this);
-                var tempMenu=_this.find(".menu");
+                var tempMenu=_this.find(">.menu");
                 if(_this.hasClass("open")){
                     _this.removeClass("open");
                     return false;

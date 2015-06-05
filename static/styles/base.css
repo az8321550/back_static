@@ -124,9 +124,6 @@ position: relative;
 left: -6px;
 transition: all .5s;
 }
-.open .icon-caret-down{
-
-}
 .menu a:hover{text-decoration:none;background:#2a8cd3;}
 .menu .menu{
     padding-left: 12px;
