@@ -119,49 +119,48 @@ line-height:35px;
 text-indent:15px;
 text-decoration:none;
 }
-.menu .menu{
-    padding-left: 10px;
-    -webkit-transition:all .5s;
-    -moz-transition:all .5s;
-    -ms-transition:all .5s;
-    transition:all .5s;
-    opacity: 0;
-    height: 0;
-    visibility: hidden;
+.menu .icon-caret-down {
+position: relative;
+left: -6px;
+transition: all .5s;
 }
-.menu .menu.open{
-    opacity: 1;
-    visibility: visible;
+.open .icon-caret-down{
+
+}
+.menu a:hover{text-decoration:none;background:#2a8cd3;}
+.menu .menu{
+    padding-left: 12px;
+    margin-top: 3px;
 }
 .menu .menu a{
     font-size: 12px;
     height: 30px;
     line-height: 30px;
+    text-indent: 10px;
 }
-.menu .menu-parent.acti{
-    background:#2a8cd3;
+
+.menu>li{
+    height: 30px;
+    overflow: hidden;
 }
-.menu .icon-caret-down {
-position: relative;
-left: -10px;
+.menu>li.open{
+    height: auto;
+    overflow: hidden;
 }
-.menu a:hover{text-decoration:none;background:#2a8cd3;}
-.menu .menu-child {
-padding-left:10px;
-padding-right:10px;
-padding-top:6px;
-display:none;
+
+.menu>li>.menu{
+    visibility: hidden;
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: all .5s;
 }
-.menu .menu-child.active {
-display:block;
+.menu>li.open>.menu{
+    visibility: visible;
+    transform: translateX(0px);
+    opacity: 1;
 }
-.menu .menu-child a.active {
-    background:#076BB9;
-}
-.menu .menu-child a {
-font-size: 13px;
-height: 32px;
-line-height: 32px;
+.menu>li.open>a{
+    background: #1d86d2;
 }
 
 .set-menu{position:relative;padding-top:30px}

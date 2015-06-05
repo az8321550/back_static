@@ -28,8 +28,41 @@
         </div>
         <ul class="menu">
             <li class="active"><a href="#">工作台</a></li>
-            <li>
+            <li class="open">
                 <a href="list.html">营销中心<i class="icon-caret-down"></i></a>
+                <ul class="menu">
+                    <li class="open">
+                        <a href="#">子菜单1<i class="icon-caret-down"></i></a>
+                        <ul class="menu">
+                            <li><a href="#">子子菜单1</a></li>
+                            <li><a href="#">子子菜单2</a></li>
+                            <li><a href="#">子子菜单3</a></li>
+                            <li><a href="#">子子菜单4</a></li>
+                            <li><a href="#">子子菜单1</a></li>
+                            <li><a href="#">子子菜单2</a></li>
+                            <li><a href="#">子子菜单3</a></li>
+                            <li><a href="#">子子菜单4</a></li>
+                            <li><a href="#">子子菜单1</a></li>
+                            <li><a href="#">子子菜单2</a></li>
+                            <li><a href="#">子子菜单3</a></li>
+                            <li><a href="#">子子菜单4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">子菜单2<i class="icon-caret-down"></i></a>
+                        <ul class="menu">
+                            <li><a href="#">子子菜单1</a></li>
+                            <li><a href="#">子子菜单2</a></li>
+                            <li><a href="#">子子菜单3</a></li>
+                            <li><a href="#">子子菜单4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">子菜单3</a></li>
+                    <li><a href="#">子菜单4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="taglist.html">会员中心<i class="icon-caret-down"></i></a>
                 <ul class="menu">
                     <li><a href="#">子菜单1</a></li>
                     <li><a href="#">子菜单2</a></li>
@@ -37,8 +70,15 @@
                     <li><a href="#">子菜单4</a></li>
                 </ul>
             </li>
-            <li><a href="taglist.html">会员中心</a></li>
-            <li><a href="tmplactive.html">模板中心</a></li>
+            <li>
+                <a href="tmplactive.html">模板中心<i class="icon-caret-down"></i></a>
+                <ul class="menu">
+                    <li><a href="#">子菜单1</a></li>
+                    <li><a href="#">子菜单2</a></li>
+                    <li><a href="#">子菜单3</a></li>
+                    <li><a href="#">子菜单4</a></li>
+                </ul>
+            </li>
             <li><a href="waylist.html">渠道中心</a></li>
         </ul>
         <ul class="menu set-menu">
@@ -243,8 +283,13 @@
     <script src="../static/plugins/respond/respond.min.js"></script>
     <script src="../static/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
     <script src="../static/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../static/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
     <script>
         !function () {
+
+            $(".sider").niceScroll({
+                cursorcolor:"#0072c5"
+            });
 
             //“常规活动”终排在第一个
             var normal_act = $(".tag").find(".tag-item:contains(常规活动)");
@@ -369,21 +414,19 @@
             })
 
 
-            //子菜单
-            $(document).on("click",".menu a", function () {
+            $(document).on("click",".menu li", function () {
                 var _this=$(this);
-                var menu=_this.next(".menu");
-                if(menu.length){
-                    if(menu.hasClass("open")){
-                        menu.removeClass("open");
-                        menu.height(0)
-                    }else{
-                        menu.addClass("open");
-                        menu.height(menu.children().length*30)
-                    }
+                var tempMenu=_this.find(".menu");
+                if(_this.hasClass("open")){
+                    _this.removeClass("open");
                     return false;
                 }
-            })
+                if(tempMenu.length){
+                    //是父菜单
+                    _this.addClass("open").siblings().removeClass("open");
+                    return false;
+                }
+            });
 
         }();
     </script>
