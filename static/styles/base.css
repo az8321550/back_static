@@ -90,11 +90,41 @@ input:active,button:focus,button:active,a:focus{outline:none!important}
 select.form-control{padding:6px 8px}
 .re{position:relative!important}
 .width40{width:40px!important}
-.sider{position:fixed;width:170px;height:100%;background:#0072c5;z-index:1000;top:0;left:0}
-.content{padding-left:170px;height:100%}
+.sider{position:fixed;width:170px;height:100%;background:#0072c5;z-index:1000;top:0;left:0;
+    transition: .4s;
+
+}
+.content{padding-left:170px;height:100%;transition: .2s .4s}
 @media(max-width:720px){.sider{display:none}
 .content{padding-left:0}
 }
+.sider .icon-double-angle-left{
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 30px;
+}
+.sider .icon-double-angle-right{
+    position: fixed;
+    left: 180px;
+    top: 11px;
+    font-size: 30px;
+    opacity: 0;
+    transition:.2s;
+    color:#09f;
+}
+
+.retract .icon-double-angle-right{
+    opacity: 1;
+    left: 0px;
+}
+.retract .sider{
+    left: -170px;
+}
+.retract .content{
+    padding-left: 0;
+}
+
 .home-menu{width:35px;height:35px;border-radius:50%;border:2px solid #fff;margin-left:16px;margin-top:16px;margin-bottom:15px;cursor:pointer}
 .home-menu i{color:#fff;font-size:21px;margin-left:6px;line-height:30px}
 .home-menu a{text-decoration:none;display:block}

@@ -1,5 +1,5 @@
 ﻿
-.nav-tabs>li{
+/*.nav-tabs>li{
     float:none;
     position:relative;
     margin-bottom:0;
@@ -46,10 +46,15 @@ color:#333333;
 .nav-tabs {
     border-bottom:none;
 }
-.data-con {
-margin-left:128px;
+.tag-nav {
+width:127px;
+position:absolute;
+padding-top:20px;
+z-index:100;
+}
+*/
+/*.data-con {
 position:relative;
-padding-left:12px;
 }
 .data-con:before {
 position:absolute;
@@ -59,13 +64,7 @@ width:1px;
 left:-4px;
 top:0;
 background:#d4d4d4;
-}
-.tag-nav {
-width:127px;
-position:absolute;
-padding-top:20px;
-z-index:100;
-}
+}*/
 
 .timetext {
     padding-bottom:20px;
@@ -160,4 +159,32 @@ display:block;
     top: 4px;
     margin-right: 10px;
     display: inline-block;
+}
+
+/*超长nav条*/
+.tag-nav-wrap{
+    padding: 0 20px;
+    position: relative;
+}
+.tag-nav{
+    width: 100%;
+    overflow: hidden;
+}
+.tag-nav-con{
+    width: 9999px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.tag-nav-left,.tag-nav-right{
+    position: absolute;
+    font-size: 30px;
+    top: -2px;
+    cursor: pointer;
+    color:#09f;
+}
+.tag-nav-left {
+    left: 0;
+}
+.tag-nav-right{
+    right:0;
 }

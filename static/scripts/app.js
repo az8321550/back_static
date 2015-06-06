@@ -13,6 +13,20 @@ var app = {
                     return false;
                 });
             }
+
+            $(".sider .retract").click(function () {
+                $("body").addClass("retract");
+                setTimeout(function(){
+                    $(window).trigger("resize");
+                },600)
+            })
+
+            $(".comeout").click(function(){
+                $("body").removeClass("retract");
+                setTimeout(function(){
+                    $(window).trigger("resize");
+                },600)
+            })
     	})
     }(),
     animate: function () {

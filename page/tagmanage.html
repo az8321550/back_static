@@ -71,13 +71,46 @@
                     </div>
                 </div>
                 <div class="clearfix re">
-                    <div class="tag-nav">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#" data-toggle="tab">基础项</a></li>
-                            <li><a href="#" data-toggle="tab">行为项</a></li>
-                            <li><a href="#" data-toggle="tab">数值项</a></li>
-                            <li><a href="#" data-toggle="tab">安克诚</a></li>
-                        </ul>
+                    <div class="tag-nav-wrap">
+                        <div class="tag-nav-left">
+                            <i class="icon-angle-left"></i>
+                        </div>
+                        <div class="tag-nav-right">
+                            <i class="icon-angle-right"></i>
+                        </div>
+                        <div class="tag-nav">
+                            <div class="tag-nav-con">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#" data-toggle="tab">基础项</a></li>
+                                    <li><a href="#" data-toggle="tab">行为项</a></li>
+                                    <li><a href="#" data-toggle="tab">数值项</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                    <li><a href="#" data-toggle="tab">安克诚</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="data-con">
                         <table id="data" class="ui-jqgrid"></table>
@@ -285,6 +318,7 @@
     <script src="../static/plugins/jquery-mockjax/jquery.mockjax.js"></script>
     <script src="../static/plugins/jquery-jqgrid/jquery.jqGrid.js"></script>
     <script src="../static/plugins/jquery-validation/1.9.0/jquery.validate.min.js"></script>
+    <script src="../static/scripts/slider.js"></script>
     <script src="../static/scripts/app.js"></script><!--[if lt IE 9]>
     <script src="../static/plugins/respond/respond.min.js"></script>
     <script src="../static/plugins/html5shiv/html5shiv.min.js"></script><![endif]-->
@@ -295,13 +329,13 @@
             $.mockjax({
                 url: "test.php",
                 type: "post",
-                responseTime: 1000,
+                responseTime: 0,
                 responseText: JSON.stringify({ "page": 1, "totalPage": 1, "totalCount": 888, "rows": [{ "id": 100, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 101, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 102, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 103, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 4, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 5, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }, { "id": 6, "cell": ["A00101", "近一个月访问频率", "字符型", "android,pc,其他,wap,ios", "79791,79792,79793,79794,79795", "单选", "启用", "次数", "2014-3-18 11:12"] }] })
             });
             $.mockjax({
                 url: "query.php",
                 type: "post",
-                responseTime: 200,
+                responseTime: 0,
                 responseText: JSON.stringify({ "page": 1, "totalPage": 1, "totalCount": 888, "rows": [{ "id": 100, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 101, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 102, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 103, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 4, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 5, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }, { "id": 6, "cell": ["搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果", "搜索结果"] }] })
             });
 
@@ -314,20 +348,21 @@
                 multiselect: true,
                 multiselectWidth: 30,
                 height: $(window).height() - $("#list-top").height() - 88,
-                width: $(".content").width() - 167,
+                autowidth: false,
+                width: $(".data-con").width()-5,
                 rowNum: 40,
                 rowList: [20, 40, 80],
                 colNames: ['指标ID', '指标名称', '类型', '指标值描述', '指标值', '是否多选', '状态', '使用次数', "同步时间"],
                 colModel: [
-                    {},
-                    { width: "300" },
-                    {},
-                    { width: "400" },
-                    { width: "400" },
-                    {},
-                    {},
-                    {},
-                    {}
+                    {width:"100%"},
+                    {width:"100%"},
+                    {width:"100%"},
+                    {width:"100%"},
+                    {width:"100%"},
+                    {width:"100%"},
+                    {width:"100%"},
+                    {width:"100%"},
+                    {width:"100%"}
                 ],
                 pager: "#pager",
                 altRows: true,
@@ -339,7 +374,6 @@
                 }
             });
             $(window).unbind("resize").resize(function () {
-                $("#data").setGridWidth($(".content").width() - 167);
                 $("#data").setGridHeight($(window).height() - $("#list-top").height() - 88);
             });
 
@@ -434,8 +468,6 @@
             $(document).on("click", ".btn-edit", function () {
                 showEdit();
             });
-
-            
 
         }();
     </script>
