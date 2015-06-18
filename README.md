@@ -38,7 +38,7 @@ js->
 
 点击新建按钮可以弹出新建弹窗
 
-###alret框
+###alter框
 
 控件bootstrap-bootbox
 
